@@ -1,0 +1,6 @@
+build/
+
+training/micro/bitcode/
+training/micro/features/
+training/micro/features-count/
+training/micro/features-normalized/
