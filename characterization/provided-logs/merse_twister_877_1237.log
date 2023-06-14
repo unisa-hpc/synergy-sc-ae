@@ -1,0 +1,28 @@
+********** Results for Merse Twister**********
+problem-size: 524288
+local-size: 256
+num-iters: 50000
+core-freq: 1237
+memory-freq: 877
+device-name: Tesla V100-SXM2-16GB
+sycl-implementation: LLVM CUDA (Intel DPC++)
+throughput-metric: N/A
+kernel-time-mean: 0.369190 [s]
+kernel-time-stddev: 0.026521 [s]
+kernel-time-median: 0.388555 [s]
+kernel-time-min: 0.340130 [s]
+kernel-time-samples: "0.340130 0.340146 0.388555 0.388557 0.388562"
+kernel-time-throughput: N/A
+run-time-mean: 0.382222 [s]
+run-time-stddev: 0.027899 [s]
+run-time-median: 0.399917 [s]
+run-time-min: 0.350164 [s]
+run-time-samples: "0.350164 0.353358 0.399917 0.402230 0.405440"
+run-time-throughput: N/A
+kernel-energy-mean: 52.007898 [J]
+kernel-energy-stddev: 1.345367 [J]
+kernel-energy-median: 51.862515 [J]
+kernel-energy-min: 50.376625 [J]
+kernel-energy-max: 53.702945 [J]
+kernel-energy-samples: "50.376625 51.131820 51.862515 52.965585 53.702945"
+Verification: PASS

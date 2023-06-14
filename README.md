@@ -10,6 +10,8 @@ We suggest using Ubuntu 20.04 or later.
   - Install using  use [Getting Started Guide](https://github.com/intel/llvm/blob/sycl/sycl/doc/GetStartedGuide.md)
 - Clang and LLVM 15
   - Install using the [LLVM automatic installation script](https://apt.llvm.org/#llvmsh)
+- Python 3
+  - Packages: `scikit-learn`, `pandas`, `numpy`, `matplotlib`, `paretoset`
 
 ## How to use this repository
 This repository is divided in four subdirectories:

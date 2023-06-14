@@ -1,6 +1,13 @@
+.vscode
 build/
 
-training/micro/bitcode/
-training/micro/features/
-training/micro/features-count/
-training/micro/features-normalized/
+bitcode/
+features/
+features-count/
+features-normalized/
+merged-*/
+plots/
+
+logs/
+
+0_SC_*/

@@ -1,0 +1,28 @@
+********** Results for Bit Compression**********
+problem-size: 524288
+local-size: 256
+num-iters: 100000
+core-freq: 285
+memory-freq: 877
+device-name: Tesla V100-SXM2-16GB
+sycl-implementation: LLVM CUDA (Intel DPC++)
+throughput-metric: N/A
+kernel-time-mean: 1.197923 [s]
+kernel-time-stddev: 0.001497 [s]
+kernel-time-median: 1.197322 [s]
+kernel-time-min: 1.197000 [s]
+kernel-time-samples: "1.197000 1.197193 1.197322 1.197519 1.200581"
+kernel-time-throughput: N/A
+run-time-mean: 1.208209 [s]
+run-time-stddev: 0.003437 [s]
+run-time-median: 1.206674 [s]
+run-time-min: 1.205308 [s]
+run-time-samples: "1.205308 1.206205 1.206674 1.209008 1.213851"
+run-time-throughput: N/A
+kernel-energy-mean: 35.453204 [J]
+kernel-energy-stddev: 0.115487 [J]
+kernel-energy-median: 35.460115 [J]
+kernel-energy-min: 35.271565 [J]
+kernel-energy-max: 35.583980 [J]
+kernel-energy-samples: "35.271565 35.441710 35.460115 35.508650 35.583980"
+Verification: PASS

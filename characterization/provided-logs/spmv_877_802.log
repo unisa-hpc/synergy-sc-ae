@@ -1,0 +1,28 @@
+********** Results for Spmv**********
+problem-size: 524288
+local-size: 256
+num-iters: 2000
+core-freq: 802
+memory-freq: 877
+device-name: Tesla V100-SXM2-16GB
+sycl-implementation: LLVM CUDA (Intel DPC++)
+throughput-metric: N/A
+kernel-time-mean: 1.165935 [s]
+kernel-time-stddev: 0.013911 [s]
+kernel-time-median: 1.161498 [s]
+kernel-time-min: 1.149231 [s]
+kernel-time-samples: "1.149231 1.158688 1.161498 1.176969 1.183288"
+kernel-time-throughput: N/A
+run-time-mean: 1.177282 [s]
+run-time-stddev: 0.013173 [s]
+run-time-median: 1.169565 [s]
+run-time-min: 1.166817 [s]
+run-time-samples: "1.166817 1.167368 1.169565 1.187329 1.195331"
+run-time-throughput: N/A
+kernel-energy-mean: 97.069596 [J]
+kernel-energy-stddev: 2.401157 [J]
+kernel-energy-median: 97.154335 [J]
+kernel-energy-min: 93.517685 [J]
+kernel-energy-max: 99.715585 [J]
+kernel-energy-samples: "93.517685 96.235090 97.154335 98.725285 99.715585"
+Verification: PASS

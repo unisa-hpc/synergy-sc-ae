@@ -1,0 +1,38 @@
+********** Results for Geometric mean**********
+problem-size: 16384
+local-size: 256
+num-iters: 200000
+core-freq: 180
+memory-freq: 877
+device-name: Tesla V100-SXM2-16GB
+sycl-implementation: LLVM CUDA (Intel DPC++)
+Host mean is 36768.804688
+Device mean is 36738.941406
+Host mean is 36768.804688
+Device mean is 36738.941406
+Host mean is 36768.804688
+Device mean is 36738.941406
+Host mean is 36768.804688
+Device mean is 36738.941406
+Host mean is 36768.804688
+Device mean is 36738.941406
+throughput-metric: N/A
+kernel-time-mean: 4.782072 [s]
+kernel-time-stddev: 0.001120 [s]
+kernel-time-median: 4.782215 [s]
+kernel-time-min: 4.780334 [s]
+kernel-time-samples: "4.780334 4.781842 4.782215 4.782625 4.783345"
+kernel-time-throughput: N/A
+run-time-mean: 4.791459 [s]
+run-time-stddev: 0.003111 [s]
+run-time-median: 4.792986 [s]
+run-time-min: 4.787441 [s]
+run-time-samples: "4.787441 4.788930 4.792986 4.793182 4.794756"
+run-time-throughput: N/A
+kernel-energy-mean: 102.833379 [J]
+kernel-energy-stddev: 0.409271 [J]
+kernel-energy-median: 103.005705 [J]
+kernel-energy-min: 102.157480 [J]
+kernel-energy-max: 103.220880 [J]
+kernel-energy-samples: "102.157480 102.776130 103.005705 103.006700 103.220880"
+Verification: PASS

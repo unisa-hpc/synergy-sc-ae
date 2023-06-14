@@ -1,0 +1,56 @@
+********** Results for LinearRegression_fp32**********
+problem-size: 3072
+local-size: 256
+num-iters: 2000
+core-freq: 555
+memory-freq: 877
+device-name: Tesla V100-SXM2-16GB
+sycl-implementation: LLVM CUDA (Intel DPC++)
+throughput-metric: N/A
+kernel-time-mean: 1.129691 [s]
+kernel-time-stddev: 0.000308 [s]
+kernel-time-median: 1.129554 [s]
+kernel-time-min: 1.129545 [s]
+kernel-time-samples: "1.129545 1.129552 1.129554 1.129562 1.130243"
+kernel-time-throughput: N/A
+run-time-mean: 1.139443 [s]
+run-time-stddev: 0.001666 [s]
+run-time-median: 1.140238 [s]
+run-time-min: 1.137086 [s]
+run-time-samples: "1.137086 1.138329 1.140238 1.140573 1.140991"
+run-time-throughput: N/A
+kernel-energy-mean: 41.510781 [J]
+kernel-energy-stddev: 0.743699 [J]
+kernel-energy-median: 41.715350 [J]
+kernel-energy-min: 40.249590 [J]
+kernel-energy-max: 42.144810 [J]
+kernel-energy-samples: "40.249590 41.511585 41.715350 41.932570 42.144810"
+Verification: PASS
+********** Results for LinearRegression_fp64**********
+problem-size: 3072
+local-size: 256
+num-iters: 2000
+core-freq: 555
+memory-freq: 877
+device-name: Tesla V100-SXM2-16GB
+sycl-implementation: LLVM CUDA (Intel DPC++)
+throughput-metric: N/A
+kernel-time-mean: 1.085871 [s]
+kernel-time-stddev: 0.000240 [s]
+kernel-time-median: 1.085773 [s]
+kernel-time-min: 1.085687 [s]
+kernel-time-samples: "1.085687 1.085772 1.085773 1.085832 1.086290"
+kernel-time-throughput: N/A
+run-time-mean: 1.096847 [s]
+run-time-stddev: 0.001340 [s]
+run-time-median: 1.097209 [s]
+run-time-min: 1.095197 [s]
+run-time-samples: "1.095197 1.095692 1.097209 1.098010 1.098129"
+run-time-throughput: N/A
+kernel-energy-mean: 40.667170 [J]
+kernel-energy-stddev: 0.562023 [J]
+kernel-energy-median: 40.965140 [J]
+kernel-energy-min: 39.674240 [J]
+kernel-energy-max: 40.968610 [J]
+kernel-energy-samples: "39.674240 40.762720 40.965140 40.965140 40.968610"
+Verification: PASS

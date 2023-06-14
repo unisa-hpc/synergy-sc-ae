@@ -1,0 +1,28 @@
+********** Results for Sinewave**********
+problem-size: 8192
+local-size: 256
+num-iters: 10000
+core-freq: 1162
+memory-freq: 877
+device-name: Tesla V100-SXM2-16GB
+sycl-implementation: LLVM CUDA (Intel DPC++)
+throughput-metric: N/A
+kernel-time-mean: 1.103718 [s]
+kernel-time-stddev: 0.000246 [s]
+kernel-time-median: 1.103587 [s]
+kernel-time-min: 1.103515 [s]
+kernel-time-samples: "1.103515 1.103532 1.103587 1.103893 1.104062"
+kernel-time-throughput: N/A
+run-time-mean: 1.114221 [s]
+run-time-stddev: 0.002104 [s]
+run-time-median: 1.112912 [s]
+run-time-min: 1.112529 [s]
+run-time-samples: "1.112529 1.112640 1.112912 1.116247 1.116776"
+run-time-throughput: N/A
+kernel-energy-mean: 60.495923 [J]
+kernel-energy-stddev: 0.156765 [J]
+kernel-energy-median: 60.594800 [J]
+kernel-energy-min: 60.323420 [J]
+kernel-energy-max: 60.623820 [J]
+kernel-energy-samples: "60.323420 60.325720 60.594800 60.611855 60.623820"
+Verification: PASS

@@ -1,0 +1,112 @@
+********** Results for VectorAddition_int32**********
+problem-size: 1048576
+local-size: 256
+num-iters: 100000
+core-freq: 1087
+memory-freq: 877
+device-name: Tesla V100-SXM2-16GB
+sycl-implementation: LLVM CUDA (Intel DPC++)
+throughput-metric: N/A
+kernel-time-mean: 0.348017 [s]
+kernel-time-stddev: 0.005089 [s]
+kernel-time-median: 0.350300 [s]
+kernel-time-min: 0.338929 [s]
+kernel-time-samples: "0.338929 0.349796 0.350300 0.350460 0.350598"
+kernel-time-throughput: N/A
+run-time-mean: 0.360916 [s]
+run-time-stddev: 0.001707 [s]
+run-time-median: 0.361852 [s]
+run-time-min: 0.358306 [s]
+run-time-samples: "0.358306 0.360086 0.361852 0.361902 0.362436"
+run-time-throughput: N/A
+kernel-energy-mean: 28.134280 [J]
+kernel-energy-stddev: 0.390822 [J]
+kernel-energy-median: 28.139100 [J]
+kernel-energy-min: 27.535795 [J]
+kernel-energy-max: 28.601765 [J]
+kernel-energy-samples: "27.535795 28.082790 28.139100 28.311950 28.601765"
+Verification: PASS
+********** Results for VectorAddition_int64**********
+problem-size: 1048576
+local-size: 256
+num-iters: 100000
+core-freq: 1087
+memory-freq: 877
+device-name: Tesla V100-SXM2-16GB
+sycl-implementation: LLVM CUDA (Intel DPC++)
+throughput-metric: N/A
+kernel-time-mean: 0.711745 [s]
+kernel-time-stddev: 0.008463 [s]
+kernel-time-median: 0.714791 [s]
+kernel-time-min: 0.696695 [s]
+kernel-time-samples: "0.696695 0.714670 0.714791 0.715606 0.716965"
+kernel-time-throughput: N/A
+run-time-mean: 0.725350 [s]
+run-time-stddev: 0.010949 [s]
+run-time-median: 0.728414 [s]
+run-time-min: 0.706922 [s]
+run-time-samples: "0.706922 0.724710 0.728414 0.732350 0.734356"
+run-time-throughput: N/A
+kernel-energy-mean: 52.166667 [J]
+kernel-energy-stddev: 0.595683 [J]
+kernel-energy-median: 52.246635 [J]
+kernel-energy-min: 51.255515 [J]
+kernel-energy-max: 52.903615 [J]
+kernel-energy-samples: "51.255515 52.081065 52.246635 52.346505 52.903615"
+Verification: PASS
+********** Results for VectorAddition_fp32**********
+problem-size: 1048576
+local-size: 256
+num-iters: 100000
+core-freq: 1087
+memory-freq: 877
+device-name: Tesla V100-SXM2-16GB
+sycl-implementation: LLVM CUDA (Intel DPC++)
+throughput-metric: N/A
+kernel-time-mean: 0.348178 [s]
+kernel-time-stddev: 0.004789 [s]
+kernel-time-median: 0.350112 [s]
+kernel-time-min: 0.339622 [s]
+kernel-time-samples: "0.339622 0.350033 0.350112 0.350544 0.350579"
+kernel-time-throughput: N/A
+run-time-mean: 0.359774 [s]
+run-time-stddev: 0.006577 [s]
+run-time-median: 0.361331 [s]
+run-time-min: 0.348321 [s]
+run-time-samples: "0.348321 0.361253 0.361331 0.363021 0.364942"
+run-time-throughput: N/A
+kernel-energy-mean: 28.072391 [J]
+kernel-energy-stddev: 0.267351 [J]
+kernel-energy-median: 28.140685 [J]
+kernel-energy-min: 27.605485 [J]
+kernel-energy-max: 28.282075 [J]
+kernel-energy-samples: "27.605485 28.140140 28.140685 28.193570 28.282075"
+Verification: PASS
+********** Results for VectorAddition_fp64**********
+problem-size: 1048576
+local-size: 256
+num-iters: 100000
+core-freq: 1087
+memory-freq: 877
+device-name: Tesla V100-SXM2-16GB
+sycl-implementation: LLVM CUDA (Intel DPC++)
+throughput-metric: N/A
+kernel-time-mean: 0.705992 [s]
+kernel-time-stddev: 0.012363 [s]
+kernel-time-median: 0.714927 [s]
+kernel-time-min: 0.692194 [s]
+kernel-time-samples: "0.692194 0.692707 0.714927 0.714937 0.715195"
+kernel-time-throughput: N/A
+run-time-mean: 0.718357 [s]
+run-time-stddev: 0.015240 [s]
+run-time-median: 0.723606 [s]
+run-time-min: 0.702450 [s]
+run-time-samples: "0.702450 0.702597 0.723606 0.726507 0.736624"
+run-time-throughput: N/A
+kernel-energy-mean: 51.797825 [J]
+kernel-energy-stddev: 0.594933 [J]
+kernel-energy-median: 51.991955 [J]
+kernel-energy-min: 51.029795 [J]
+kernel-energy-max: 52.325800 [J]
+kernel-energy-samples: "51.029795 51.316600 51.991955 52.324975 52.325800"
+Verification: PASS

@@ -1,0 +1,28 @@
+********** Results for ScalarProduct_NDRange_fp32**********
+problem-size: 8192
+local-size: 256
+num-iters: 200000
+core-freq: 577
+memory-freq: 877
+device-name: Tesla V100-SXM2-16GB
+sycl-implementation: LLVM CUDA (Intel DPC++)
+throughput-metric: N/A
+kernel-time-mean: 2.289129 [s]
+kernel-time-stddev: 0.001346 [s]
+kernel-time-median: 2.289398 [s]
+kernel-time-min: 2.286839 [s]
+kernel-time-samples: "2.286839 2.289322 2.289398 2.289709 2.290375"
+kernel-time-throughput: N/A
+run-time-mean: 2.349813 [s]
+run-time-stddev: 0.009105 [s]
+run-time-median: 2.349477 [s]
+run-time-min: 2.336221 [s]
+run-time-samples: "2.336221 2.348181 2.349477 2.354199 2.360987"
+run-time-throughput: N/A
+kernel-energy-mean: 82.917291 [J]
+kernel-energy-stddev: 0.369730 [J]
+kernel-energy-median: 83.094470 [J]
+kernel-energy-min: 82.425685 [J]
+kernel-energy-max: 83.293470 [J]
+kernel-energy-samples: "82.425685 82.631155 83.094470 83.141675 83.293470"
+Verification: PASS
