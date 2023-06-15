@@ -1,0 +1,28 @@
+********** Results for BoxBlur**********
+problem-size: 3072
+local-size: 256
+num-iters: 200
+core-freq: 240
+memory-freq: 877
+device-name: Tesla V100-SXM2-16GB
+sycl-implementation: LLVM CUDA (Intel DPC++)
+throughput-metric: N/A
+kernel-time-mean: 1.226362 [s]
+kernel-time-stddev: 0.000463 [s]
+kernel-time-median: 1.226230 [s]
+kernel-time-min: 1.225880 [s]
+kernel-time-samples: "1.225880 1.226120 1.226230 1.226484 1.227094"
+kernel-time-throughput: N/A
+run-time-mean: 1.243831 [s]
+run-time-stddev: 0.005530 [s]
+run-time-median: 1.246299 [s]
+run-time-min: 1.235252 [s]
+run-time-samples: "1.235252 1.241767 1.246299 1.246338 1.249498"
+run-time-throughput: N/A
+kernel-energy-mean: 33.477542 [J]
+kernel-energy-stddev: 0.500835 [J]
+kernel-energy-median: 33.697530 [J]
+kernel-energy-min: 32.818490 [J]
+kernel-energy-max: 33.903725 [J]
+kernel-energy-samples: "32.818490 33.072350 33.697530 33.895615 33.903725"
+Verification: PASS

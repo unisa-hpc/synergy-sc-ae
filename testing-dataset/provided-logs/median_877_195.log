@@ -1,0 +1,28 @@
+********** Results for MedianFilter**********
+problem-size: 3072
+local-size: 256
+num-iters: 2000
+core-freq: 195
+memory-freq: 877
+device-name: Tesla V100-SXM2-16GB
+sycl-implementation: LLVM CUDA (Intel DPC++)
+throughput-metric: N/A
+kernel-time-mean: 7.092568 [s]
+kernel-time-stddev: 0.000700 [s]
+kernel-time-median: 7.092321 [s]
+kernel-time-min: 7.091812 [s]
+kernel-time-samples: "7.091812 7.092127 7.092321 7.093078 7.093504"
+kernel-time-throughput: N/A
+run-time-mean: 7.106454 [s]
+run-time-stddev: 0.004707 [s]
+run-time-median: 7.106547 [s]
+run-time-min: 7.099238 [s]
+run-time-samples: "7.099238 7.105209 7.106547 7.110631 7.110642"
+run-time-throughput: N/A
+kernel-energy-mean: 78.891601 [J]
+kernel-energy-stddev: 0.549156 [J]
+kernel-energy-median: 78.911290 [J]
+kernel-energy-min: 78.016995 [J]
+kernel-energy-max: 79.518395 [J]
+kernel-energy-samples: "78.016995 78.900600 78.911290 79.110725 79.518395"
+Verification: PASS

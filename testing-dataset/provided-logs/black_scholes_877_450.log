@@ -1,0 +1,28 @@
+********** Results for Black Scholes**********
+problem-size: 524288
+local-size: 256
+num-iters: 100000
+core-freq: 450
+memory-freq: 877
+device-name: Tesla V100-SXM2-16GB
+sycl-implementation: LLVM CUDA (Intel DPC++)
+throughput-metric: N/A
+kernel-time-mean: 6.218075 [s]
+kernel-time-stddev: 0.000990 [s]
+kernel-time-median: 6.217442 [s]
+kernel-time-min: 6.217398 [s]
+kernel-time-samples: "6.217398 6.217428 6.217442 6.218451 6.219655"
+kernel-time-throughput: N/A
+run-time-mean: 6.228842 [s]
+run-time-stddev: 0.005583 [s]
+run-time-median: 6.225310 [s]
+run-time-min: 6.224418 [s]
+run-time-samples: "6.224418 6.224651 6.225310 6.234104 6.235725"
+run-time-throughput: N/A
+kernel-energy-mean: 184.442391 [J]
+kernel-energy-stddev: 1.182996 [J]
+kernel-energy-median: 185.196510 [J]
+kernel-energy-min: 182.915580 [J]
+kernel-energy-max: 185.479100 [J]
+kernel-energy-samples: "182.915580 183.419190 185.196510 185.201575 185.479100"
+Verification: PASS

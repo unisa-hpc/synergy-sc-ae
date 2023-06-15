@@ -1,0 +1,28 @@
+********** Results for Nbody_local_mem**********
+problem-size: 8192
+local-size: 256
+num-iters: 500
+core-freq: 705
+memory-freq: 877
+device-name: Tesla V100-SXM2-16GB
+sycl-implementation: LLVM CUDA (Intel DPC++)
+throughput-metric: N/A
+kernel-time-mean: 1.241296 [s]
+kernel-time-stddev: 0.000308 [s]
+kernel-time-median: 1.241253 [s]
+kernel-time-min: 1.240917 [s]
+kernel-time-samples: "1.240917 1.241135 1.241253 1.241450 1.241725"
+kernel-time-throughput: N/A
+run-time-mean: 1.250977 [s]
+run-time-stddev: 0.001530 [s]
+run-time-median: 1.250154 [s]
+run-time-min: 1.249890 [s]
+run-time-samples: "1.249890 1.250020 1.250154 1.251297 1.253523"
+run-time-throughput: N/A
+kernel-energy-mean: 57.746084 [J]
+kernel-energy-stddev: 0.128778 [J]
+kernel-energy-median: 57.688350 [J]
+kernel-energy-min: 57.672325 [J]
+kernel-energy-max: 57.974235 [J]
+kernel-energy-samples: "57.672325 57.677300 57.688350 57.718210 57.974235"
+Verification: PASS

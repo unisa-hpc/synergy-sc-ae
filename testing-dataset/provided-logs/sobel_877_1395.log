@@ -1,0 +1,28 @@
+********** Results for Sobel3**********
+problem-size: 3072
+local-size: 256
+num-iters: 2000
+core-freq: 1395
+memory-freq: 877
+device-name: Tesla V100-SXM2-16GB
+sycl-implementation: LLVM CUDA (Intel DPC++)
+throughput-metric: N/A
+kernel-time-mean: 0.416492 [s]
+kernel-time-stddev: 0.000228 [s]
+kernel-time-median: 0.416503 [s]
+kernel-time-min: 0.416197 [s]
+kernel-time-samples: "0.416197 0.416362 0.416503 0.416605 0.416795"
+kernel-time-throughput: N/A
+run-time-mean: 0.430462 [s]
+run-time-stddev: 0.004264 [s]
+run-time-median: 0.428675 [s]
+run-time-min: 0.427223 [s]
+run-time-samples: "0.427223 0.427723 0.428675 0.431076 0.437616"
+run-time-throughput: N/A
+kernel-energy-mean: 75.034564 [J]
+kernel-energy-stddev: 3.823615 [J]
+kernel-energy-median: 73.349410 [J]
+kernel-energy-min: 71.339555 [J]
+kernel-energy-max: 79.337040 [J]
+kernel-energy-samples: "71.339555 72.189970 73.349410 78.956845 79.337040"
+Verification: PASS

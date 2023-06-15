@@ -1,0 +1,28 @@
+********** Results for Knn**********
+problem-size: 8192
+local-size: 256
+num-iters: 200
+core-freq: 472
+memory-freq: 877
+device-name: Tesla V100-SXM2-16GB
+sycl-implementation: LLVM CUDA (Intel DPC++)
+throughput-metric: N/A
+kernel-time-mean: 2.832106 [s]
+kernel-time-stddev: 0.000398 [s]
+kernel-time-median: 2.831914 [s]
+kernel-time-min: 2.831727 [s]
+kernel-time-samples: "2.831727 2.831838 2.831914 2.832405 2.832645"
+kernel-time-throughput: N/A
+run-time-mean: 2.842505 [s]
+run-time-stddev: 0.001789 [s]
+run-time-median: 2.841467 [s]
+run-time-min: 2.841338 [s]
+run-time-samples: "2.841338 2.841440 2.841467 2.842744 2.845534"
+run-time-throughput: N/A
+kernel-energy-mean: 111.329793 [J]
+kernel-energy-stddev: 0.734000 [J]
+kernel-energy-median: 111.485385 [J]
+kernel-energy-min: 110.186005 [J]
+kernel-energy-max: 112.067630 [J]
+kernel-energy-samples: "110.186005 111.103675 111.485385 111.806270 112.067630"
+Verification: PASS
