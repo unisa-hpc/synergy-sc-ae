@@ -6,6 +6,12 @@ if [ -z "$1" ]
 	return
 fi
 
+sampling=$2
+if [ -z "$2" ]
+then
+  sampling=1
+fi
+
 DPCPP_CLANG=$1/clang++
 DPCPP_LIB=$1/../lib/
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
@@ -23,10 +29,25 @@ mkdir -p $SCRIPT_DIR/logs
 mem_frequencies=$(nvidia-smi -i 0 --query-supported-clocks=mem --format=csv,noheader,nounits)
 core_frequencies=$(nvidia-smi -i 0 --query-supported-clocks=gr --format=csv,noheader,nounits)
 
+nvsmi_out=$(nvidia-smi  -q | grep "Default Applications Clocks" -A 2 | tail -n +2)
+def_core=$(echo $nvsmi_out | awk '{print $3}')
 
+sampled_freq=()
+i=-1
+for core_freq in $core_frequencies; do
+  i=$((i+1))
+  if [ $((i % sampling)) != 0 ]
+  then
+    continue
+  fi
+  sampled_freq+=($core_freq)
+done
+sampled_freq+=($def_core)
+
+echo "Running SYCL-Bench..."
 runs=5
-for mem_freq in $mem_frequencies; do 
-	for core_freq in $core_frequencies; do
+for mem_freq in $mem_frequencies; do
+  for core_freq in "${sampled_freq[@]}"; do
     $SCRIPT_DIR/sycl-bench/build/bit_compression --device=gpu --size=524288 --num-iters=100000 --num-runs=$runs --memory-freq=${mem_freq} --core-freq=${core_freq} > $SCRIPT_DIR/logs/bit_compression_${mem_freq}_${core_freq}.log
     $SCRIPT_DIR/sycl-bench/build/black_scholes --device=gpu --size=524288 --num-iters=100000 --num-runs=$runs --memory-freq=${mem_freq} --core-freq=${core_freq} > $SCRIPT_DIR/logs/black_scholes_${mem_freq}_${core_freq}.log
     $SCRIPT_DIR/sycl-bench/build/box_blur --device=gpu --num-iters=200 --num-runs=$runs --memory-freq=${mem_freq} --core-freq=${core_freq} > $SCRIPT_DIR/logs/box_blur_${mem_freq}_${core_freq}.log

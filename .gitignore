@@ -11,3 +11,5 @@ plots/
 logs/
 
 0_SC_*/
+models-validation/predictions/
+models-validation/data/

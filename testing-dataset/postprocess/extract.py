@@ -38,7 +38,7 @@ with open(f"{output_dir}/ES_PL_metrics_freq_measurement.csv", "w") as out_file:
       out_file.write(f"{kernel_name}")
 
       kernel_data = df[df["kernel-name"] == kernel_name].copy()
-
+      
       baseline_row = kernel_data[(kernel_data["core-freq"] == default_core_freq) & (kernel_data["memory-freq"] == default_memory_freq)]
       baseline_time = baseline_row["kernel-time [s]"].iloc[0]
       baseline_energy = baseline_row["max-energy [J]"].iloc[0]

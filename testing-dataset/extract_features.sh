@@ -9,10 +9,8 @@ fi
 DPCPP_CLANG=$1/clang++
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
-if [[ ! -f "$SCRIPT_DIR/passes/build/feature-pass/libfeature_pass.so" ]]; then
-  cmake -S $SCRIPT_DIR/passes -B $SCRIPT_DIR/passes/build
-  cmake --build $SCRIPT_DIR/passes/ -j
-fi
+cmake -S $SCRIPT_DIR/passes -B $SCRIPT_DIR/passes/build
+cmake --build $SCRIPT_DIR/passes/build -j
 
 ######################################################################################
 

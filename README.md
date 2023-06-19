@@ -23,10 +23,16 @@ This repository is divided in four subdirectories:
 
 Each subdirectory has its own README.md file that provides additional information.
 
-## Use our own data
+## Use the authors' data
 As running the tests may take some time and some specific requirements, we provide our data to reproduce the results of the paper.
-You can find additional information in each subfolder's readme file.
+In order to replicate our results using the provided data, visit the folders and follow the readme files in the following order:
+1. `models-validation`
+2. `energy-scaling`
 
 ## Use your own data
 The scripts allow you to reproduce our work in a simple way, given that all requirements are fulfilled.
-You can find additional information in each subfolder's readme file.
+In order to replicate our results by launching the experiments, visit the folders and follow the readme files in the following order:
+1. `training-dataset`
+2. `testing-dataset`
+3. `models-validation`
+4. `energy-scaling`
