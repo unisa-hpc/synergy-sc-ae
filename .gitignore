@@ -13,3 +13,9 @@ logs/
 0_SC_*/
 models-validation/predictions/
 models-validation/data/
+
+executables/
+**/placeholder/default/
+**/placeholder/min*/
+**/placeholder/es*/
+**/placeholder/pl*/

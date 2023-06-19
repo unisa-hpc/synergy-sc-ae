@@ -1,0 +1,1 @@
+ccmake .. -DYAKL_ARCH="SYCL" -DYAKL_SYCL_FLAGS="-fsycl -fsycl-targets=nvptx64-nvidia-cuda -I/usr/lib/x86_64-linux-gnu/openmpi/include -I/usr/lib/x86_64-linux-gnu/openmpi/include/openmpi -pthread -L/usr/lib/x86_64-linux-gnu/openmpi/lib -lmpi" -DCMAKE_CXX_COMPILER="/root/dpcpp-2022-09/install-dpcpp-2022-09/bin/clang++" -DCMAKE_CXX_FLAGS="-pthread" -DLDFLAGS="-lpnetcdf"
