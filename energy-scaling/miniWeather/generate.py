@@ -7,6 +7,26 @@ import os, shutil
 import sys
 import pandas as pd
 import getopt
+import subprocess
+import re
+
+
+# extract default frequency on nvidia GPU
+cmd_default_freq="nvidia-smi  -q | grep 'Default Applications Clocks' -A 2 | tail -n +2"
+
+# Launch the command and capture the output
+result = subprocess.check_output(cmd_default_freq, shell=True, stderr=subprocess.STDOUT)
+
+# Convert the byte output to a string
+output = result.decode("utf-8").strip()
+
+# Find all numbers in the text using regular expressions
+numbers = re.findall(r'\d+', output)
+# Convert the matched numbers to integers
+numbers = [int(number) for number in numbers]
+
+default_core_freq=numbers[0]
+default_memory_freq=numbers[1]
 
 
 # per ogni file in src che termina con cpp scorrerere e ogni file in 
@@ -76,7 +96,7 @@ for cpp_file, prediction_file in zip(cpp_files, prediction_files):
         with open(default_dir+"/"+cpp_file, 'a') as default_file:
             
             if("parallel_for($mem_freq, $core_freq, " in line):
-                new_line = line.replace("parallel_for($mem_freq, $core_freq, ", "parallel_for(877, 1312, ")
+                new_line = line.replace("parallel_for($mem_freq, $core_freq, ", "parallel_for("+str(default_memory_freq) + ", " + str(default_core_freq) + ", ")
         
             default_file.write(new_line)
     
@@ -107,38 +127,22 @@ for cpp_file, prediction_file in zip(cpp_files, prediction_files):
         if("parallel_for($mem_freq, $core_freq, " in line):
             i=i+1
 
+
+# proble input size for x and z dimension
 nx_sizes = [3072, 4096, 5120, 6144, 7168]
 nz_size = 1536
-# create the configure string with this parameter if not setted use the default
-# CMAKE_CXX_COMPILE 
-# CMAKE_CXX_FLAGS
-# YAKL_ARCH
-# YAKL_SYCL_FLAGS
-# LDFLAGS
-# SYNERGY_CUDA_ARCH
-# SYNERGY_CUDA_SUPPORT
-# SYNERGY_ENABLE_PROFILING
-# SYNERGY_ROCM_SUPPORT
-# SYNERGY_SYCL_BACKEND 
-# SYNERGY_ROCM_ARCH
-#cmake .. -DYAKL_ARCH="SYCL" -DYAKL_SYCL_FLAGS="-fsycl -fsycl-targets=nvptx64-nvidia-cuda " -DCMAKE_CXX_COMPILER="/software-local/dpcpp-2022-09/bin/clang++"  -DLDFLAGS="-lpnetcdf" -DSYNERGY_CUDA_ARCH="sm_70" -DSYNERGY_CUDA_SUPPORT=ON -DSYNERGY_ENABLE_PROFILING=ON -DSYNERGY_ROCM_SUPPORT=OFF -DSYNERGY_SYCL_BACKEND="dpcpp" 
-#lets fetch all the arguments from sys.argv except the script nameargv = sys.argv[1:]
-#get option and value pair from getopt
+# parse the command line parameters for miniWeather compilation
 argv = sys.argv[1:]
 try:
     opts, argv = getopt.getopt(argv, "", ["cxx_compiler=","cxx_flags=", "sycl_flags=", "ldflags=", "cuda_support=","cuda_arch=", "rocm_support=", "rocm_arch="])
     #lets's check out how getopt parse the arguments
 except:
-    print('pass the arguments like -f <first name> -l <last name> or --firstname <fisrt name> and --lastname <last name>')
-
-
+    print('pass the arguments like --cxx_compiler= <path to cxx_compiler>')
 
 cxx_compiler = ""
 cxx_flags = ""
-#in our experiment we use only the sycl version
 yakl_arch = "SYCL"
 yakl_sycl_flags= "-fsycl"
-# miniWeather requires pnetcdf
 ldflags="-lpnetcdf" 
 synergy_cuda_support="OFF"
 synergy_cuda_arch=""
@@ -167,36 +171,35 @@ for o,v in opts:
          
 
 
+# create the executables dir
+os.makedirs(f"{script_dir}/executables", exist_ok=True)
 
-
+# compile miniWeather for each target metric and input. 
 for folder in paths_cpp_folder:
     folder_name = os.path.basename(os.path.dirname(folder))
+
     for file in os.listdir(folder):
         # copy cpp file with frequency values setted in the src folder of the original application
         os.system(f"cp {folder}/{file} {script_dir}/miniWeatherApp/cpp/")
-        # build the application for each input
-        i=1
-        for nx_val in nx_sizes:
-            os.system(f"cmake -DCMAKE_CXX_COMPILER={cxx_compiler} \
-                        -DCMAKE_CXX_FLAGS={cxx_flags} \
-                        -DYAKL_ARCH={yakl_arch} \
-                        -DYAKL_SYCL_FLAGS=\"{yakl_sycl_flags}\" \
-                        -DLDFLAGS={ldflags} \
-                        -DSYNERGY_CUDA_SUPPORT={synergy_cuda_support} \
-                        -DSYNERGY_CUDA_ARCH={synergy_cuda_arch} \
-                        -DSYNERGY_ROCM_SUPPORT={synergy_rocm_support} \
-                        -DSYNERGY_ROCM_ARCH={synergy_rocm_arch} \
-                        -DNX={nx_val} \
-                        -DNZ={nz_size} \
-                        -S {script_dir}/miniWeatherApp/cpp -B {script_dir}/miniWeatherApp/cpp/build/")
-            os.system(f"cmake --build {script_dir}/miniWeatherApp/cpp/build -j")
-            os.system(f"mv {script_dir}/miniWeatherApp/cpp/build/parallelfor {script_dir}/executables/parallel_for_{folder_name}_{i}")
-            i=i*2
+    
+    # build the application for each input 
+    i=1
+    for nx_val in nx_sizes:
+        os.system(f"cmake -DCMAKE_CXX_COMPILER={cxx_compiler} \
+                    -DCMAKE_CXX_FLAGS={cxx_flags} \
+                    -DYAKL_ARCH={yakl_arch} \
+                    -DYAKL_SYCL_FLAGS=\"{yakl_sycl_flags}\" \
+                    -DLDFLAGS={ldflags} \
+                    -DSYNERGY_CUDA_SUPPORT={synergy_cuda_support} \
+                    -DSYNERGY_CUDA_ARCH={synergy_cuda_arch} \
+                    -DSYNERGY_ROCM_SUPPORT={synergy_rocm_support} \
+                    -DSYNERGY_ROCM_ARCH={synergy_rocm_arch} \
+                    -DSYNERGY_SYCL_BACKEND={synergy_sycl_backend} \
+                    -DNX={nx_val} \
+                    -DNZ={nz_size} \
+                    -S {script_dir}/miniWeatherApp/cpp -B {script_dir}/miniWeatherApp/cpp/build/")
+        os.system(f"cmake --build {script_dir}/miniWeatherApp/cpp/build -j")
+        # move the executable in the executables folder
+        os.system(f"mv {script_dir}/miniWeatherApp/cpp/build/parallelfor {script_dir}/executables/parallel_for_{folder_name}_{i}")
+        i=i*2
             
-#cmake -DNX=3072 -DNZ=1536  ..
-
-#             cmake --build . -j
-# mv parallelfor  ../../../miniWeather-executable-versions/parallel_for_${1}_1
-
-# for each dir containing the cpp with the target frequency do a cpy in the src folder and the compile the program for each target input 
-# then move th executable in the executables folder

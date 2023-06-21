@@ -1,0 +1,1 @@
+./generate.py --cxx_compiler="/software-local/dpcpp-2022-09/bin/clang++" --cxx_flags="-fsycl -fsycl-targets=nvptx64-nvidia-cuda -O3" --cuda_support="ON" --cuda_arch="sm_70"

@@ -31,7 +31,6 @@ if (SYCL_RUNTIME)
     elseif (${SYCL_RUNTIME} STREQUAL "DPCPP")
 
         set(CMAKE_CXX_STANDARD 17)
-        set(CMAKE_CXX_COMPILER "/root/dpcpp-2022-09/install-dpcpp-2022-09/bin/clang++")
         set(EXTRA_FLAGS -pedantic)
     else ()
         message(FATAL_ERROR "SYCL_RUNTIME unsupported, must be one of HIPSYCL|COMPUTECPP|DPCPP, got ${SYCL_RUNTIME}")
