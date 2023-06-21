@@ -13,7 +13,8 @@ We suggest using Ubuntu 20.04 or later.
 - Python 3
   - Packages: `scikit-learn`, `pandas`, `numpy`, `matplotlib`, `paretoset`
 - [SLURM NVGPUFREQ plugin](https://github.com/LigateProject/slurm-nvgpufreq)
-
+- libpnetcdf-dev (for miniWeahter)
+- mpi 
 ## How to use this repository
 This repository is divided in four subdirectories:
 - `training-dataset`, it contains all the scripts required to generate the data on which the models are trained;

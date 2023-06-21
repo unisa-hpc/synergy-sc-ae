@@ -1,0 +1,3 @@
+kernel_name,core_clk_time,core_clk_energy,core_clk_edp,core_clk_ed2p,clk_es_25,clk_es_50,clk_es_75,clk_pl_25,clk_pl_50,clk_pl_75
+_ZTSZZ14generate_chunkiR16global_variablesENKUlRN4sycl3_V17handlerEE_clES4_E16generate_chunk_1,1530,990,1312,1530,1252,1177,1072,1230,1147,1072
+_ZTSZZ14generate_chunkiR16global_variablesENKUlRN4sycl3_V17handlerEE0_clES4_E16generate_chunk_2,1530,990,1387,1530,1245,1177,1050,1237,1162,1087

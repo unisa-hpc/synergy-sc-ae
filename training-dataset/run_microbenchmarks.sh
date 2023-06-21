@@ -52,3 +52,5 @@ for mem_freq in $mem_frequencies; do
     $SCRIPT_DIR/sycl-bench/build/Stencil --device=gpu --num-runs=$runs --size=8192 --num-iters=15 --memory-freq=${mem_freq} --core-freq=${core_freq} > $SCRIPT_DIR/logs/Stencil_${mem_freq}_${core_freq}.log
 	done
 done
+
+## TODO: sampling always takes into account default freq

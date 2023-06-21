@@ -7,7 +7,6 @@ endif()
 
 enable_testing()
 
-
 ############################################################
 ## Set Parameters
 ############################################################
@@ -57,36 +56,6 @@ include_directories(YAKL)
 
 
 ############################################################
-## Compile the serial version
-############################################################
-add_executable(serial miniWeather_serial.cpp)
-set_target_properties(serial PROPERTIES COMPILE_FLAGS "${EXE_DEFS}")
-
-add_executable(serial_test miniWeather_serial.cpp)
-set_target_properties(serial_test PROPERTIES COMPILE_FLAGS "${TEST_DEFS}")
-
-target_link_libraries(serial      "${LDFLAGS}")
-target_link_libraries(serial_test "${LDFLAGS}")
-
-add_test(NAME SERIAL_TEST COMMAND ./check_output.sh ./serial_test 1e-9 4.5e-5 )
-
-
-############################################################
-## Compile the MPI version
-############################################################
-add_executable(mpi miniWeather_mpi.cpp)
-set_target_properties(mpi PROPERTIES COMPILE_FLAGS "${EXE_DEFS}")
-
-add_executable(mpi_test miniWeather_mpi.cpp)
-set_target_properties(mpi_test PROPERTIES COMPILE_FLAGS "${TEST_DEFS}")
-
-target_link_libraries(mpi      "${LDFLAGS}")
-target_link_libraries(mpi_test "${LDFLAGS}")
-
-add_test(NAME MPI_TEST COMMAND ./check_output.sh ./mpi_test 1e-9 4.5e-5 ) 
-
-
-############################################################
 ## YAKL parallel_for Version
 ############################################################
 add_executable(parallelfor miniWeather_mpi_parallelfor.cpp)
@@ -100,32 +69,10 @@ target_link_libraries(parallelfor_test "${LDFLAGS}")
 
 add_test(NAME YAKL_TEST COMMAND ./check_output.sh ./parallelfor_test 1e-9 4.5e-5 )
 
-
-############################################################
-## YAKL parallel_for_simd_x Version
-############################################################
-add_executable(parallelfor_simd_x miniWeather_mpi_parallelfor_simd_x.cpp)
-set_target_properties(parallelfor_simd_x PROPERTIES COMPILE_FLAGS "${EXE_DEFS}")
-
-add_executable(parallelfor_simd_x_test miniWeather_mpi_parallelfor_simd_x.cpp)
-set_target_properties(parallelfor_simd_x_test PROPERTIES COMPILE_FLAGS "${TEST_DEFS}")
-
-target_link_libraries(parallelfor_simd_x      "${LDFLAGS}")
-target_link_libraries(parallelfor_simd_x_test "${LDFLAGS}")
-
-add_test(NAME YAKL_SIMD_X_TEST COMMAND ./check_output.sh ./parallelfor_simd_x_test 1e-9 4.5e-5 )
-
-
 include(YAKL/yakl_utils.cmake)
-yakl_process_target(serial)
-yakl_process_target(serial_test)
-yakl_process_target(mpi)
-yakl_process_target(mpi_test)
+
 yakl_process_target(parallelfor)
 yakl_process_target(parallelfor_test)
-yakl_process_target(parallelfor_simd_x)
-yakl_process_target(parallelfor_simd_x_test)
-
 
 if ("${YAKL_ARCH}" STREQUAL "CUDA")
   set_target_properties(serial serial_test mpi mpi_test parallelfor parallelfor_test parallelfor_simd_x parallelfor_simd_x_test  PROPERTIES LINKER_LANGUAGE CXX)

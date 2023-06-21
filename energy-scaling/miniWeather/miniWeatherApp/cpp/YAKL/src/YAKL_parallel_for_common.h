@@ -225,12 +225,12 @@ YAKL_DEVICE_INLINE void callFunctorOuter(F const &f , Bounds<N,simple> const &bn
   // Also, there is a violation of dependence wherein the stream must synchronized with a wait()
   // call after launch
   template<class F, int N, bool simple, int VecLen, bool B4B>
-  void parallel_for_sycl( Bounds<N,simple> const &bounds , F const &f , std::string kernel_name, LaunchConfig<VecLen,B4B> config) {
+  void parallel_for_sycl(synergy::frequency mem_freq, synergy::frequency core_freq, Bounds<N,simple> const &bounds , F const &f , std::string kernel_name, LaunchConfig<VecLen,B4B> config) {
     #ifdef SYCL_DEVICE_COPYABLE
       if constexpr (sizeof(F) < 1700) {
         SYCL_Functor_Wrapper sycl_functor_wrapper(f);
         synergy::queue& q = config.get_stream().get_real_stream();
-        sycl::event e = q.submit([&](sycl::handler& cgh){
+        sycl::event e = q.submit(mem_freq, core_freq, [&](sycl::handler& cgh){
           cgh.parallel_for( sycl::nd_range<1>(((bounds.nIter-1)/VecLen+1)*VecLen,VecLen) , [=] (sycl::nd_item<1> item) {
             if (item.get_global_id(0) < bounds.nIter) {
               callFunctor( sycl_functor_wrapper.get_functor() , bounds , item.get_global_id(0) );
@@ -503,9 +503,15 @@ inline void parallel_inner_cpu_serial( Bounds<N,simple> const &bounds , F const 
 // parallel_for
 ////////////////////////////////////////////////////////////////////////////////////
 // Default parameter to config, VecLen, and B4B already specified in YAKL_parallel_for_c.h and YAKL_parallel_for_fortran.h
+#ifdef YAKL_ARCH_SYCL
 template <class F, int N, bool simple, int VecLen=YAKL_DEFAULT_VECTOR_LEN , bool B4B=false>
-inline void parallel_for( char const * str , Bounds<N,simple> const &bounds , F const &f ,
+inline void parallel_for( synergy::frequency mem_freq, synergy::frequency core_freq, char const * str , Bounds<N,simple> const &bounds , F const &f ,
                           std::string kernel_name="default",  LaunchConfig<VecLen,B4B> config = LaunchConfig<>()) {
+#else
+    template <class F, int N, bool simple, int VecLen=YAKL_DEFAULT_VECTOR_LEN , bool B4B=false>
+    inline void parallel_for(char const * str , Bounds<N,simple> const &bounds , F const &f ,
+                          std::string kernel_name="default",  LaunchConfig<VecLen,B4B> config = LaunchConfig<>()) {
+#endif
   #ifdef YAKL_VERBOSE
     verbose_inform(std::string("Launching parallel_for labeled \"")+std::string(str)+std::string("\" with ")+std::to_string(bounds.nIter)+" threads",str);
   #endif
@@ -539,7 +545,7 @@ inline void parallel_for( char const * str , Bounds<N,simple> const &bounds , F 
     #elif defined(YAKL_ARCH_HIP)
       parallel_for_hip ( bounds , f , config );
     #elif defined(YAKL_ARCH_SYCL)
-      parallel_for_sycl( bounds , f , kernel_name, config);
+      parallel_for_sycl(mem_freq, core_freq, bounds , f , kernel_name, config);
     #else
       parallel_for_cpu_serial( bounds , f );
     #endif
@@ -562,28 +568,28 @@ inline void parallel_for( char const * str , Bounds<N,simple> const &bounds , F 
 
 // Default parameter to config, VecLen, and B4B already specified in YAKL_parallel_for_c.h and YAKL_parallel_for_fortran.h
 template <class F, int N, bool simple, int VecLen=YAKL_DEFAULT_VECTOR_LEN, bool B4B=false>
-inline void parallel_for( Bounds<N,simple> const &bounds , F const &f ,std::string kernel_name = "default",
+inline void parallel_for(synergy::frequency mem_freq, synergy::frequency core_freq,  Bounds<N,simple> const &bounds , F const &f ,std::string kernel_name = "default",
                           LaunchConfig<VecLen,B4B> config = LaunchConfig<>() ) {
-  parallel_for( "Unlabeled" , bounds , f , kernel_name, config );
+  parallel_for(mem_freq, core_freq, "Unlabeled" , bounds , f , kernel_name, config );
 }
 
 template <class F, int VecLen=YAKL_DEFAULT_VECTOR_LEN, bool B4B=false>
-inline void parallel_for( LBnd bnd , F const &f , std::string kernel_name = "default",
+inline void parallel_for(synergy::frequency mem_freq, synergy::frequency core_freq,  LBnd bnd , F const &f , std::string kernel_name = "default",
                           LaunchConfig<VecLen,B4B> config = LaunchConfig<>() ) {
   if (bnd.l == bnd.default_lbound && bnd.s == 1) {
-    parallel_for( "Unlabeled" , Bounds<1,true>(bnd.to_scalar()) , f , kernel_name, config );
+    parallel_for(mem_freq, core_freq, "Unlabeled" , Bounds<1,true>(bnd.to_scalar()) , f , kernel_name, config );
   } else {
-    parallel_for( "Unlabeled" , Bounds<1,false>(bnd) , f , kernel_name, config );
+    parallel_for(mem_freq, core_freq, "Unlabeled" , Bounds<1,false>(bnd) , f , kernel_name, config );
   }
 }
 
 template <class F, int VecLen=YAKL_DEFAULT_VECTOR_LEN, bool B4B=false>
-inline void parallel_for( char const * str , LBnd bnd , F const &f , std::string kernel_name ="default",
+inline void parallel_for(synergy::frequency mem_freq, synergy::frequency core_freq,  char const * str , LBnd bnd , F const &f , std::string kernel_name ="default",
                           LaunchConfig<VecLen,B4B> config = LaunchConfig<>() ) {
   if (bnd.l == bnd.default_lbound && bnd.s == 1) {
-    parallel_for( str , Bounds<1,true>(bnd.to_scalar()) , f , kernel_name,config );
+    parallel_for(mem_freq, core_freq, str , Bounds<1,true>(bnd.to_scalar()) , f , kernel_name,config );
   } else {
-    parallel_for( str , Bounds<1,false>(bnd) , f , kernel_name,config );
+    parallel_for(mem_freq, core_freq, str , Bounds<1,false>(bnd) , f , kernel_name,config );
   }
 }
 

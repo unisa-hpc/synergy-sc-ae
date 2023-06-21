@@ -6,6 +6,8 @@
 import os, shutil
 import sys
 import pandas as pd
+import getopt
+
 
 # per ogni file in src che termina con cpp scorrerere e ogni file in 
 # prediction-csv
@@ -107,6 +109,66 @@ for cpp_file, prediction_file in zip(cpp_files, prediction_files):
 
 nx_sizes = [3072, 4096, 5120, 6144, 7168]
 nz_size = 1536
+# create the configure string with this parameter if not setted use the default
+# CMAKE_CXX_COMPILE 
+# CMAKE_CXX_FLAGS
+# YAKL_ARCH
+# YAKL_SYCL_FLAGS
+# LDFLAGS
+# SYNERGY_CUDA_ARCH
+# SYNERGY_CUDA_SUPPORT
+# SYNERGY_ENABLE_PROFILING
+# SYNERGY_ROCM_SUPPORT
+# SYNERGY_SYCL_BACKEND 
+# SYNERGY_ROCM_ARCH
+#cmake .. -DYAKL_ARCH="SYCL" -DYAKL_SYCL_FLAGS="-fsycl -fsycl-targets=nvptx64-nvidia-cuda " -DCMAKE_CXX_COMPILER="/software-local/dpcpp-2022-09/bin/clang++"  -DLDFLAGS="-lpnetcdf" -DSYNERGY_CUDA_ARCH="sm_70" -DSYNERGY_CUDA_SUPPORT=ON -DSYNERGY_ENABLE_PROFILING=ON -DSYNERGY_ROCM_SUPPORT=OFF -DSYNERGY_SYCL_BACKEND="dpcpp" 
+#lets fetch all the arguments from sys.argv except the script nameargv = sys.argv[1:]
+#get option and value pair from getopt
+argv = sys.argv[1:]
+try:
+    opts, argv = getopt.getopt(argv, "", ["cxx_compiler=","cxx_flags=", "sycl_flags=", "ldflags=", "cuda_support=","cuda_arch=", "rocm_support=", "rocm_arch="])
+    #lets's check out how getopt parse the arguments
+except:
+    print('pass the arguments like -f <first name> -l <last name> or --firstname <fisrt name> and --lastname <last name>')
+
+
+
+cxx_compiler = ""
+cxx_flags = ""
+#in our experiment we use only the sycl version
+yakl_arch = "SYCL"
+yakl_sycl_flags= "-fsycl"
+# miniWeather requires pnetcdf
+ldflags="-lpnetcdf" 
+synergy_cuda_support="OFF"
+synergy_cuda_arch=""
+synergy_rocm_support="OFF"
+synergy_rocm_arch=""
+
+synergy_enable_profiling="ON"
+synergy_sycl_backend="dpcpp"
+
+for o,v in opts:
+    if o in ['--cxx_compiler']:
+        cxx_compiler = v
+    elif o in ['--cxx_flags']:
+        cxx_flags = v
+    elif o in ['--sycl_flags']:
+        yakl_sycl_flags = v    
+    elif o in ['--cuda_support']:
+        synergy_cuda_support = v   
+
+    elif o in ['--cuda_arch']:
+        synergy_cuda_arch = v   
+    elif o in ['--rocm_support']:
+        synergy_rocm_support = v   
+    elif o in ['--rocm_arch']:
+        synergy_rocm_arch = v   
+         
+
+
+
+
 for folder in paths_cpp_folder:
     folder_name = os.path.basename(os.path.dirname(folder))
     for file in os.listdir(folder):
@@ -115,9 +177,20 @@ for folder in paths_cpp_folder:
         # build the application for each input
         i=1
         for nx_val in nx_sizes:
-            os.system(f"cmake -DNX={nx_val} -DNZ={nz_size} -S {script_dir}/miniWeatherApp/cpp -B {script_dir}/miniWeatherApp/cpp/build/")
+            os.system(f"cmake -DCMAKE_CXX_COMPILER={cxx_compiler} \
+                        -DCMAKE_CXX_FLAGS={cxx_flags} \
+                        -DYAKL_ARCH={yakl_arch} \
+                        -DYAKL_SYCL_FLAGS=\"{yakl_sycl_flags}\" \
+                        -DLDFLAGS={ldflags} \
+                        -DSYNERGY_CUDA_SUPPORT={synergy_cuda_support} \
+                        -DSYNERGY_CUDA_ARCH={synergy_cuda_arch} \
+                        -DSYNERGY_ROCM_SUPPORT={synergy_rocm_support} \
+                        -DSYNERGY_ROCM_ARCH={synergy_rocm_arch} \
+                        -DNX={nx_val} \
+                        -DNZ={nz_size} \
+                        -S {script_dir}/miniWeatherApp/cpp -B {script_dir}/miniWeatherApp/cpp/build/")
             os.system(f"cmake --build {script_dir}/miniWeatherApp/cpp/build -j")
-            os.system(f"mv {script_dir}/miniWeatherApp/cpp/build/parallel_for {script_dir}/executables/parallel_for_{folder_name}_{i}")
+            os.system(f"mv {script_dir}/miniWeatherApp/cpp/build/parallelfor {script_dir}/executables/parallel_for_{folder_name}_{i}")
             i=i*2
             
 #cmake -DNX=3072 -DNZ=1536  ..

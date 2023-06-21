@@ -1,0 +1,1 @@
+./generate.py --cxx_compiler="/home/lorenzo/Desktop/workspace/sycl_workspace/llvm/build/bin/clang++" --cxx_flags="" --sycl_flags="-fsycl -fsycl-targets='nvptx64-nvidia-cuda'"  --cuda_support="ON" --cuda_arch="sm_70"
