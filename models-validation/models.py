@@ -414,6 +414,8 @@ if __name__ == '__main__':
     # # EDP
 
     # ================= EDP - ML prediction and plot result for each test benchmarks
+    print("Generating edp prediction...")
+
     predictors = [
         ("RandomForest", RandomForestRegressor()),
         ("SVR_RBF", SVR(kernel="rbf", C=100, gamma=0.1, epsilon=0.1)),
@@ -454,6 +456,8 @@ if __name__ == '__main__':
     # ===========================================================================================================
     # # ED2P
     # ================= ED2P - ML prediction and plot result for each test benchmarks
+    print("Generating ed2p prediction...")
+
     predictors = [
         ("Linear", LinearRegression()),
         # ("Lasso", Lasso(alpha=1.0, tol=0.0001)),
@@ -498,6 +502,9 @@ if __name__ == '__main__':
     # ===========================================================================================================
     # ES metric
     # ================= ES metric - ML prediction and plot result for each test benchmarks
+
+    print("Generating energy saving prediction...")
+
     predictors = [
         ("RandomForest", RandomForestRegressor()),
         ("SVR_RBF", SVR(kernel="rbf", C=100, gamma=0.1, epsilon=0.1)),
@@ -597,6 +604,8 @@ if __name__ == '__main__':
     # ===========================================================================================================
     # # PL metric
     # ================= PL metric - ML prediction and plot result for each test benchmarks
+    print("Generating PL metric results ...")
+
     predictors = [
         ("Linear", LinearRegression()),
         ("Lasso", Lasso(alpha=1.0)),  # alpha=0.005, max_iter=5000
