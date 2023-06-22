@@ -33,7 +33,7 @@ mkdir -p $SCRIPT_DIR/micro/features-normalized
 # feature extraction from bitcode
 for file in $SCRIPT_DIR/micro/bitcode/*.bc; do
   name=`basename ${file%.*}`
-  opt -load-pass-plugin $SCRIPT_DIR/passes/build/feature-pass/libfeature_pass.so  --passes="print<feature>" -disable-output $file 1>> "$SCRIPT_DIR/micro/features/$name.temp"
+  opt -load-pass-plugin $SCRIPT_DIR/passes/build/feature-pass/libfeature_pass.so  --passes="print<feature>" -disable-output $file 1>> "$SCRIPT_DIR/micro/features/$name.temp" 2> /dev/null
 done
 
 for tempfile in $SCRIPT_DIR/micro/features/*.temp; do

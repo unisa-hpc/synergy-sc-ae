@@ -31,16 +31,25 @@ mkdir -p $SCRIPT_DIR/logs
 mem_frequencies=$(nvidia-smi -i 0 --query-supported-clocks=mem --format=csv,noheader,nounits)
 core_frequencies=$(nvidia-smi -i 0 --query-supported-clocks=gr --format=csv,noheader,nounits)
 
+nvsmi_out=$(nvidia-smi  -q | grep "Default Applications Clocks" -A 2 | tail -n +2)
+def_core=$(echo $nvsmi_out | awk '{print $3}')
+def_mem=$(echo $nvsmi_out | awk '{print $7}')
+
+sampled_freq=()
+i=-1
+for core_freq in $core_frequencies; do
+  i=$((i+1))
+  if [ $((i % sampling)) != 0 ]
+  then
+    continue
+  fi
+  sampled_freq+=($core_freq)
+done
+sampled_freq+=($def_core)
+
 runs=5
-for mem_freq in $mem_frequencies; do
-  i=-1
-	for core_freq in $core_frequencies; do
-    i=$((i+1))
-    if [ $((i % sampling)) != 0 ]
-    then
-      continue
-    fi
-    
+mem_freq=$def_mem
+for core_freq in "${sampled_freq[@]}"; do
 		$SCRIPT_DIR/sycl-bench/build/ArithLocalMixed --device=gpu --num-runs=$runs --size=65536 --num-iters=20000 --memory-freq=${mem_freq} --core-freq=${core_freq} > $SCRIPT_DIR/logs/ArithLocalMixed_${mem_freq}_${core_freq}.log
     $SCRIPT_DIR/sycl-bench/build/ArithMixedUnitOp  --device=gpu --num-runs=$runs --size=500000 --num-iters=50000 --memory-freq=${mem_freq} --core-freq=${core_freq} > $SCRIPT_DIR/logs/ArithMixedUnitOp_${mem_freq}_${core_freq}.log 
     $SCRIPT_DIR/sycl-bench/build/ArithMixedUnitType --device=gpu --num-runs=$runs --size=500000 --num-iters=25000 --memory-freq=${mem_freq} --core-freq=${core_freq} > $SCRIPT_DIR/logs/ArithMixedUnitType_${mem_freq}_${core_freq}.log
@@ -50,7 +59,4 @@ for mem_freq in $mem_frequencies; do
     $SCRIPT_DIR/sycl-bench/build/L2Unit --device=gpu --num-runs=$runs --size=1000000 --num-iters=131072 --memory-freq=${mem_freq} --core-freq=${core_freq} > $SCRIPT_DIR/logs/L2Unit_${mem_freq}_${core_freq}.log
     $SCRIPT_DIR/sycl-bench/build/LocalMemory --device=gpu --num-runs=$runs --size=1000000 --num-iters=1000000 --memory-freq=${mem_freq} --core-freq=${core_freq} > $SCRIPT_DIR/logs/LocalMemory_${mem_freq}_${core_freq}.log
     $SCRIPT_DIR/sycl-bench/build/Stencil --device=gpu --num-runs=$runs --size=8192 --num-iters=15 --memory-freq=${mem_freq} --core-freq=${core_freq} > $SCRIPT_DIR/logs/Stencil_${mem_freq}_${core_freq}.log
-	done
 done
-
-## TODO: sampling always takes into account default freq
