@@ -1,0 +1,1938 @@
+
+Clover Version 1.300
+Kokkos Version
+Task Count 64
+
+Output file clover.out opened. All output will go there.
+Detected SYCL devices:
+Detected SYCL devices:
+Detected SYCL devices:
+Detected SYCL devices:
+Detected SYCL devices:
+Detected SYCL devices:
+Detected SYCL devices:
+Detected SYCL devices:
+Detected SYCL devices:
+Detected SYCL devices:
+Detected SYCL devices:
+Detected SYCL devices:
+  0. Tesla V100-SXM2-16GB(gpu)
+Detected SYCL devices:
+Detected SYCL devices:
+Detected SYCL devices:
+Detected SYCL devices:
+Detected SYCL devices:
+Detected SYCL devices:
+Detected SYCL devices:
+Detected SYCL devices:
+  0. Tesla V100-SXM2-16GB(gpu)
+  0. Tesla V100-SXM2-16GB(gpu)
+  0. Tesla V100-SXM2-16GB(gpu)
+Detected SYCL devices:
+Detected SYCL devices:
+Detected SYCL devices:
+Detected SYCL devices:
+Detected SYCL devices:
+Detected SYCL devices:
+Detected SYCL devices:
+Detected SYCL devices:
+Detected SYCL devices:
+Detected SYCL devices:
+Detected SYCL devices:
+Detected SYCL devices:
+Detected SYCL devices:
+Detected SYCL devices:
+Detected SYCL devices:
+  1. Tesla V100-SXM2-16GB(gpu)
+Detected SYCL devices:
+Detected SYCL devices:
+Detected SYCL devices:
+Detected SYCL devices:
+Detected SYCL devices:
+Detected SYCL devices:
+Detected SYCL devices:
+Detected SYCL devices:
+Detected SYCL devices:
+Detected SYCL devices:
+Detected SYCL devices:
+Detected SYCL devices:
+Detected SYCL devices:
+Detected SYCL devices:
+Detected SYCL devices:
+  1. Tesla V100-SXM2-16GB(gpu)
+  1. Tesla V100-SXM2-16GB(gpu)
+  1. Tesla V100-SXM2-16GB(gpu)
+Detected SYCL devices:
+Detected SYCL devices:
+Detected SYCL devices:
+  0. Tesla V100-SXM2-16GB(gpu)
+Detected SYCL devices:
+Detected SYCL devices:
+Detected SYCL devices:
+  0. Tesla V100-SXM2-16GB(gpu)
+  0. Tesla V100-SXM2-16GB(gpu)
+  0. Tesla V100-SXM2-16GB(gpu)
+Detected SYCL devices:
+Detected SYCL devices:
+Detected SYCL devices:
+Detected SYCL devices:
+Detected SYCL devices:
+  2. Tesla V100-SXM2-16GB(gpu)
+  2. Tesla V100-SXM2-16GB(gpu)
+  2. Tesla V100-SXM2-16GB(gpu)
+Detected SYCL devices:
+  0. Tesla V100-SXM2-16GB(gpu)
+  0. Tesla V100-SXM2-16GB(gpu)
+  0. Tesla V100-SXM2-16GB(gpu)
+  0. Tesla V100-SXM2-16GB(gpu)
+  0. Tesla V100-SXM2-16GB(gpu)
+Detected SYCL devices:
+  0. Tesla V100-SXM2-16GB(gpu)
+  0. Tesla V100-SXM2-16GB(gpu)
+  0. Tesla V100-SXM2-16GB(gpu)
+  0. Tesla V100-SXM2-16GB(gpu)
+Detected SYCL devices:
+  0. Tesla V100-SXM2-16GB(gpu)
+  0. Tesla V100-SXM2-16GB(gpu)
+  0. Tesla V100-SXM2-16GB(gpu)
+  2. Tesla V100-SXM2-16GB(gpu)
+  0. Tesla V100-SXM2-16GB(gpu)
+  0. Tesla V100-SXM2-16GB(gpu)
+  0. Tesla V100-SXM2-16GB(gpu)
+  0. Tesla V100-SXM2-16GB(gpu)
+  0. Tesla V100-SXM2-16GB(gpu)
+  0. Tesla V100-SXM2-16GB(gpu)
+  0. Tesla V100-SXM2-16GB(gpu)
+  0. Tesla V100-SXM2-16GB(gpu)
+  0. Tesla V100-SXM2-16GB(gpu)
+  0. Tesla V100-SXM2-16GB(gpu)
+  0. Tesla V100-SXM2-16GB(gpu)
+  0. Tesla V100-SXM2-16GB(gpu)
+  0. Tesla V100-SXM2-16GB(gpu)
+  0. Tesla V100-SXM2-16GB(gpu)
+  0. Tesla V100-SXM2-16GB(gpu)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+  0. Tesla V100-SXM2-16GB(gpu)
+  0. Tesla V100-SXM2-16GB(gpu)
+  0. Tesla V100-SXM2-16GB(gpu)
+  0. Tesla V100-SXM2-16GB(gpu)
+  0. Tesla V100-SXM2-16GB(gpu)
+  0. Tesla V100-SXM2-16GB(gpu)
+  0. Tesla V100-SXM2-16GB(gpu)
+  0. Tesla V100-SXM2-16GB(gpu)
+  0. Tesla V100-SXM2-16GB(gpu)
+  0. Tesla V100-SXM2-16GB(gpu)
+  0. Tesla V100-SXM2-16GB(gpu)
+  0. Tesla V100-SXM2-16GB(gpu)
+  0. Tesla V100-SXM2-16GB(gpu)
+  0. Tesla V100-SXM2-16GB(gpu)
+  0. Tesla V100-SXM2-16GB(gpu)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+  1. Tesla V100-SXM2-16GB(gpu)
+  0. Tesla V100-SXM2-16GB(gpu)
+  0. Tesla V100-SXM2-16GB(gpu)
+  0. Tesla V100-SXM2-16GB(gpu)
+  1. Tesla V100-SXM2-16GB(gpu)
+  1. Tesla V100-SXM2-16GB(gpu)
+  1. Tesla V100-SXM2-16GB(gpu)
+  0. Tesla V100-SXM2-16GB(gpu)
+  0. Tesla V100-SXM2-16GB(gpu)
+  0. Tesla V100-SXM2-16GB(gpu)
+  0. Tesla V100-SXM2-16GB(gpu)
+  0. Tesla V100-SXM2-16GB(gpu)
+  0. Tesla V100-SXM2-16GB(gpu)
+  0. Tesla V100-SXM2-16GB(gpu)
+  0. Tesla V100-SXM2-16GB(gpu)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+  1. Tesla V100-SXM2-16GB(gpu)
+  0. Tesla V100-SXM2-16GB(gpu)
+  1. Tesla V100-SXM2-16GB(gpu)
+  1. Tesla V100-SXM2-16GB(gpu)
+  1. Tesla V100-SXM2-16GB(gpu)
+  0. Tesla V100-SXM2-16GB(gpu)
+  1. Tesla V100-SXM2-16GB(gpu)
+  1. Tesla V100-SXM2-16GB(gpu)
+  1. Tesla V100-SXM2-16GB(gpu)
+  1. Tesla V100-SXM2-16GB(gpu)
+  1. Tesla V100-SXM2-16GB(gpu)
+  0. Tesla V100-SXM2-16GB(gpu)
+  1. Tesla V100-SXM2-16GB(gpu)
+  1. Tesla V100-SXM2-16GB(gpu)
+  1. Tesla V100-SXM2-16GB(gpu)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  1. Tesla V100-SXM2-16GB(gpu)
+  1. Tesla V100-SXM2-16GB(gpu)
+  1. Tesla V100-SXM2-16GB(gpu)
+  1. Tesla V100-SXM2-16GB(gpu)
+  1. Tesla V100-SXM2-16GB(gpu)
+  1. Tesla V100-SXM2-16GB(gpu)
+  1. Tesla V100-SXM2-16GB(gpu)
+  1. Tesla V100-SXM2-16GB(gpu)
+  1. Tesla V100-SXM2-16GB(gpu)
+  1. Tesla V100-SXM2-16GB(gpu)
+  1. Tesla V100-SXM2-16GB(gpu)
+  1. Tesla V100-SXM2-16GB(gpu)
+  1. Tesla V100-SXM2-16GB(gpu)
+  1. Tesla V100-SXM2-16GB(gpu)
+  1. Tesla V100-SXM2-16GB(gpu)
+  1. Tesla V100-SXM2-16GB(gpu)
+  1. Tesla V100-SXM2-16GB(gpu)
+  1. Tesla V100-SXM2-16GB(gpu)
+  1. Tesla V100-SXM2-16GB(gpu)
+  1. Tesla V100-SXM2-16GB(gpu)
+  1. Tesla V100-SXM2-16GB(gpu)
+  1. Tesla V100-SXM2-16GB(gpu)
+  1. Tesla V100-SXM2-16GB(gpu)
+  1. Tesla V100-SXM2-16GB(gpu)
+  1. Tesla V100-SXM2-16GB(gpu)
+  1. Tesla V100-SXM2-16GB(gpu)
+  1. Tesla V100-SXM2-16GB(gpu)
+  1. Tesla V100-SXM2-16GB(gpu)
+  1. Tesla V100-SXM2-16GB(gpu)
+  1. Tesla V100-SXM2-16GB(gpu)
+  1. Tesla V100-SXM2-16GB(gpu)
+  1. Tesla V100-SXM2-16GB(gpu)
+  1. Tesla V100-SXM2-16GB(gpu)
+  1. Tesla V100-SXM2-16GB(gpu)
+  1. Tesla V100-SXM2-16GB(gpu)
+  1. Tesla V100-SXM2-16GB(gpu)
+  2. Tesla V100-SXM2-16GB(gpu)
+  1. Tesla V100-SXM2-16GB(gpu)
+  1. Tesla V100-SXM2-16GB(gpu)
+  1. Tesla V100-SXM2-16GB(gpu)
+  2. Tesla V100-SXM2-16GB(gpu)
+  2. Tesla V100-SXM2-16GB(gpu)
+  2. Tesla V100-SXM2-16GB(gpu)
+  1. Tesla V100-SXM2-16GB(gpu)
+  1. Tesla V100-SXM2-16GB(gpu)
+  2. Tesla V100-SXM2-16GB(gpu)
+  1. Tesla V100-SXM2-16GB(gpu)
+  2. Tesla V100-SXM2-16GB(gpu)
+  2. Tesla V100-SXM2-16GB(gpu)
+  2. Tesla V100-SXM2-16GB(gpu)
+  1. Tesla V100-SXM2-16GB(gpu)
+  2. Tesla V100-SXM2-16GB(gpu)
+  2. Tesla V100-SXM2-16GB(gpu)
+  2. Tesla V100-SXM2-16GB(gpu)
+  2. Tesla V100-SXM2-16GB(gpu)
+  2. Tesla V100-SXM2-16GB(gpu)
+  1. Tesla V100-SXM2-16GB(gpu)
+  2. Tesla V100-SXM2-16GB(gpu)
+  2. Tesla V100-SXM2-16GB(gpu)
+  2. Tesla V100-SXM2-16GB(gpu)
+  2. Tesla V100-SXM2-16GB(gpu)
+  2. Tesla V100-SXM2-16GB(gpu)
+  2. Tesla V100-SXM2-16GB(gpu)
+  2. Tesla V100-SXM2-16GB(gpu)
+  2. Tesla V100-SXM2-16GB(gpu)
+  2. Tesla V100-SXM2-16GB(gpu)
+  2. Tesla V100-SXM2-16GB(gpu)
+  2. Tesla V100-SXM2-16GB(gpu)
+  2. Tesla V100-SXM2-16GB(gpu)
+  2. Tesla V100-SXM2-16GB(gpu)
+  2. Tesla V100-SXM2-16GB(gpu)
+  2. Tesla V100-SXM2-16GB(gpu)
+  2. Tesla V100-SXM2-16GB(gpu)
+  2. Tesla V100-SXM2-16GB(gpu)
+  2. Tesla V100-SXM2-16GB(gpu)
+  2. Tesla V100-SXM2-16GB(gpu)
+  2. Tesla V100-SXM2-16GB(gpu)
+  2. Tesla V100-SXM2-16GB(gpu)
+  2. Tesla V100-SXM2-16GB(gpu)
+  2. Tesla V100-SXM2-16GB(gpu)
+  2. Tesla V100-SXM2-16GB(gpu)
+  2. Tesla V100-SXM2-16GB(gpu)
+  2. Tesla V100-SXM2-16GB(gpu)
+  2. Tesla V100-SXM2-16GB(gpu)
+  2. Tesla V100-SXM2-16GB(gpu)
+  2. Tesla V100-SXM2-16GB(gpu)
+  2. Tesla V100-SXM2-16GB(gpu)
+  2. Tesla V100-SXM2-16GB(gpu)
+  2. Tesla V100-SXM2-16GB(gpu)
+  2. Tesla V100-SXM2-16GB(gpu)
+  2. Tesla V100-SXM2-16GB(gpu)
+  2. Tesla V100-SXM2-16GB(gpu)
+  2. Tesla V100-SXM2-16GB(gpu)
+  2. Tesla V100-SXM2-16GB(gpu)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+  2. Tesla V100-SXM2-16GB(gpu)
+  2. Tesla V100-SXM2-16GB(gpu)
+  2. Tesla V100-SXM2-16GB(gpu)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+  2. Tesla V100-SXM2-16GB(gpu)
+  2. Tesla V100-SXM2-16GB(gpu)
+  2. Tesla V100-SXM2-16GB(gpu)
+  2. Tesla V100-SXM2-16GB(gpu)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+  2. Tesla V100-SXM2-16GB(gpu)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+  2. Tesla V100-SXM2-16GB(gpu)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+  2. Tesla V100-SXM2-16GB(gpu)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+
+
+
+
+
+
+
+
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+
+
+
+
+
+
+
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Launching hydro
+Launching hydro
+Launching hydro
+Launching hydro
+Launching hydro
+Launching hydro
+Launching hydro
+Launching hydro
+Launching hydro
+Launching hydro
+Launching hydro
+Launching hydro
+Launching hydro
+Launching hydro
+Launching hydro
+Launching hydro
+Launching hydro
+Launching hydro
+Launching hydro
+Launching hydro
+Launching hydro
+Launching hydro
+Launching hydro
+Launching hydro
+Launching hydro
+Launching hydro
+Launching hydro
+Launching hydro
+Launching hydro
+Launching hydro
+Launching hydro
+Launching hydro
+Launching hydro
+Launching hydro
+Launching hydro
+Launching hydro
+Launching hydro
+Launching hydro
+Launching hydro
+Launching hydro
+Launching hydro
+Launching hydro
+Launching hydro
+Launching hydro
+Launching hydro
+Launching hydro
+Launching hydro
+Launching hydro
+Launching hydro
+Launching hydro
+Launching hydro
+Launching hydro
+Launching hydro
+Launching hydro
+Launching hydro
+Launching hydro
+Launching hydro
+Launching hydro
+Launching hydro
+Launching hydro
+Launching hydro
+Launching hydro
+Launching hydro
+Launching hydro
+ Step 1 time 0 control sound timestep  9.62904e-05 1,1 x 1.73837e-310 y 6.95332e-310
+Wall clock 10.4263
+Average time per cell 5.52404e-09
+Step time per cell    5.52404e-09
+ Step 2 time 9.62904e-05 control sound timestep  8.01387e-05 1,1 x 0 y 6.95332e-310
+Wall clock 22.2079
+Average time per cell 5.88309e-09
+Step time per cell    6.2411e-09
+ Step 3 time 0.000176429 control sound timestep  7.02273e-05 1,1 x 0 y 6.95332e-310
+Wall clock 34.2801
+Average time per cell 6.05408e-09
+Step time per cell    6.395e-09
+ Step 4 time 0.000246656 control sound timestep  6.40743e-05 1,1 x 0 y 6.95332e-310
+Wall clock 46.3117
+Average time per cell 6.13421e-09
+Step time per cell    6.37368e-09
+ Step 5 time 0.000310731 control sound timestep  6.80221e-05 1,1 x 0 y 6.95332e-310
+Wall clock 58.3466
+Average time per cell 6.18263e-09
+Step time per cell    6.37528e-09
+ Step 6 time 0.000378753 control sound timestep  6.36199e-05 1,1 x 0 y 6.95332e-310
+Wall clock 69.7392
+Average time per cell 6.1582e-09
+Step time per cell    6.0353e-09
+ Step 7 time 0.000442373 control sound timestep  6.38615e-05 1,1 x 0 y 6.95332e-310
+Wall clock 81.8488
+Average time per cell 6.19501e-09
+Step time per cell    6.41492e-09
+ Step 8 time 0.000506234 control sound timestep  6.48068e-05 1,1 x 0 y 6.95332e-310
+Wall clock 93.785
+Average time per cell 6.21113e-09
+Step time per cell    6.32332e-09
+ Step 9 time 0.000571041 control sound timestep  6.4995e-05 1,1 x 0 y 6.95332e-310
+Wall clock 105.469
+Average time per cell 6.20883e-09
+Step time per cell    6.18936e-09
+ Step 10 time 0.000636036 control sound timestep  6.52278e-05 1,1 x 0 y 6.95332e-310
+Wall clock 119.732
+Average time per cell 6.34364e-09
+Step time per cell    7.55592e-09
+ Step 11 time 0.000701264 control sound timestep  6.54562e-05 1,1 x 0 y 6.95332e-310
+Wall clock 130.191
+Average time per cell 6.27068e-09
+Step time per cell    5.54106e-09
+ Step 12 time 0.00076672 control sound timestep  6.64336e-05 1,1 x 0 y 6.95332e-310
+Wall clock 142.075
+Average time per cell 6.27282e-09
+Step time per cell    6.29536e-09
+ Step 13 time 0.000833153 control sound timestep  6.74246e-05 1,1 x 0 y 6.95332e-310
+Wall clock 153.946
+Average time per cell 6.2741e-09
+Step time per cell    6.28726e-09
+ Step 14 time 0.000900578 control sound timestep  6.81204e-05 1,1 x 0 y 6.95332e-310
+Wall clock 166.478
+Average time per cell 6.30024e-09
+Step time per cell    6.63912e-09
+ Step 15 time 0.000968698 control sound timestep  6.81365e-05 1,1 x 0 y 6.95332e-310
+Wall clock 178.274
+Average time per cell 6.29685e-09
+Step time per cell    6.24872e-09
+ Step 16 time 0.00103683 control sound timestep  6.7878e-05 1,1 x 0 y 6.95332e-310
+Wall clock 190.249
+Average time per cell 6.29986e-09
+Step time per cell    6.34416e-09
+ Step 17 time 0.00110471 control sound timestep  6.78877e-05 1,1 x 0 y 6.95332e-310
+Wall clock 202.003
+Average time per cell 6.29559e-09
+Step time per cell    6.22619e-09
+ Step 18 time 0.0011726 control sound timestep  6.80467e-05 1,1 x 0 y 6.95332e-310
+Wall clock 213.731
+Average time per cell 6.29106e-09
+Step time per cell    6.21308e-09
+ Step 19 time 0.00124065 control sound timestep  6.83728e-05 1,1 x 0 y 6.95332e-310
+Wall clock 226.001
+Average time per cell 6.30208e-09
+Step time per cell    6.49967e-09
+ Step 20 time 0.00130902 control sound timestep  6.86731e-05 1,1 x 0 y 6.95332e-310
+Wall clock 239.549
+Average time per cell 6.34588e-09
+Step time per cell    7.17716e-09
+ Step 21 time 0.00137769 control sound timestep  6.8447e-05 1,1 x 0 y 6.95332e-310
+Wall clock 249.341
+Average time per cell 6.29075e-09
+Step time per cell    5.18804e-09
+ Step 22 time 0.00144614 control sound timestep  6.82499e-05 1,1 x 0 y 6.95332e-310
+Wall clock 262.039
+Average time per cell 6.31061e-09
+Step time per cell    6.72673e-09
+ Step 23 time 0.00151439 control sound timestep  6.81922e-05 1,1 x 0 y 6.95332e-310
+Wall clock 273.634
+Average time per cell 6.30332e-09
+Step time per cell    6.14206e-09
+ Step 24 time 0.00158258 control sound timestep  6.82231e-05 1,1 x 0 y 6.95332e-310
+Wall clock 285.142
+Average time per cell 6.29475e-09
+Step time per cell    6.09664e-09
+ Step 25 time 0.00165081 control sound timestep  6.83771e-05 1,1 x 0 y 6.95332e-310
+Wall clock 297.24
+Average time per cell 6.29935e-09
+Step time per cell    6.40902e-09
+ Step 26 time 0.00171918 control sound timestep  6.85233e-05 1,1 x 0 y 6.95332e-310
+Wall clock 309.611
+Average time per cell 6.30915e-09
+Step time per cell    6.55333e-09
+ Step 27 time 0.00178771 control sound timestep  6.8478e-05 1,1 x 0 y 6.95332e-310
+Wall clock 321.122
+Average time per cell 6.30136e-09
+Step time per cell    6.09781e-09
+ Step 28 time 0.00185618 control sound timestep  6.83625e-05 1,1 x 0 y 6.95332e-310
+Wall clock 333.26
+Average time per cell 6.30599e-09
+Step time per cell    6.43019e-09
+ Step 29 time 0.00192455 control sound timestep  6.83082e-05 1,1 x 0 y 6.95332e-310
+Wall clock 344.715
+Average time per cell 6.29781e-09
+Step time per cell    6.06792e-09
+ Step 30 time 0.00199285 control sound timestep  6.83024e-05 1,1 x 0 y 6.95332e-310
+Wall clock 358.666
+Average time per cell 6.33428e-09
+Step time per cell    7.39092e-09
+ Step 31 time 0.00206116 control sound timestep  6.83616e-05 1,1 x 0 y 6.95332e-310
+Wall clock 368.966
+Average time per cell 6.30598e-09
+Step time per cell    5.4571e-09
+ Step 32 time 0.00212952 control sound timestep  6.8441e-05 1,1 x 0 y 6.95332e-310
+Wall clock 381.076
+Average time per cell 6.30941e-09
+Step time per cell    6.41474e-09
+ Step 33 time 0.00219796 control sound timestep  6.84583e-05 1,1 x 0 y 6.95332e-310
+Wall clock 393.024
+Average time per cell 6.31005e-09
+Step time per cell    6.32959e-09
+ Step 34 time 0.00226642 control sound timestep  6.83879e-05 1,1 x 0 y 6.95332e-310
+Wall clock 404.914
+Average time per cell 6.30974e-09
+Step time per cell    6.29843e-09
+ Step 35 time 0.00233481 control sound timestep  6.83498e-05 1,1 x 0 y 6.95332e-310
+Wall clock 417.244
+Average time per cell 6.31611e-09
+Step time per cell    6.53167e-09
+ Step 36 time 0.00240316 control sound timestep  6.83463e-05 1,1 x 0 y 6.95332e-310
+Wall clock 428.196
+Average time per cell 6.30184e-09
+Step time per cell    5.80177e-09
+ Step 37 time 0.0024715 control sound timestep  6.83751e-05 1,1 x 0 y 6.95332e-310
+Wall clock 440.321
+Average time per cell 6.30515e-09
+Step time per cell    6.42329e-09
+ Step 38 time 0.00253988 control sound timestep  6.8424e-05 1,1 x 0 y 6.95332e-310
+Wall clock 452.824
+Average time per cell 6.31355e-09
+Step time per cell    6.62322e-09
+ Step 39 time 0.0026083 control sound timestep  6.84416e-05 1,1 x 0 y 6.95332e-310
+Wall clock 464.26
+Average time per cell 6.30701e-09
+Step time per cell    6.05757e-09
+ Step 40 time 0.00267674 control sound timestep  6.8397e-05 1,1 x 0 y 6.95332e-310
+Wall clock 478.107
+Average time per cell 6.33275e-09
+Step time per cell    7.33579e-09
+ Step 41 time 0.00274514 control sound timestep  6.8371e-05 1,1 x 0 y 6.95332e-310
+Wall clock 488.296
+Average time per cell 6.30996e-09
+Step time per cell    5.39837e-09
+ Step 42 time 0.00281351 control sound timestep  6.83686e-05 1,1 x 0 y 6.95332e-310
+Wall clock 500.196
+Average time per cell 6.30984e-09
+Step time per cell    6.3039e-09
+ Step 43 time 0.00288188 control sound timestep  6.83878e-05 1,1 x 0 y 6.95332e-310
+Wall clock 512.554
+Average time per cell 6.31537e-09
+Step time per cell    6.54672e-09
+ Step 44 time 0.00295027 control sound timestep  6.84205e-05 1,1 x 0 y 6.95332e-310
+Wall clock 524.453
+Average time per cell 6.31512e-09
+Step time per cell    6.30346e-09
+ Step 45 time 0.00301869 control sound timestep  6.84298e-05 1,1 x 0 y 6.95332e-310
+Wall clock 536.227
+Average time per cell 6.3134e-09
+Step time per cell    6.23714e-09
+ Step 46 time 0.00308712 control sound timestep  6.84003e-05 1,1 x 0 y 6.95332e-310
+Wall clock 547.885
+Average time per cell 6.31043e-09
+Step time per cell    6.17566e-09
+ Step 47 time 0.00315552 control sound timestep  6.83813e-05 1,1 x 0 y 6.95332e-310
+Wall clock 559.8
+Average time per cell 6.31048e-09
+Step time per cell    6.31204e-09
+ Step 48 time 0.0032239 control sound timestep  6.83783e-05 1,1 x 0 y 6.95332e-310
+Wall clock 571.838
+Average time per cell 6.31189e-09
+Step time per cell    6.37677e-09
+ Step 49 time 0.00329228 control sound timestep  6.83956e-05 1,1 x 0 y 6.95332e-310
+Wall clock 582.889
+Average time per cell 6.30256e-09
+Step time per cell    5.85444e-09
+ Step 50 time 0.00336067 control sound timestep  6.84174e-05 1,1 x 0 y 6.95332e-310
+Wall clock 597.325
+Average time per cell 6.32949e-09
+Step time per cell    7.64727e-09
+ Step 51 time 0.00342909 control sound timestep  6.84255e-05 1,1 x 0 y 6.95332e-310
+Wall clock 607.849
+Average time per cell 6.3147e-09
+Step time per cell    5.57565e-09
+ Step 52 time 0.00349752 control sound timestep  6.84006e-05 1,1 x 0 y 6.95332e-310
+Wall clock 619.82
+Average time per cell 6.31524e-09
+Step time per cell    6.33956e-09
+ Step 53 time 0.00356592 control sound timestep  6.83863e-05 1,1 x 0 y 6.95332e-310
+Wall clock 631.768
+Average time per cell 6.31552e-09
+Step time per cell    6.32969e-09
+ Step 54 time 0.0036343 control sound timestep  6.83851e-05 1,1 x 0 y 6.95332e-310
+Wall clock 643.665
+Average time per cell 6.3153e-09
+Step time per cell    6.30251e-09
+ Step 55 time 0.00370269 control sound timestep  6.83991e-05 1,1 x 0 y 6.95332e-310
+Wall clock 655.34
+Average time per cell 6.31294e-09
+Step time per cell    6.18474e-09
+ Step 56 time 0.00377109 control sound timestep  6.84176e-05 1,1 x 0 y 6.95332e-310
+Wall clock 667.318
+Average time per cell 6.31354e-09
+Step time per cell    6.34534e-09
+ Step 57 time 0.0038395 control sound timestep  6.84209e-05 1,1 x 0 y 6.95332e-310
+Wall clock 679.385
+Average time per cell 6.31493e-09
+Step time per cell    6.39178e-09
+ Step 58 time 0.00390792 control sound timestep  6.84006e-05 1,1 x 0 y 6.95332e-310
+Wall clock 691.246
+Average time per cell 6.3144e-09
+Step time per cell    6.28352e-09
+ Step 59 time 0.00397633 control sound timestep  6.83886e-05 1,1 x 0 y 6.95332e-310
+Wall clock 703.411
+Average time per cell 6.31662e-09
+Step time per cell    6.44476e-09
+ Step 60 time 0.00404471 control sound timestep  6.83886e-05 1,1 x 0 y 6.95332e-310
+Wall clock 717.033
+Average time per cell 6.33163e-09
+Step time per cell    7.21584e-09
+ Step 61 time 0.0041131 control sound timestep  6.83999e-05 1,1 x 0 y 6.95332e-310
+Wall clock 727.581
+Average time per cell 6.31945e-09
+Step time per cell    5.58871e-09
+ Step 62 time 0.0041815 control sound timestep  6.84165e-05 1,1 x 0 y 6.95332e-310
+Wall clock 739.433
+Average time per cell 6.3188e-09
+Step time per cell    6.27832e-09
+ Step 63 time 0.00424992 control sound timestep  6.84182e-05 1,1 x 0 y 6.95332e-310
+Wall clock 750.982
+Average time per cell 6.31563e-09
+Step time per cell    6.11837e-09
+ Step 64 time 0.00431834 control sound timestep  6.84028e-05 1,1 x 0 y 6.95332e-310
+Wall clock 763.072
+Average time per cell 6.31704e-09
+Step time per cell    6.40442e-09
+ Step 65 time 0.00438674 control sound timestep  6.83924e-05 1,1 x 0 y 6.95332e-310
+Wall clock 774.545
+Average time per cell 6.31337e-09
+Step time per cell    6.0775e-09
+ Step 66 time 0.00445513 control sound timestep  6.83939e-05 1,1 x 0 y 6.95332e-310
+Wall clock 787.047
+Average time per cell 6.31807e-09
+Step time per cell    6.62299e-09
+ Step 67 time 0.00452353 control sound timestep  6.84022e-05 1,1 x 0 y 6.95332e-310
+Wall clock 798.436
+Average time per cell 6.31383e-09
+Step time per cell    6.03328e-09
+ Step 68 time 0.00459193 control sound timestep  6.84156e-05 1,1 x 0 y 6.95332e-310
+Wall clock 810.647
+Average time per cell 6.31612e-09
+Step time per cell    6.46805e-09
+ Step 69 time 0.00466034 control sound timestep  6.84126e-05 1,1 x 0 y 6.95332e-310
+Wall clock 822.741
+Average time per cell 6.31745e-09
+Step time per cell    6.40686e-09
+ Step 70 time 0.00472876 control sound timestep  6.84001e-05 1,1 x 0 y 6.95332e-310
+Wall clock 836.467
+Average time per cell 6.33109e-09
+Step time per cell    7.27026e-09
+ Step 71 time 0.00479716 control sound timestep  6.83932e-05 1,1 x 0 y 6.95332e-310
+Wall clock 846.621
+Average time per cell 6.31769e-09
+Step time per cell    5.38e-09
+ Step 72 time 0.00486555 control sound timestep  6.83948e-05 1,1 x 0 y 6.95332e-310
+Wall clock 858.524
+Average time per cell 6.31753e-09
+Step time per cell    6.30494e-09
+ Step 73 time 0.00493394 control sound timestep  6.84009e-05 1,1 x 0 y 6.95332e-310
+Wall clock 870.5
+Average time per cell 6.31791e-09
+Step time per cell    6.34522e-09
+ Step 74 time 0.00500235 control sound timestep  6.84132e-05 1,1 x 0 y 6.95332e-310
+Wall clock 882.352
+Average time per cell 6.31739e-09
+Step time per cell    6.27939e-09
+ Step 75 time 0.00507076 control sound timestep  6.84094e-05 1,1 x 0 y 6.95332e-310
+Wall clock 894.305
+Average time per cell 6.3176e-09
+Step time per cell    6.33287e-09
+ Step 76 time 0.00513917 control sound timestep  6.83972e-05 1,1 x 0 y 6.95332e-310
+Wall clock 906.434
+Average time per cell 6.31903e-09
+Step time per cell    6.42623e-09
+ Step 77 time 0.00520757 control sound timestep  6.83916e-05 1,1 x 0 y 6.95332e-310
+Wall clock 918.163
+Average time per cell 6.31766e-09
+Step time per cell    6.21392e-09
+ Step 78 time 0.00527596 control sound timestep  6.83935e-05 1,1 x 0 y 6.95332e-310
+Wall clock 930.074
+Average time per cell 6.31758e-09
+Step time per cell    6.31069e-09
+ Step 79 time 0.00534435 control sound timestep  6.84011e-05 1,1 x 0 y 6.95332e-310
+Wall clock 941.743
+Average time per cell 6.31586e-09
+Step time per cell    6.18229e-09
+ Step 80 time 0.00541275 control sound timestep  6.84123e-05 1,1 x 0 y 6.95332e-310
+Wall clock 955.673
+Average time per cell 6.32917e-09
+Step time per cell    7.38026e-09
+ Step 81 time 0.00548116 control sound timestep  6.84103e-05 1,1 x 0 y 6.95332e-310
+Wall clock 965.888
+Average time per cell 6.31785e-09
+Step time per cell    5.41222e-09
+ Step 82 time 0.00554957 control sound timestep  6.83986e-05 1,1 x 0 y 6.95332e-310
+Wall clock 977.888
+Average time per cell 6.31834e-09
+Step time per cell    6.35805e-09
+ Step 83 time 0.00561797 control sound timestep  6.83939e-05 1,1 x 0 y 6.95332e-310
+Wall clock 989.665
+Average time per cell 6.31739e-09
+Step time per cell    6.23939e-09
+ Step 84 time 0.00568637 control sound timestep  6.83954e-05 1,1 x 0 y 6.95332e-310
+Wall clock 1001.23
+Average time per cell 6.31511e-09
+Step time per cell    6.12575e-09
+ Step 85 time 0.00575476 control sound timestep  6.8401e-05 1,1 x 0 y 6.95332e-310
+Wall clock 1013.4
+Average time per cell 6.31668e-09
+Step time per cell    6.44867e-09
+ Step 86 time 0.00582316 control sound timestep  6.84107e-05 1,1 x 0 y 6.95332e-310
+Wall clock 1025.4
+Average time per cell 6.31715e-09
+Step time per cell    6.35699e-09
+ Step 87 time 0.00589157 control sound timestep  6.84078e-05 1,1 x 0 y 6.95332e-310
+Wall clock 1039.48
+First step overhead 0
+Node name: r211n17, rank: 1, local_rank: 1, device_energy_consumption [J]: 22895
+Node name: r211n17, rank: 3, local_rank: 3, device_energy_consumption [J]: 23781.5
+Node name: r211n17, rank: 2, local_rank: 2, device_energy_consumption [J]: 23001.3
+Node name: r211n17, rank: 0, local_rank: 0, device_energy_consumption [J]: 24522.1
+Node name: r223n16, rank: 20, local_rank: 0, device_energy_consumption [J]: 9993.78
+Node name: r212n20, rank: 5, local_rank: 1, device_energy_consumption [J]: 19648.2
+Node name: r224n13, rank: 25, local_rank: 1, device_energy_consumption [J]: 11082.9
+Node name: r222n11, rank: 17, local_rank: 1, device_energy_consumption [J]: 11363.6
+Node name: r223n16, rank: 21, local_rank: 1, device_energy_consumption [J]: 9963.18
+Node name: r224n13, rank: 26, local_rank: 2, device_energy_consumption [J]: 11116.1
+Node name: r234n09, rank: 33, local_rank: 1, device_energy_consumption [J]: 12214.8
+Node name: r243n18, rank: 39, local_rank: 3, device_energy_consumption [J]: 12161.1
+Node name: r213n14, rank: 11, local_rank: 3, device_energy_consumption [J]: 15063.9
+Node name: r221n18, rank: 13, local_rank: 1, device_energy_consumption [J]: 9873.87
+Node name: r245n20, rank: 44, local_rank: 0, device_energy_consumption [J]: 16051.6
+Node name: r246n19, rank: 53, local_rank: 1, device_energy_consumption [J]: 9583.1
+Node name: r246n18, rank: 48, local_rank: 0, device_energy_consumption [J]: 11381.6
+Node name: r247n13, rank: 61, local_rank: 1, device_energy_consumption [J]: 17902.5
+Node name: r244n02, rank: 40, local_rank: 0, device_energy_consumption [J]: 9866.77
+Node name: r246n20, rank: 57, local_rank: 1, device_energy_consumption [J]: 23106.5
+Node name: r223n16, rank: 22, local_rank: 2, device_energy_consumption [J]: 9975.15
+Node name: r212n20, rank: 7, local_rank: 3, device_energy_consumption [J]: 21743
+Node name: r224n13, rank: 24, local_rank: 0, device_energy_consumption [J]: 11944.3
+Node name: r226n04, rank: 30, local_rank: 2, device_energy_consumption [J]: 9660.84
+Node name: r222n11, rank: 19, local_rank: 3, device_energy_consumption [J]: 11494.7
+Node name: r234n09, rank: 32, local_rank: 0, device_energy_consumption [J]: 13768.4
+Node name: r243n18, rank: 36, local_rank: 0, device_energy_consumption [J]: 11122.1
+Node name: r213n14, rank: 9, local_rank: 1, device_energy_consumption [J]: 14540.9
+Node name: r221n18, rank: 15, local_rank: 3, device_energy_consumption [J]: 10785.3
+Node name: r245n20, rank: 46, local_rank: 2, device_energy_consumption [J]: 15454.6
+Node name: r246n19, rank: 55, local_rank: 3, device_energy_consumption [J]: 10134.6
+Node name: r246n18, rank: 51, local_rank: 3, device_energy_consumption [J]: 10516.6
+Node name: r247n13, rank: 60, local_rank: 0, device_energy_consumption [J]: 17937.5
+Node name: r244n02, rank: 42, local_rank: 2, device_energy_consumption [J]: 9162.26
+Node name: r246n20, rank: 58, local_rank: 2, device_energy_consumption [J]: 23146.4
+Node name: r212n20, rank: 4, local_rank: 0, device_energy_consumption [J]: 19693.2
+Node name: r224n13, rank: 27, local_rank: 3, device_energy_consumption [J]: 11209.8
+Node name: r226n04, rank: 28, local_rank: 0, device_energy_consumption [J]: 9690.28
+Node name: r222n11, rank: 16, local_rank: 0, device_energy_consumption [J]: 12062.9
+Node name: r234n09, rank: 35, local_rank: 3, device_energy_consumption [J]: 12378.1
+Node name: r243n18, rank: 38, local_rank: 2, device_energy_consumption [J]: 11093.6
+Node name: r213n14, rank: 10, local_rank: 2, device_energy_consumption [J]: 14571.4
+Node name: r221n18, rank: 12, local_rank: 0, device_energy_consumption [J]: 9904.04
+Node name: r245n20, rank: 45, local_rank: 1, device_energy_consumption [J]: 15426.6
+Node name: r246n19, rank: 54, local_rank: 2, device_energy_consumption [J]: 9585.11
+Node name: r246n18, rank: 49, local_rank: 1, device_energy_consumption [J]: 10461.9
+Node name: r247n13, rank: 63, local_rank: 3, device_energy_consumption [J]: 19758.1
+Node name: r244n02, rank: 43, local_rank: 3, device_energy_consumption [J]: 9188.94
+Node name: r246n20, rank: 59, local_rank: 3, device_energy_consumption [J]: 23422.1
+Node name: r223n16, rank: 23, local_rank: 3, device_energy_consumption [J]: 10920.5
+Node name: r246n18, rank: 50, local_rank: 2, device_energy_consumption [J]: 10481.4
+Node name: r247n13, rank: 62, local_rank: 2, device_energy_consumption [J]: 17952.7
+Node name: r244n02, rank: 41, local_rank: 1, device_energy_consumption [J]: 9157.42
+Node name: r246n20, rank: 56, local_rank: 0, device_energy_consumption [J]: 25107.5
+Node name: r212n20, rank: 6, local_rank: 2, device_energy_consumption [J]: 19707.4
+Node name: r226n04, rank: 29, local_rank: 1, device_energy_consumption [J]: 9666.33
+Node name: r222n11, rank: 18, local_rank: 2, device_energy_consumption [J]: 11413.9
+Node name: r234n09, rank: 34, local_rank: 2, device_energy_consumption [J]: 12193.8
+Node name: r243n18, rank: 37, local_rank: 1, device_energy_consumption [J]: 11076.6
+Node name: r213n14, rank: 8, local_rank: 0, device_energy_consumption [J]: 15908.6
+Node name: r221n18, rank: 14, local_rank: 2, device_energy_consumption [J]: 9892.87
+Node name: r245n20, rank: 47, local_rank: 3, device_energy_consumption [J]: 17373.1
+Node name: r246n19, rank: 52, local_rank: 0, device_energy_consumption [J]: 9624.46
+Node name: r226n04, rank: 31, local_rank: 3, device_energy_consumption [J]: 10544.3
+Done
+Done
+Done
+Done
+Done
+Done
+Done
+Done
+Done
+Done
+Done
+Done
+Done
+Done
+Done
+Done
+Done
+Done
+Done
+Done
+Done
+Done
+Done
+Done
+Done
+Done
+Done
+Done
+Done
+Done
+Done
+Done
+Done
+Done
+Done
+Done
+Done
+Done
+Done
+Done
+Done
+Done
+Done
+Done
+Done
+Done
+Done
+Done
+Done
+Done
+Done
+Done
+Done
+Done
+Done
+Done
+Done
+Done
+Done
+Done
+Done
+Done
+Done
+Done

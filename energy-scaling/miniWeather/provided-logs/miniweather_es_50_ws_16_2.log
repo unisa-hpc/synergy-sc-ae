@@ -1,0 +1,695 @@
+Running on Tesla V100-SXM2-16GB
+Running on Tesla V100-SXM2-16GB
+Running on Tesla V100-SXM2-16GB
+Running on Tesla V100-SXM2-16GB
+Running on Tesla V100-SXM2-16GB
+Running on Tesla V100-SXM2-16GB
+Running on Tesla V100-SXM2-16GB
+Running on Tesla V100-SXM2-16GB
+Running on Tesla V100-SXM2-16GB
+Running on Tesla V100-SXM2-16GB
+Running on Tesla V100-SXM2-16GB
+Running on Tesla V100-SXM2-16GB
+Running on Tesla V100-SXM2-16GB
+Running on Tesla V100-SXM2-16GB
+Running on Tesla V100-SXM2-16GB
+Running on Tesla V100-SXM2-16GB
+Running on Tesla V100-SXM2-16GB
+Running on Tesla V100-SXM2-16GB
+Running on Tesla V100-SXM2-16GB
+Running on Tesla V100-SXM2-16GB
+Running on Tesla V100-SXM2-16GB
+Running on Tesla V100-SXM2-16GB
+Running on Tesla V100-SXM2-16GB
+Running on Tesla V100-SXM2-16GB
+Running on Tesla V100-SXM2-16GB
+Running on Tesla V100-SXM2-16GB
+Running on Tesla V100-SXM2-16GB
+Running on Tesla V100-SXM2-16GB
+Running on Tesla V100-SXM2-16GB
+Running on Tesla V100-SXM2-16GB
+Running on Tesla V100-SXM2-16GB
+Running on Tesla V100-SXM2-16GB
+Running on Tesla V100-SXM2-16GB
+Running on Tesla V100-SXM2-16GB
+Running on Tesla V100-SXM2-16GB
+Running on Tesla V100-SXM2-16GB
+Running on Tesla V100-SXM2-16GB
+Running on Tesla V100-SXM2-16GB
+Running on Tesla V100-SXM2-16GB
+Running on Tesla V100-SXM2-16GB
+Running on Tesla V100-SXM2-16GB
+Running on Tesla V100-SXM2-16GB
+Running on Tesla V100-SXM2-16GB
+Running on Tesla V100-SXM2-16GB
+Running on Tesla V100-SXM2-16GB
+Running on Tesla V100-SXM2-16GB
+Running on Tesla V100-SXM2-16GB
+Running on Tesla V100-SXM2-16GB
+Running on Tesla V100-SXM2-16GB
+nx_glob, nz_glob: 14336 50
+dx,dz: 1.395089 200.000000
+dt: 0.004650
+Running on Tesla V100-SXM2-16GB
+Running on Tesla V100-SXM2-16GB
+Running on Tesla V100-SXM2-16GB
+Running on Tesla V100-SXM2-16GB
+Running on Tesla V100-SXM2-16GB
+Running on Tesla V100-SXM2-16GB
+Running on Tesla V100-SXM2-16GB
+Running on Tesla V100-SXM2-16GB
+Running on Tesla V100-SXM2-16GB
+Running on Tesla V100-SXM2-16GB
+Running on Tesla V100-SXM2-16GB
+Running on Tesla V100-SXM2-16GB
+Running on Tesla V100-SXM2-16GB
+Running on Tesla V100-SXM2-16GB
+Running on Tesla V100-SXM2-16GB
+*** OUTPUT ***
+Elapsed Time: 0.000000 / 2.000000
+Elapsed Time: 0.004650 / 2.000000
+Elapsed Time: 0.009301 / 2.000000
+Elapsed Time: 0.013951 / 2.000000
+Elapsed Time: 0.018601 / 2.000000
+Elapsed Time: 0.023251 / 2.000000
+Elapsed Time: 0.027902 / 2.000000
+Elapsed Time: 0.032552 / 2.000000
+Elapsed Time: 0.037202 / 2.000000
+Elapsed Time: 0.041853 / 2.000000
+Elapsed Time: 0.046503 / 2.000000
+Elapsed Time: 0.051153 / 2.000000
+Elapsed Time: 0.055804 / 2.000000
+Elapsed Time: 0.060454 / 2.000000
+Elapsed Time: 0.065104 / 2.000000
+Elapsed Time: 0.069754 / 2.000000
+Elapsed Time: 0.074405 / 2.000000
+Elapsed Time: 0.079055 / 2.000000
+Elapsed Time: 0.083705 / 2.000000
+Elapsed Time: 0.088356 / 2.000000
+Elapsed Time: 0.093006 / 2.000000
+Elapsed Time: 0.097656 / 2.000000
+Elapsed Time: 0.102307 / 2.000000
+Elapsed Time: 0.106957 / 2.000000
+Elapsed Time: 0.111607 / 2.000000
+Elapsed Time: 0.116257 / 2.000000
+Elapsed Time: 0.120908 / 2.000000
+Elapsed Time: 0.125558 / 2.000000
+Elapsed Time: 0.130208 / 2.000000
+Elapsed Time: 0.134859 / 2.000000
+Elapsed Time: 0.139509 / 2.000000
+Elapsed Time: 0.144159 / 2.000000
+Elapsed Time: 0.148810 / 2.000000
+Elapsed Time: 0.153460 / 2.000000
+Elapsed Time: 0.158110 / 2.000000
+Elapsed Time: 0.162760 / 2.000000
+Elapsed Time: 0.167411 / 2.000000
+Elapsed Time: 0.172061 / 2.000000
+Elapsed Time: 0.176711 / 2.000000
+Elapsed Time: 0.181362 / 2.000000
+Elapsed Time: 0.186012 / 2.000000
+Elapsed Time: 0.190662 / 2.000000
+Elapsed Time: 0.195312 / 2.000000
+Elapsed Time: 0.199963 / 2.000000
+Elapsed Time: 0.204613 / 2.000000
+Elapsed Time: 0.209263 / 2.000000
+Elapsed Time: 0.213914 / 2.000000
+Elapsed Time: 0.218564 / 2.000000
+Elapsed Time: 0.223214 / 2.000000
+Elapsed Time: 0.227865 / 2.000000
+Elapsed Time: 0.232515 / 2.000000
+Elapsed Time: 0.237165 / 2.000000
+Elapsed Time: 0.241815 / 2.000000
+Elapsed Time: 0.246466 / 2.000000
+Elapsed Time: 0.251116 / 2.000000
+Elapsed Time: 0.255766 / 2.000000
+Elapsed Time: 0.260417 / 2.000000
+Elapsed Time: 0.265067 / 2.000000
+Elapsed Time: 0.269717 / 2.000000
+Elapsed Time: 0.274368 / 2.000000
+Elapsed Time: 0.279018 / 2.000000
+Elapsed Time: 0.283668 / 2.000000
+Elapsed Time: 0.288318 / 2.000000
+Elapsed Time: 0.292969 / 2.000000
+Elapsed Time: 0.297619 / 2.000000
+Elapsed Time: 0.302269 / 2.000000
+Elapsed Time: 0.306920 / 2.000000
+Elapsed Time: 0.311570 / 2.000000
+Elapsed Time: 0.316220 / 2.000000
+Elapsed Time: 0.320871 / 2.000000
+Elapsed Time: 0.325521 / 2.000000
+Elapsed Time: 0.330171 / 2.000000
+Elapsed Time: 0.334821 / 2.000000
+Elapsed Time: 0.339472 / 2.000000
+Elapsed Time: 0.344122 / 2.000000
+Elapsed Time: 0.348772 / 2.000000
+Elapsed Time: 0.353423 / 2.000000
+Elapsed Time: 0.358073 / 2.000000
+Elapsed Time: 0.362723 / 2.000000
+Elapsed Time: 0.367374 / 2.000000
+Elapsed Time: 0.372024 / 2.000000
+Elapsed Time: 0.376674 / 2.000000
+Elapsed Time: 0.381324 / 2.000000
+Elapsed Time: 0.385975 / 2.000000
+Elapsed Time: 0.390625 / 2.000000
+Elapsed Time: 0.395275 / 2.000000
+Elapsed Time: 0.399926 / 2.000000
+Elapsed Time: 0.404576 / 2.000000
+Elapsed Time: 0.409226 / 2.000000
+Elapsed Time: 0.413876 / 2.000000
+Elapsed Time: 0.418527 / 2.000000
+Elapsed Time: 0.423177 / 2.000000
+Elapsed Time: 0.427827 / 2.000000
+Elapsed Time: 0.432478 / 2.000000
+Elapsed Time: 0.437128 / 2.000000
+Elapsed Time: 0.441778 / 2.000000
+Elapsed Time: 0.446429 / 2.000000
+Elapsed Time: 0.451079 / 2.000000
+Elapsed Time: 0.455729 / 2.000000
+Elapsed Time: 0.460379 / 2.000000
+Elapsed Time: 0.465030 / 2.000000
+Elapsed Time: 0.469680 / 2.000000
+Elapsed Time: 0.474330 / 2.000000
+Elapsed Time: 0.478981 / 2.000000
+Elapsed Time: 0.483631 / 2.000000
+Elapsed Time: 0.488281 / 2.000000
+Elapsed Time: 0.492932 / 2.000000
+Elapsed Time: 0.497582 / 2.000000
+Elapsed Time: 0.502232 / 2.000000
+Elapsed Time: 0.506882 / 2.000000
+Elapsed Time: 0.511533 / 2.000000
+Elapsed Time: 0.516183 / 2.000000
+Elapsed Time: 0.520833 / 2.000000
+Elapsed Time: 0.525484 / 2.000000
+Elapsed Time: 0.530134 / 2.000000
+Elapsed Time: 0.534784 / 2.000000
+Elapsed Time: 0.539435 / 2.000000
+Elapsed Time: 0.544085 / 2.000000
+Elapsed Time: 0.548735 / 2.000000
+Elapsed Time: 0.553385 / 2.000000
+Elapsed Time: 0.558036 / 2.000000
+Elapsed Time: 0.562686 / 2.000000
+Elapsed Time: 0.567336 / 2.000000
+Elapsed Time: 0.571987 / 2.000000
+Elapsed Time: 0.576637 / 2.000000
+Elapsed Time: 0.581287 / 2.000000
+Elapsed Time: 0.585938 / 2.000000
+Elapsed Time: 0.590588 / 2.000000
+Elapsed Time: 0.595238 / 2.000000
+Elapsed Time: 0.599888 / 2.000000
+Elapsed Time: 0.604539 / 2.000000
+Elapsed Time: 0.609189 / 2.000000
+Elapsed Time: 0.613839 / 2.000000
+Elapsed Time: 0.618490 / 2.000000
+Elapsed Time: 0.623140 / 2.000000
+Elapsed Time: 0.627790 / 2.000000
+Elapsed Time: 0.632440 / 2.000000
+Elapsed Time: 0.637091 / 2.000000
+Elapsed Time: 0.641741 / 2.000000
+Elapsed Time: 0.646391 / 2.000000
+Elapsed Time: 0.651042 / 2.000000
+Elapsed Time: 0.655692 / 2.000000
+Elapsed Time: 0.660342 / 2.000000
+Elapsed Time: 0.664993 / 2.000000
+Elapsed Time: 0.669643 / 2.000000
+Elapsed Time: 0.674293 / 2.000000
+Elapsed Time: 0.678943 / 2.000000
+Elapsed Time: 0.683594 / 2.000000
+Elapsed Time: 0.688244 / 2.000000
+Elapsed Time: 0.692894 / 2.000000
+Elapsed Time: 0.697545 / 2.000000
+Elapsed Time: 0.702195 / 2.000000
+Elapsed Time: 0.706845 / 2.000000
+Elapsed Time: 0.711496 / 2.000000
+Elapsed Time: 0.716146 / 2.000000
+Elapsed Time: 0.720796 / 2.000000
+Elapsed Time: 0.725446 / 2.000000
+Elapsed Time: 0.730097 / 2.000000
+Elapsed Time: 0.734747 / 2.000000
+Elapsed Time: 0.739397 / 2.000000
+Elapsed Time: 0.744048 / 2.000000
+Elapsed Time: 0.748698 / 2.000000
+Elapsed Time: 0.753348 / 2.000000
+Elapsed Time: 0.757999 / 2.000000
+Elapsed Time: 0.762649 / 2.000000
+Elapsed Time: 0.767299 / 2.000000
+Elapsed Time: 0.771949 / 2.000000
+Elapsed Time: 0.776600 / 2.000000
+Elapsed Time: 0.781250 / 2.000000
+Elapsed Time: 0.785900 / 2.000000
+Elapsed Time: 0.790551 / 2.000000
+Elapsed Time: 0.795201 / 2.000000
+Elapsed Time: 0.799851 / 2.000000
+Elapsed Time: 0.804501 / 2.000000
+Elapsed Time: 0.809152 / 2.000000
+Elapsed Time: 0.813802 / 2.000000
+Elapsed Time: 0.818452 / 2.000000
+Elapsed Time: 0.823103 / 2.000000
+Elapsed Time: 0.827753 / 2.000000
+Elapsed Time: 0.832403 / 2.000000
+Elapsed Time: 0.837054 / 2.000000
+Elapsed Time: 0.841704 / 2.000000
+Elapsed Time: 0.846354 / 2.000000
+Elapsed Time: 0.851004 / 2.000000
+Elapsed Time: 0.855655 / 2.000000
+Elapsed Time: 0.860305 / 2.000000
+Elapsed Time: 0.864955 / 2.000000
+Elapsed Time: 0.869606 / 2.000000
+Elapsed Time: 0.874256 / 2.000000
+Elapsed Time: 0.878906 / 2.000000
+Elapsed Time: 0.883557 / 2.000000
+Elapsed Time: 0.888207 / 2.000000
+Elapsed Time: 0.892857 / 2.000000
+Elapsed Time: 0.897507 / 2.000000
+Elapsed Time: 0.902158 / 2.000000
+Elapsed Time: 0.906808 / 2.000000
+Elapsed Time: 0.911458 / 2.000000
+Elapsed Time: 0.916109 / 2.000000
+Elapsed Time: 0.920759 / 2.000000
+Elapsed Time: 0.925409 / 2.000000
+Elapsed Time: 0.930060 / 2.000000
+Elapsed Time: 0.934710 / 2.000000
+Elapsed Time: 0.939360 / 2.000000
+Elapsed Time: 0.944010 / 2.000000
+Elapsed Time: 0.948661 / 2.000000
+Elapsed Time: 0.953311 / 2.000000
+Elapsed Time: 0.957961 / 2.000000
+Elapsed Time: 0.962612 / 2.000000
+Elapsed Time: 0.967262 / 2.000000
+Elapsed Time: 0.971912 / 2.000000
+Elapsed Time: 0.976563 / 2.000000
+Elapsed Time: 0.981213 / 2.000000
+Elapsed Time: 0.985863 / 2.000000
+Elapsed Time: 0.990513 / 2.000000
+Elapsed Time: 0.995164 / 2.000000
+Elapsed Time: 0.999814 / 2.000000
+*** OUTPUT ***
+Elapsed Time: 1.004464 / 2.000000
+Elapsed Time: 1.009115 / 2.000000
+Elapsed Time: 1.013765 / 2.000000
+Elapsed Time: 1.018415 / 2.000000
+Elapsed Time: 1.023065 / 2.000000
+Elapsed Time: 1.027716 / 2.000000
+Elapsed Time: 1.032366 / 2.000000
+Elapsed Time: 1.037016 / 2.000000
+Elapsed Time: 1.041667 / 2.000000
+Elapsed Time: 1.046317 / 2.000000
+Elapsed Time: 1.050967 / 2.000000
+Elapsed Time: 1.055618 / 2.000000
+Elapsed Time: 1.060268 / 2.000000
+Elapsed Time: 1.064918 / 2.000000
+Elapsed Time: 1.069568 / 2.000000
+Elapsed Time: 1.074219 / 2.000000
+Elapsed Time: 1.078869 / 2.000000
+Elapsed Time: 1.083519 / 2.000000
+Elapsed Time: 1.088170 / 2.000000
+Elapsed Time: 1.092820 / 2.000000
+Elapsed Time: 1.097470 / 2.000000
+Elapsed Time: 1.102121 / 2.000000
+Elapsed Time: 1.106771 / 2.000000
+Elapsed Time: 1.111421 / 2.000000
+Elapsed Time: 1.116071 / 2.000000
+Elapsed Time: 1.120722 / 2.000000
+Elapsed Time: 1.125372 / 2.000000
+Elapsed Time: 1.130022 / 2.000000
+Elapsed Time: 1.134673 / 2.000000
+Elapsed Time: 1.139323 / 2.000000
+Elapsed Time: 1.143973 / 2.000000
+Elapsed Time: 1.148624 / 2.000000
+Elapsed Time: 1.153274 / 2.000000
+Elapsed Time: 1.157924 / 2.000000
+Elapsed Time: 1.162574 / 2.000000
+Elapsed Time: 1.167225 / 2.000000
+Elapsed Time: 1.171875 / 2.000000
+Elapsed Time: 1.176525 / 2.000000
+Elapsed Time: 1.181176 / 2.000000
+Elapsed Time: 1.185826 / 2.000000
+Elapsed Time: 1.190476 / 2.000000
+Elapsed Time: 1.195126 / 2.000000
+Elapsed Time: 1.199777 / 2.000000
+Elapsed Time: 1.204427 / 2.000000
+Elapsed Time: 1.209077 / 2.000000
+Elapsed Time: 1.213728 / 2.000000
+Elapsed Time: 1.218378 / 2.000000
+Elapsed Time: 1.223028 / 2.000000
+Elapsed Time: 1.227679 / 2.000000
+Elapsed Time: 1.232329 / 2.000000
+Elapsed Time: 1.236979 / 2.000000
+Elapsed Time: 1.241629 / 2.000000
+Elapsed Time: 1.246280 / 2.000000
+Elapsed Time: 1.250930 / 2.000000
+Elapsed Time: 1.255580 / 2.000000
+Elapsed Time: 1.260231 / 2.000000
+Elapsed Time: 1.264881 / 2.000000
+Elapsed Time: 1.269531 / 2.000000
+Elapsed Time: 1.274182 / 2.000000
+Elapsed Time: 1.278832 / 2.000000
+Elapsed Time: 1.283482 / 2.000000
+Elapsed Time: 1.288132 / 2.000000
+Elapsed Time: 1.292783 / 2.000000
+Elapsed Time: 1.297433 / 2.000000
+Elapsed Time: 1.302083 / 2.000000
+Elapsed Time: 1.306734 / 2.000000
+Elapsed Time: 1.311384 / 2.000000
+Elapsed Time: 1.316034 / 2.000000
+Elapsed Time: 1.320685 / 2.000000
+Elapsed Time: 1.325335 / 2.000000
+Elapsed Time: 1.329985 / 2.000000
+Elapsed Time: 1.334635 / 2.000000
+Elapsed Time: 1.339286 / 2.000000
+Elapsed Time: 1.343936 / 2.000000
+Elapsed Time: 1.348586 / 2.000000
+Elapsed Time: 1.353237 / 2.000000
+Elapsed Time: 1.357887 / 2.000000
+Elapsed Time: 1.362537 / 2.000000
+Elapsed Time: 1.367188 / 2.000000
+Elapsed Time: 1.371838 / 2.000000
+Elapsed Time: 1.376488 / 2.000000
+Elapsed Time: 1.381138 / 2.000000
+Elapsed Time: 1.385789 / 2.000000
+Elapsed Time: 1.390439 / 2.000000
+Elapsed Time: 1.395089 / 2.000000
+Elapsed Time: 1.399740 / 2.000000
+Elapsed Time: 1.404390 / 2.000000
+Elapsed Time: 1.409040 / 2.000000
+Elapsed Time: 1.413690 / 2.000000
+Elapsed Time: 1.418341 / 2.000000
+Elapsed Time: 1.422991 / 2.000000
+Elapsed Time: 1.427641 / 2.000000
+Elapsed Time: 1.432292 / 2.000000
+Elapsed Time: 1.436942 / 2.000000
+Elapsed Time: 1.441592 / 2.000000
+Elapsed Time: 1.446243 / 2.000000
+Elapsed Time: 1.450893 / 2.000000
+Elapsed Time: 1.455543 / 2.000000
+Elapsed Time: 1.460193 / 2.000000
+Elapsed Time: 1.464844 / 2.000000
+Elapsed Time: 1.469494 / 2.000000
+Elapsed Time: 1.474144 / 2.000000
+Elapsed Time: 1.478795 / 2.000000
+Elapsed Time: 1.483445 / 2.000000
+Elapsed Time: 1.488095 / 2.000000
+Elapsed Time: 1.492746 / 2.000000
+Elapsed Time: 1.497396 / 2.000000
+Elapsed Time: 1.502046 / 2.000000
+Elapsed Time: 1.506696 / 2.000000
+Elapsed Time: 1.511347 / 2.000000
+Elapsed Time: 1.515997 / 2.000000
+Elapsed Time: 1.520647 / 2.000000
+Elapsed Time: 1.525298 / 2.000000
+Elapsed Time: 1.529948 / 2.000000
+Elapsed Time: 1.534598 / 2.000000
+Elapsed Time: 1.539249 / 2.000000
+Elapsed Time: 1.543899 / 2.000000
+Elapsed Time: 1.548549 / 2.000000
+Elapsed Time: 1.553199 / 2.000000
+Elapsed Time: 1.557850 / 2.000000
+Elapsed Time: 1.562500 / 2.000000
+Elapsed Time: 1.567150 / 2.000000
+Elapsed Time: 1.571801 / 2.000000
+Elapsed Time: 1.576451 / 2.000000
+Elapsed Time: 1.581101 / 2.000000
+Elapsed Time: 1.585751 / 2.000000
+Elapsed Time: 1.590402 / 2.000000
+Elapsed Time: 1.595052 / 2.000000
+Elapsed Time: 1.599702 / 2.000000
+Elapsed Time: 1.604353 / 2.000000
+Elapsed Time: 1.609003 / 2.000000
+Elapsed Time: 1.613653 / 2.000000
+Elapsed Time: 1.618304 / 2.000000
+Elapsed Time: 1.622954 / 2.000000
+Elapsed Time: 1.627604 / 2.000000
+Elapsed Time: 1.632254 / 2.000000
+Elapsed Time: 1.636905 / 2.000000
+Elapsed Time: 1.641555 / 2.000000
+Elapsed Time: 1.646205 / 2.000000
+Elapsed Time: 1.650856 / 2.000000
+Elapsed Time: 1.655506 / 2.000000
+Elapsed Time: 1.660156 / 2.000000
+Elapsed Time: 1.664807 / 2.000000
+Elapsed Time: 1.669457 / 2.000000
+Elapsed Time: 1.674107 / 2.000000
+Elapsed Time: 1.678757 / 2.000000
+Elapsed Time: 1.683408 / 2.000000
+Elapsed Time: 1.688058 / 2.000000
+Elapsed Time: 1.692708 / 2.000000
+Elapsed Time: 1.697359 / 2.000000
+Elapsed Time: 1.702009 / 2.000000
+Elapsed Time: 1.706659 / 2.000000
+Elapsed Time: 1.711310 / 2.000000
+Elapsed Time: 1.715960 / 2.000000
+Elapsed Time: 1.720610 / 2.000000
+Elapsed Time: 1.725260 / 2.000000
+Elapsed Time: 1.729911 / 2.000000
+Elapsed Time: 1.734561 / 2.000000
+Elapsed Time: 1.739211 / 2.000000
+Elapsed Time: 1.743862 / 2.000000
+Elapsed Time: 1.748512 / 2.000000
+Elapsed Time: 1.753162 / 2.000000
+Elapsed Time: 1.757813 / 2.000000
+Elapsed Time: 1.762463 / 2.000000
+Elapsed Time: 1.767113 / 2.000000
+Elapsed Time: 1.771763 / 2.000000
+Elapsed Time: 1.776414 / 2.000000
+Elapsed Time: 1.781064 / 2.000000
+Elapsed Time: 1.785714 / 2.000000
+Elapsed Time: 1.790365 / 2.000000
+Elapsed Time: 1.795015 / 2.000000
+Elapsed Time: 1.799665 / 2.000000
+Elapsed Time: 1.804315 / 2.000000
+Elapsed Time: 1.808966 / 2.000000
+Elapsed Time: 1.813616 / 2.000000
+Elapsed Time: 1.818266 / 2.000000
+Elapsed Time: 1.822917 / 2.000000
+Elapsed Time: 1.827567 / 2.000000
+Elapsed Time: 1.832217 / 2.000000
+Elapsed Time: 1.836868 / 2.000000
+Elapsed Time: 1.841518 / 2.000000
+Elapsed Time: 1.846168 / 2.000000
+Elapsed Time: 1.850818 / 2.000000
+Elapsed Time: 1.855469 / 2.000000
+Elapsed Time: 1.860119 / 2.000000
+Elapsed Time: 1.864769 / 2.000000
+Elapsed Time: 1.869420 / 2.000000
+Elapsed Time: 1.874070 / 2.000000
+Elapsed Time: 1.878720 / 2.000000
+Elapsed Time: 1.883371 / 2.000000
+Elapsed Time: 1.888021 / 2.000000
+Elapsed Time: 1.892671 / 2.000000
+Elapsed Time: 1.897321 / 2.000000
+Elapsed Time: 1.901972 / 2.000000
+Elapsed Time: 1.906622 / 2.000000
+Elapsed Time: 1.911272 / 2.000000
+Elapsed Time: 1.915923 / 2.000000
+Elapsed Time: 1.920573 / 2.000000
+Elapsed Time: 1.925223 / 2.000000
+Elapsed Time: 1.929874 / 2.000000
+Elapsed Time: 1.934524 / 2.000000
+Elapsed Time: 1.939174 / 2.000000
+Elapsed Time: 1.943824 / 2.000000
+Elapsed Time: 1.948475 / 2.000000
+Elapsed Time: 1.953125 / 2.000000
+Elapsed Time: 1.957775 / 2.000000
+Elapsed Time: 1.962426 / 2.000000
+Elapsed Time: 1.967076 / 2.000000
+Elapsed Time: 1.971726 / 2.000000
+Elapsed Time: 1.976376 / 2.000000
+Elapsed Time: 1.981027 / 2.000000
+Elapsed Time: 1.985677 / 2.000000
+Elapsed Time: 1.990327 / 2.000000
+Elapsed Time: 1.994978 / 2.000000
+Elapsed Time: 1.999628 / 2.000000
+Node name: r251n04, rank: 62, local_rank: 2, device_energy_consumption [J]: 7235.69
+Node name: r224n01, rank: 31, local_rank: 3, device_energy_consumption [J]: 7128.75
+Node name: r237n05, rank: 40, local_rank: 0, device_energy_consumption [J]: 6707.67
+Node name: r221n14, rank: 27, local_rank: 3, device_energy_consumption [J]: 6646.14
+Node name: r251n04, rank: 61, local_rank: 1, device_energy_consumption [J]: 7215.19
+Node name: r237n05, rank: 41, local_rank: 1, device_energy_consumption [J]: 6705.27
+Node name: r224n01, rank: 28, local_rank: 0, device_energy_consumption [J]: 7141.46
+Node name: r251n04, rank: 63, local_rank: 3, device_energy_consumption [J]: 7241.1
+Node name: r248n02, rank: 56, local_rank: 0, device_energy_consumption [J]: 8277.87
+Node name: r206n06, rank: 2, local_rank: 2, device_energy_consumption [J]: 7357.19
+Node name: r206n06, rank: 0, local_rank: 0, device_energy_consumption [J]: 7330.22
+CPU Time: 516.334 sec
+Node name: r224n01, rank: 30, local_rank: 2, device_energy_consumption [J]: 7134.99
+Node name: r251n04, rank: 60, local_rank: 0, device_energy_consumption [J]: 7221.93
+Node name: r237n05, rank: 42, local_rank: 2, device_energy_consumption [J]: 6709.42
+Node name: r206n06, rank: 1, local_rank: 1, device_energy_consumption [J]: 7346.54
+Node name: r206n06, rank: 3, local_rank: 3, device_energy_consumption [J]: 7343.73
+Node name: r224n01, rank: 29, local_rank: 1, device_energy_consumption [J]: 7145.76
+Node name: r240n13, rank: 45, local_rank: 1, device_energy_consumption [J]: 7107.54
+Node name: r221n14, rank: 25, local_rank: 1, device_energy_consumption [J]: 6653.85
+Node name: r248n02, rank: 58, local_rank: 2, device_energy_consumption [J]: 8271.93
+Node name: r211n07, rank: 8, local_rank: 0, device_energy_consumption [J]: 5768.96
+Node name: r215n02, rank: 12, local_rank: 0, device_energy_consumption [J]: 7546.79
+Node name: r237n05, rank: 43, local_rank: 3, device_energy_consumption [J]: 6707.81
+Node name: r248n02, rank: 59, local_rank: 3, device_energy_consumption [J]: 8231.89
+Node name: r216n01, rank: 17, local_rank: 1, device_energy_consumption [J]: 7003.17
+Node name: r211n07, rank: 9, local_rank: 1, device_energy_consumption [J]: 5757.99
+Node name: r215n02, rank: 13, local_rank: 1, device_energy_consumption [J]: 7559.54
+Node name: r227n05, rank: 35, local_rank: 3, device_energy_consumption [J]: 7361.44
+Node name: r240n13, rank: 47, local_rank: 3, device_energy_consumption [J]: 7113.48
+Node name: r221n14, rank: 24, local_rank: 0, device_energy_consumption [J]: 6669.02
+Node name: r248n02, rank: 57, local_rank: 1, device_energy_consumption [J]: 8276.57
+Node name: r216n01, rank: 19, local_rank: 3, device_energy_consumption [J]: 6973.83
+Node name: r211n07, rank: 10, local_rank: 2, device_energy_consumption [J]: 5755.53
+Node name: r215n02, rank: 14, local_rank: 2, device_energy_consumption [J]: 7539.76
+Node name: r236n01, rank: 38, local_rank: 2, device_energy_consumption [J]: 6472.57
+Node name: r227n05, rank: 33, local_rank: 1, device_energy_consumption [J]: 7381.84
+Node name: r240n13, rank: 46, local_rank: 2, device_energy_consumption [J]: 7105.91
+Node name: r221n14, rank: 26, local_rank: 2, device_energy_consumption [J]: 6638.13
+Node name: r246n02, rank: 48, local_rank: 0, device_energy_consumption [J]: 6397.87
+Node name: r216n01, rank: 16, local_rank: 0, device_energy_consumption [J]: 6991.77
+Node name: r211n07, rank: 11, local_rank: 3, device_energy_consumption [J]: 5756.84
+Node name: r215n02, rank: 15, local_rank: 3, device_energy_consumption [J]: 7524.32
+Node name: r236n01, rank: 37, local_rank: 1, device_energy_consumption [J]: 6475.06
+Node name: r227n05, rank: 32, local_rank: 0, device_energy_consumption [J]: 7378.88
+Node name: r209n10, rank: 5, local_rank: 1, device_energy_consumption [J]: 5727.67
+Node name: r240n13, rank: 44, local_rank: 0, device_energy_consumption [J]: 7089.25
+Node name: r218n02, rank: 22, local_rank: 2, device_energy_consumption [J]: 7336.34
+Node name: r246n02, rank: 51, local_rank: 3, device_energy_consumption [J]: 6410.66
+Node name: r216n01, rank: 18, local_rank: 2, device_energy_consumption [J]: 6982.12
+Node name: r236n01, rank: 39, local_rank: 3, device_energy_consumption [J]: 6478.03
+Node name: r227n05, rank: 34, local_rank: 2, device_energy_consumption [J]: 7356.88
+Node name: r209n10, rank: 4, local_rank: 0, device_energy_consumption [J]: 5719.95
+Node name: r218n02, rank: 20, local_rank: 0, device_energy_consumption [J]: 7356.55
+Node name: r246n02, rank: 49, local_rank: 1, device_energy_consumption [J]: 6396.34
+Node name: r209n10, rank: 6, local_rank: 2, device_energy_consumption [J]: 5718.33
+Node name: r218n02, rank: 21, local_rank: 1, device_energy_consumption [J]: 7374.23
+Node name: r246n02, rank: 50, local_rank: 2, device_energy_consumption [J]: 6400.07
+Node name: r236n01, rank: 36, local_rank: 0, device_energy_consumption [J]: 6478.32
+Node name: r209n10, rank: 7, local_rank: 3, device_energy_consumption [J]: 5751.41
+Node name: r218n02, rank: 23, local_rank: 3, device_energy_consumption [J]: 7337.21
+Node name: r247n20, rank: 53, local_rank: 1, device_energy_consumption [J]: 6963.9
+Node name: r247n20, rank: 52, local_rank: 0, device_energy_consumption [J]: 6967.13
+Node name: r247n20, rank: 54, local_rank: 2, device_energy_consumption [J]: 6972.06
+Node name: r247n20, rank: 55, local_rank: 3, device_energy_consumption [J]: 6972.86
+d_mass: 0.000000e+00
+d_te:   1.998626e-06
+Pool Memory High Water Mark:       1514496
+Pool Memory High Water Efficiency: 0.00141048
+Pool Memory High Water Mark:       1514496
+Pool Memory High Water Efficiency: 0.00141048
+Pool Memory High Water Mark:       1514496
+Pool Memory High Water Efficiency: 0.00141048
+Pool Memory High Water Mark:       1514496
+Pool Memory High Water Efficiency: 0.00141048
+Pool Memory High Water Mark:       1514496
+Pool Memory High Water Efficiency: 0.00141048
+Pool Memory High Water Mark:       1514496
+Pool Memory High Water Efficiency: 0.00141048
+Pool Memory High Water Mark:       1514496
+Pool Memory High Water Efficiency: 0.00141048
+Pool Memory High Water Mark:       1514496
+Pool Memory High Water Efficiency: 0.00141048
+Pool Memory High Water Mark:       1514496
+Pool Memory High Water Efficiency: 0.00141048
+Pool Memory High Water Mark:       1514496
+Pool Memory High Water Efficiency: 0.00141048
+Pool Memory High Water Mark:       1514496
+Pool Memory High Water Efficiency: 0.00141048
+Pool Memory High Water Mark:       1514496
+Pool Memory High Water Efficiency: 0.00141048
+Pool Memory High Water Mark:       1514496
+Pool Memory High Water Efficiency: 0.00141048
+Pool Memory High Water Mark:       1514496
+Pool Memory High Water Efficiency: 0.00141048
+Pool Memory High Water Mark:       1514496
+Pool Memory High Water Efficiency: 0.00141048
+Pool Memory High Water Mark:       1514496
+Pool Memory High Water Efficiency: 0.00141048
+Pool Memory High Water Mark:       1514496
+Pool Memory High Water Efficiency: 0.00141048
+Pool Memory High Water Mark:       1514496
+Pool Memory High Water Efficiency: 0.00141048
+Pool Memory High Water Mark:       1514496
+Pool Memory High Water Efficiency: 0.00141048
+Pool Memory High Water Mark:       1514496
+Pool Memory High Water Efficiency: 0.00141048
+Pool Memory High Water Mark:       1514496
+Pool Memory High Water Efficiency: 0.00141048
+Pool Memory High Water Mark:       1514496
+Pool Memory High Water Efficiency: 0.00141048
+Pool Memory High Water Mark:       1514496
+Pool Memory High Water Efficiency: 0.00141048
+Pool Memory High Water Mark:       1514496
+Pool Memory High Water Efficiency: 0.00141048
+Pool Memory High Water Mark:       1514496
+Pool Memory High Water Efficiency: 0.00141048
+Pool Memory High Water Mark:       1514496
+Pool Memory High Water Efficiency: 0.00141048
+Pool Memory High Water Mark:       1514496
+Pool Memory High Water Efficiency: 0.00141048
+Pool Memory High Water Mark:       1514496
+Pool Memory High Water Efficiency: 0.00141048
+Pool Memory High Water Mark:       1514496
+Pool Memory High Water Efficiency: 0.00141048
+Pool Memory High Water Mark:       1514496
+Pool Memory High Water Efficiency: 0.00141048
+Pool Memory High Water Mark:       1514496
+Pool Memory High Water Efficiency: 0.00141048
+Pool Memory High Water Mark:       1514496
+Pool Memory High Water Efficiency: 0.00141048
+Pool Memory High Water Mark:       1514496
+Pool Memory High Water Efficiency: 0.00141048
+Pool Memory High Water Mark:       1514496
+Pool Memory High Water Efficiency: 0.00141048
+Pool Memory High Water Mark:       1514496
+Pool Memory High Water Efficiency: 0.00141048
+Pool Memory High Water Mark:       1514496
+Pool Memory High Water Efficiency: 0.00141048
+Pool Memory High Water Mark:       1514496
+Pool Memory High Water Efficiency: 0.00141048
+Pool Memory High Water Mark:       1514496
+Pool Memory High Water Efficiency: 0.00141048
+Pool Memory High Water Mark:       1514496
+Pool Memory High Water Efficiency: 0.00141048
+Pool Memory High Water Mark:       1514496
+Pool Memory High Water Efficiency: 0.00141048
+Pool Memory High Water Mark:       1514496
+Pool Memory High Water Efficiency: 0.00141048
+Pool Memory High Water Mark:       1514496
+Pool Memory High Water Efficiency: 0.00141048
+Pool Memory High Water Mark:       1514496
+Pool Memory High Water Efficiency: 0.00141048
+Pool Memory High Water Mark:       1514496
+Pool Memory High Water Efficiency: 0.00141048
+Pool Memory High Water Mark:       1514496
+Pool Memory High Water Efficiency: 0.00141048
+Pool Memory High Water Mark:       1514496
+Pool Memory High Water Efficiency: 0.00141048
+Pool Memory High Water Mark:       1514496
+Pool Memory High Water Efficiency: 0.00141048
+Pool Memory High Water Mark:       1514496
+Pool Memory High Water Efficiency: 0.00141048
+Pool Memory High Water Mark:       1514496
+Pool Memory High Water Efficiency: 0.00141048
+Pool Memory High Water Mark:       1514496
+Pool Memory High Water Efficiency: 0.00141048
+Pool Memory High Water Mark:       1514496
+Pool Memory High Water Efficiency: 0.00141048
+Pool Memory High Water Mark:       1514496
+Pool Memory High Water Efficiency: 0.00141048
+Pool Memory High Water Mark:       1514496
+Pool Memory High Water Efficiency: 0.00141048
+Pool Memory High Water Mark:       1514496
+Pool Memory High Water Efficiency: 0.00141048
+Pool Memory High Water Mark:       1514496
+Pool Memory High Water Efficiency: 0.00141048
+Pool Memory High Water Mark:       1514496
+Pool Memory High Water Efficiency: 0.00141048
+Pool Memory High Water Mark:       1514496
+Pool Memory High Water Efficiency: 0.00141048
+Pool Memory High Water Mark:       1514496
+Pool Memory High Water Efficiency: 0.00141048
+Pool Memory High Water Mark:       1514496
+Pool Memory High Water Efficiency: 0.00141048
+Pool Memory High Water Mark:       1514496
+Pool Memory High Water Efficiency: 0.00141048
+Pool Memory High Water Mark:       1514496
+Pool Memory High Water Efficiency: 0.00141048
+Pool Memory High Water Mark:       1514496
+Pool Memory High Water Efficiency: 0.00141048
+Pool Memory High Water Mark:       1514496
+Pool Memory High Water Efficiency: 0.00141048
+Pool Memory High Water Mark:       1514496
+Pool Memory High Water Efficiency: 0.00141048

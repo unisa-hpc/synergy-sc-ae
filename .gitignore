@@ -20,4 +20,7 @@ executables/
 **/placeholder/es*/
 **/placeholder/pl*/
 energy-scaling/**/predictions/
+energy-scaling/**/parsed/
+energy-scaling/**/plots/
+energy-scaling/**/logs/
 gpu-freq.csv

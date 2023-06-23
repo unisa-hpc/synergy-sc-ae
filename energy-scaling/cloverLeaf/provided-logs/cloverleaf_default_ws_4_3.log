@@ -1,0 +1,738 @@
+
+Clover Version 1.300
+Kokkos Version
+Task Count 16
+
+Output file clover.out opened. All output will go there.
+Detected SYCL devices:
+Detected SYCL devices:
+Detected SYCL devices:
+Detected SYCL devices:
+Detected SYCL devices:
+Detected SYCL devices:
+Detected SYCL devices:
+Detected SYCL devices:
+Detected SYCL devices:
+  0. Tesla V100-SXM2-16GB(gpu)
+Detected SYCL devices:
+Detected SYCL devices:
+  0. Tesla V100-SXM2-16GB(gpu)
+  0. Tesla V100-SXM2-16GB(gpu)
+Detected SYCL devices:
+  0. Tesla V100-SXM2-16GB(gpu)
+  0. Tesla V100-SXM2-16GB(gpu)
+  0. Tesla V100-SXM2-16GB(gpu)
+  0. Tesla V100-SXM2-16GB(gpu)
+  0. Tesla V100-SXM2-16GB(gpu)
+  0. Tesla V100-SXM2-16GB(gpu)
+  0. Tesla V100-SXM2-16GB(gpu)
+  0. Tesla V100-SXM2-16GB(gpu)
+  0. Tesla V100-SXM2-16GB(gpu)
+  1. Tesla V100-SXM2-16GB(gpu)
+  1. Tesla V100-SXM2-16GB(gpu)
+  1. Tesla V100-SXM2-16GB(gpu)
+  1. Tesla V100-SXM2-16GB(gpu)
+  1. Tesla V100-SXM2-16GB(gpu)
+  1. Tesla V100-SXM2-16GB(gpu)
+  1. Tesla V100-SXM2-16GB(gpu)
+  1. Tesla V100-SXM2-16GB(gpu)
+  1. Tesla V100-SXM2-16GB(gpu)
+  1. Tesla V100-SXM2-16GB(gpu)
+  1. Tesla V100-SXM2-16GB(gpu)
+Detected SYCL devices:
+  1. Tesla V100-SXM2-16GB(gpu)
+Detected SYCL devices:
+Detected SYCL devices:
+Detected SYCL devices:
+  2. Tesla V100-SXM2-16GB(gpu)
+  2. Tesla V100-SXM2-16GB(gpu)
+  0. Tesla V100-SXM2-16GB(gpu)
+  2. Tesla V100-SXM2-16GB(gpu)
+  2. Tesla V100-SXM2-16GB(gpu)
+  2. Tesla V100-SXM2-16GB(gpu)
+  2. Tesla V100-SXM2-16GB(gpu)
+  0. Tesla V100-SXM2-16GB(gpu)
+  2. Tesla V100-SXM2-16GB(gpu)
+  2. Tesla V100-SXM2-16GB(gpu)
+  2. Tesla V100-SXM2-16GB(gpu)
+  2. Tesla V100-SXM2-16GB(gpu)
+  2. Tesla V100-SXM2-16GB(gpu)
+  0. Tesla V100-SXM2-16GB(gpu)
+  2. Tesla V100-SXM2-16GB(gpu)
+  0. Tesla V100-SXM2-16GB(gpu)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+  1. Tesla V100-SXM2-16GB(gpu)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+  1. Tesla V100-SXM2-16GB(gpu)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+  1. Tesla V100-SXM2-16GB(gpu)
+  1. Tesla V100-SXM2-16GB(gpu)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+  2. Tesla V100-SXM2-16GB(gpu)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+  2. Tesla V100-SXM2-16GB(gpu)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+  2. Tesla V100-SXM2-16GB(gpu)
+  2. Tesla V100-SXM2-16GB(gpu)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+  3. Tesla V100-SXM2-16GB(gpu)
+  4. SYCL host device(host)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+Using SYCL device: Tesla V100-SXM2-16GB(gpu)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Launching hydro
+Launching hydro
+Launching hydro
+Launching hydro
+Launching hydro
+Launching hydro
+Launching hydro
+Launching hydro
+Launching hydro
+Launching hydro
+Launching hydro
+Launching hydro
+Launching hydro
+Launching hydro
+Launching hydro
+Launching hydro
+ Step 1 time 0 control sound timestep  0.000192581 1,1 x 1.73837e-310 y 6.95334e-310
+Wall clock 10.8393
+Average time per cell 2.29715e-08
+Step time per cell    2.29715e-08
+ Step 2 time 0.000192581 control sound timestep  0.000164867 1,1 x 0 y 6.95334e-310
+Wall clock 22.1462
+Average time per cell 2.34669e-08
+Step time per cell    2.39592e-08
+ Step 3 time 0.000357448 control sound timestep  0.000141228 1,1 x 0 y 6.95334e-310
+Wall clock 32.9345
+Average time per cell 2.32658e-08
+Step time per cell    2.28599e-08
+ Step 4 time 0.000498676 control sound timestep  0.000129047 1,1 x 0 y 6.95334e-310
+Wall clock 44.4417
+Average time per cell 2.35461e-08
+Step time per cell    2.4383e-08
+ Step 5 time 0.000627723 control sound timestep  0.000136911 1,1 x 0 y 6.95334e-310
+Wall clock 55.6142
+Average time per cell 2.35724e-08
+Step time per cell    2.3674e-08
+ Step 6 time 0.000764634 control sound timestep  0.000127051 1,1 x 0 y 6.95334e-310
+Wall clock 66.7746
+Average time per cell 2.35856e-08
+Step time per cell    2.36479e-08
+ Step 7 time 0.000891685 control sound timestep  0.000127481 1,1 x 0 y 6.95334e-310
+Wall clock 77.9778
+Average time per cell 2.36081e-08
+Step time per cell    2.3739e-08
+ Step 8 time 0.00101917 control sound timestep  0.00012945 1,1 x 0 y 6.95334e-310
+Wall clock 89.1103
+Average time per cell 2.36062e-08
+Step time per cell    2.35893e-08
+ Step 9 time 0.00114862 control sound timestep  0.000130046 1,1 x 0 y 6.95334e-310
+Wall clock 100.083
+Average time per cell 2.35672e-08
+Step time per cell    2.32515e-08
+ Step 10 time 0.00127866 control sound timestep  0.000130853 1,1 x 0 y 6.95334e-310
+Wall clock 112.483
+Average time per cell 2.38382e-08
+Step time per cell    2.62744e-08
+ Step 11 time 0.00140952 control sound timestep  0.000131042 1,1 x 0 y 6.95334e-310
+Wall clock 122.947
+Average time per cell 2.36871e-08
+Step time per cell    2.21755e-08
+ Step 12 time 0.00154056 control sound timestep  0.000132953 1,1 x 0 y 6.95334e-310
+Wall clock 134.012
+Average time per cell 2.36674e-08
+Step time per cell    2.34478e-08
+ Step 13 time 0.00167351 control sound timestep  0.00013511 1,1 x 0 y 6.95334e-310
+Wall clock 145.225
+Average time per cell 2.36748e-08
+Step time per cell    2.376e-08
+ Step 14 time 0.00180862 control sound timestep  0.000136391 1,1 x 0 y 6.95334e-310
+Wall clock 156.335
+Average time per cell 2.36656e-08
+Step time per cell    2.35408e-08
+ Step 15 time 0.00194501 control sound timestep  0.000136235 1,1 x 0 y 6.95334e-310
+Wall clock 167.625
+Average time per cell 2.3683e-08
+Step time per cell    2.39228e-08
+ Step 16 time 0.00208125 control sound timestep  0.000135792 1,1 x 0 y 6.95334e-310
+Wall clock 178.7
+Average time per cell 2.36697e-08
+Step time per cell    2.34664e-08
+ Step 17 time 0.00221704 control sound timestep  0.000135855 1,1 x 0 y 6.95334e-310
+Wall clock 189.65
+Average time per cell 2.36424e-08
+Step time per cell    2.32019e-08
+ Step 18 time 0.00235289 control sound timestep  0.000136212 1,1 x 0 y 6.95334e-310
+Wall clock 200.784
+Average time per cell 2.36398e-08
+Step time per cell    2.35926e-08
+ Step 19 time 0.00248911 control sound timestep  0.000136834 1,1 x 0 y 6.95334e-310
+Wall clock 211.726
+Average time per cell 2.36161e-08
+Step time per cell    2.31855e-08
+ Step 20 time 0.00262594 control sound timestep  0.000137267 1,1 x 0 y 6.95334e-310
+Wall clock 224.242
+Average time per cell 2.37615e-08
+Step time per cell    2.65205e-08
+ Step 21 time 0.00276321 control sound timestep  0.000136848 1,1 x 0 y 6.95334e-310
+Wall clock 234.763
+Average time per cell 2.36918e-08
+Step time per cell    2.22978e-08
+ Step 22 time 0.00290006 control sound timestep  0.000136507 1,1 x 0 y 6.95334e-310
+Wall clock 245.641
+Average time per cell 2.36627e-08
+Step time per cell    2.30486e-08
+ Step 23 time 0.00303656 control sound timestep  0.000136424 1,1 x 0 y 6.95334e-310
+Wall clock 256.935
+Average time per cell 2.36746e-08
+Step time per cell    2.39329e-08
+ Step 24 time 0.00317299 control sound timestep  0.000136495 1,1 x 0 y 6.95334e-310
+Wall clock 267.9
+Average time per cell 2.36564e-08
+Step time per cell    2.32337e-08
+ Step 25 time 0.00330948 control sound timestep  0.000136799 1,1 x 0 y 6.95334e-310
+Wall clock 279.069
+Average time per cell 2.36569e-08
+Step time per cell    2.3665e-08
+ Step 26 time 0.00344628 control sound timestep  0.000137093 1,1 x 0 y 6.95334e-310
+Wall clock 290.222
+Average time per cell 2.36562e-08
+Step time per cell    2.36343e-08
+ Step 27 time 0.00358338 control sound timestep  0.00013694 1,1 x 0 y 6.95334e-310
+Wall clock 301.374
+Average time per cell 2.36554e-08
+Step time per cell    2.36293e-08
+ Step 28 time 0.00372032 control sound timestep  0.000136723 1,1 x 0 y 6.95334e-310
+Wall clock 312.188
+Average time per cell 2.3629e-08
+Step time per cell    2.29138e-08
+ Step 29 time 0.00385704 control sound timestep  0.000136635 1,1 x 0 y 6.95334e-310
+Wall clock 323.75
+Average time per cell 2.36591e-08
+Step time per cell    2.4492e-08
+ Step 30 time 0.00399367 control sound timestep  0.000136627 1,1 x 0 y 6.95334e-310
+Wall clock 335.613
+Average time per cell 2.37086e-08
+Step time per cell    2.51376e-08
+ Step 31 time 0.0041303 control sound timestep  0.000136745 1,1 x 0 y 6.95334e-310
+Wall clock 346.253
+Average time per cell 2.36712e-08
+Step time per cell    2.25485e-08
+ Step 32 time 0.00426704 control sound timestep  0.000136911 1,1 x 0 y 6.95334e-310
+Wall clock 357.629
+Average time per cell 2.36848e-08
+Step time per cell    2.41043e-08
+ Step 33 time 0.00440396 control sound timestep  0.000136917 1,1 x 0 y 6.95334e-310
+Wall clock 368.707
+Average time per cell 2.36785e-08
+Step time per cell    2.34727e-08
+ Step 34 time 0.00454087 control sound timestep  0.00013678 1,1 x 0 y 6.95334e-310
+Wall clock 379.636
+Average time per cell 2.36633e-08
+Step time per cell    2.3158e-08
+ Step 35 time 0.00467765 control sound timestep  0.000136714 1,1 x 0 y 6.95334e-310
+Wall clock 390.669
+Average time per cell 2.36553e-08
+Step time per cell    2.33792e-08
+ Step 36 time 0.00481437 control sound timestep  0.000136707 1,1 x 0 y 6.95334e-310
+Wall clock 401.721
+Average time per cell 2.36488e-08
+Step time per cell    2.34186e-08
+ Step 37 time 0.00495107 control sound timestep  0.000136766 1,1 x 0 y 6.95334e-310
+Wall clock 412.851
+Average time per cell 2.36472e-08
+Step time per cell    2.35834e-08
+ Step 38 time 0.00508784 control sound timestep  0.00013687 1,1 x 0 y 6.95334e-310
+Wall clock 423.982
+Average time per cell 2.36457e-08
+Step time per cell    2.35853e-08
+ Step 39 time 0.00522471 control sound timestep  0.00013689 1,1 x 0 y 6.95334e-310
+Wall clock 435.049
+Average time per cell 2.36407e-08
+Step time per cell    2.34499e-08
+ Step 40 time 0.0053616 control sound timestep  0.000136801 1,1 x 0 y 6.95334e-310
+Wall clock 447.498
+Average time per cell 2.37093e-08
+Step time per cell    2.6379e-08
+ Step 41 time 0.0054984 control sound timestep  0.000136755 1,1 x 0 y 6.95334e-310
+Wall clock 458.013
+Average time per cell 2.36745e-08
+Step time per cell    2.22842e-08
+ Step 42 time 0.00563516 control sound timestep  0.000136748 1,1 x 0 y 6.95334e-310
+Wall clock 468.892
+Average time per cell 2.36598e-08
+Step time per cell    2.30518e-08
+ Step 43 time 0.0057719 control sound timestep  0.000136787 1,1 x 0 y 6.95334e-310
+Wall clock 480.132
+Average time per cell 2.36635e-08
+Step time per cell    2.38166e-08
+ Step 44 time 0.00590869 control sound timestep  0.000136856 1,1 x 0 y 6.95334e-310
+Wall clock 491.147
+Average time per cell 2.36563e-08
+Step time per cell    2.33409e-08
+ Step 45 time 0.00604555 control sound timestep  0.000136866 1,1 x 0 y 6.95334e-310
+Wall clock 502.354
+Average time per cell 2.36584e-08
+Step time per cell    2.37474e-08
+ Step 46 time 0.00618241 control sound timestep  0.000136806 1,1 x 0 y 6.95334e-310
+Wall clock 513.605
+Average time per cell 2.36624e-08
+Step time per cell    2.38407e-08
+ Step 47 time 0.00631922 control sound timestep  0.000136771 1,1 x 0 y 6.95334e-310
+Wall clock 524.665
+Average time per cell 2.36577e-08
+Step time per cell    2.34357e-08
+ Step 48 time 0.00645599 control sound timestep  0.000136766 1,1 x 0 y 6.95334e-310
+Wall clock 535.853
+Average time per cell 2.36588e-08
+Step time per cell    2.37072e-08
+ Step 49 time 0.00659276 control sound timestep  0.000136801 1,1 x 0 y 6.95334e-310
+Wall clock 546.98
+Average time per cell 2.36572e-08
+Step time per cell    2.35778e-08
+ Step 50 time 0.00672956 control sound timestep  0.000136849 1,1 x 0 y 6.95334e-310
+Wall clock 559.193
+Average time per cell 2.37017e-08
+Step time per cell    2.58772e-08
+ Step 51 time 0.00686641 control sound timestep  0.000136857 1,1 x 0 y 6.95334e-310
+Wall clock 569.555
+Average time per cell 2.36675e-08
+Step time per cell    2.19601e-08
+ Step 52 time 0.00700326 control sound timestep  0.000136807 1,1 x 0 y 6.95334e-310
+Wall clock 580.719
+Average time per cell 2.36674e-08
+Step time per cell    2.36575e-08
+ Step 53 time 0.00714007 control sound timestep  0.00013678 1,1 x 0 y 6.95334e-310
+Wall clock 591.788
+Average time per cell 2.36634e-08
+Step time per cell    2.34547e-08
+ Step 54 time 0.00727685 control sound timestep  0.000136777 1,1 x 0 y 6.95334e-310
+Wall clock 603.137
+Average time per cell 2.36706e-08
+Step time per cell    2.40484e-08
+ Step 55 time 0.00741363 control sound timestep  0.000136807 1,1 x 0 y 6.95334e-310
+Wall clock 613.982
+Average time per cell 2.36581e-08
+Step time per cell    2.2876e-08
+ Step 56 time 0.00755043 control sound timestep  0.000136845 1,1 x 0 y 6.95334e-310
+Wall clock 625.115
+Average time per cell 2.3657e-08
+Step time per cell    2.35908e-08
+ Step 57 time 0.00768728 control sound timestep  0.000136849 1,1 x 0 y 6.95334e-310
+Wall clock 636.472
+Average time per cell 2.36642e-08
+Step time per cell    2.40653e-08
+ Step 58 time 0.00782413 control sound timestep  0.000136808 1,1 x 0 y 6.95334e-310
+Wall clock 647.752
+Average time per cell 2.36684e-08
+Step time per cell    2.39039e-08
+ Step 59 time 0.00796094 control sound timestep  0.000136785 1,1 x 0 y 6.95334e-310
+Wall clock 659.237
+Average time per cell 2.36798e-08
+Step time per cell    2.43372e-08
+ Step 60 time 0.00809772 control sound timestep  0.000136784 1,1 x 0 y 6.95334e-310
+Wall clock 671.258
+Average time per cell 2.37097e-08
+Step time per cell    2.54711e-08
+ Step 61 time 0.0082345 control sound timestep  0.000136808 1,1 x 0 y 6.95334e-310
+Wall clock 681.802
+Average time per cell 2.36873e-08
+Step time per cell    2.23467e-08
+ Step 62 time 0.00837131 control sound timestep  0.000136841 1,1 x 0 y 6.95334e-310
+Wall clock 692.831
+Average time per cell 2.36823e-08
+Step time per cell    2.33705e-08
+ Step 63 time 0.00850815 control sound timestep  0.000136845 1,1 x 0 y 6.95334e-310
+Wall clock 703.961
+Average time per cell 2.36808e-08
+Step time per cell    2.35826e-08
+ Step 64 time 0.008645 control sound timestep  0.000136813 1,1 x 0 y 6.95334e-310
+Wall clock 715.33
+Average time per cell 2.36872e-08
+Step time per cell    2.40911e-08
+ Step 65 time 0.00878181 control sound timestep  0.000136793 1,1 x 0 y 6.95334e-310
+Wall clock 726.812
+Average time per cell 2.36972e-08
+Step time per cell    2.43295e-08
+ Step 66 time 0.0089186 control sound timestep  0.000136795 1,1 x 0 y 6.95334e-310
+Wall clock 737.853
+Average time per cell 2.36926e-08
+Step time per cell    2.33945e-08
+ Step 67 time 0.0090554 control sound timestep  0.000136812 1,1 x 0 y 6.95334e-310
+Wall clock 749.027
+Average time per cell 2.36925e-08
+Step time per cell    2.36752e-08
+ Step 68 time 0.00919221 control sound timestep  0.000136839 1,1 x 0 y 6.95334e-310
+Wall clock 760.108
+Average time per cell 2.36894e-08
+Step time per cell    2.3481e-08
+ Step 69 time 0.00932905 control sound timestep  0.000136837 1,1 x 0 y 6.95334e-310
+Wall clock 771.156
+Average time per cell 2.36854e-08
+Step time per cell    2.34102e-08
+ Step 70 time 0.00946589 control sound timestep  0.000136812 1,1 x 0 y 6.95334e-310
+Wall clock 783.325
+Average time per cell 2.37155e-08
+Step time per cell    2.57847e-08
+ Step 71 time 0.0096027 control sound timestep  0.000136796 1,1 x 0 y 6.95334e-310
+Wall clock 793.769
+Average time per cell 2.36932e-08
+Step time per cell    2.21345e-08
+ Step 72 time 0.00973949 control sound timestep  0.000136797 1,1 x 0 y 6.95334e-310
+Wall clock 804.963
+Average time per cell 2.36936e-08
+Step time per cell    2.37198e-08
+ Step 73 time 0.00987629 control sound timestep  0.00013681 1,1 x 0 y 6.95334e-310
+Wall clock 815.897
+Average time per cell 2.36865e-08
+Step time per cell    2.31687e-08
+ Step 74 time 0.0100131 control sound timestep  0.000136835 1,1 x 0 y 6.95334e-310
+Wall clock 826.985
+Average time per cell 2.36839e-08
+Step time per cell    2.34948e-08
+ Step 75 time 0.0101499 control sound timestep  0.000136831 1,1 x 0 y 6.95334e-310
+Wall clock 838.08
+Average time per cell 2.36816e-08
+Step time per cell    2.35094e-08
+ Step 76 time 0.0102868 control sound timestep  0.000136807 1,1 x 0 y 6.95334e-310
+Wall clock 849.119
+Average time per cell 2.36779e-08
+Step time per cell    2.33899e-08
+ Step 77 time 0.0104236 control sound timestep  0.000136793 1,1 x 0 y 6.95334e-310
+Wall clock 860.292
+Average time per cell 2.36779e-08
+Step time per cell    2.36731e-08
+ Step 78 time 0.0105604 control sound timestep  0.000136796 1,1 x 0 y 6.95334e-310
+Wall clock 871.589
+Average time per cell 2.36813e-08
+Step time per cell    2.39384e-08
+ Step 79 time 0.0106972 control sound timestep  0.00013681 1,1 x 0 y 6.95334e-310
+Wall clock 882.624
+Average time per cell 2.36775e-08
+Step time per cell    2.33832e-08
+ Step 80 time 0.010834 control sound timestep  0.000136834 1,1 x 0 y 6.95334e-310
+Wall clock 894.988
+Average time per cell 2.37091e-08
+Step time per cell    2.61988e-08
+ Step 81 time 0.0109708 control sound timestep  0.000136832 1,1 x 0 y 6.95334e-310
+Wall clock 905.399
+Average time per cell 2.36888e-08
+Step time per cell    2.20639e-08
+ Step 82 time 0.0111076 control sound timestep  0.000136808 1,1 x 0 y 6.95334e-310
+Wall clock 916.378
+Average time per cell 2.36836e-08
+Step time per cell    2.32629e-08
+ Step 83 time 0.0112444 control sound timestep  0.000136798 1,1 x 0 y 6.95334e-310
+Wall clock 927.301
+Average time per cell 2.36772e-08
+Step time per cell    2.31473e-08
+ Step 84 time 0.0113812 control sound timestep  0.0001368 1,1 x 0 y 6.95334e-310
+Wall clock 938.829
+Average time per cell 2.36862e-08
+Step time per cell    2.44255e-08
+ Step 85 time 0.011518 control sound timestep  0.00013681 1,1 x 0 y 6.95334e-310
+Wall clock 949.889
+Average time per cell 2.36833e-08
+Step time per cell    2.34378e-08
+ Step 86 time 0.0116549 control sound timestep  0.000136831 1,1 x 0 y 6.95334e-310
+Wall clock 961.44
+Average time per cell 2.36925e-08
+Step time per cell    2.44749e-08
+ Step 87 time 0.0117917 control sound timestep  0.000136827 1,1 x 0 y 6.95334e-310
+Wall clock 973.366
+First step overhead 0
+Node name: r209n10, rank: 0, local_rank: 0, device_energy_consumption [J]: 15121.4
+Node name: r209n10, rank: 1, local_rank: 1, device_energy_consumption [J]: 14745.6
+Node name: r209n10, rank: 3, local_rank: 3, device_energy_consumption [J]: 15121.8
+Node name: r209n10, rank: 2, local_rank: 2, device_energy_consumption [J]: 14737.9
+Node name: r249n10, rank: 14, local_rank: 2, device_energy_consumption [J]: 16541.1
+Node name: r249n10, rank: 12, local_rank: 0, device_energy_consumption [J]: 16886.3
+Node name: r249n10, rank: 13, local_rank: 1, device_energy_consumption [J]: 16555.8
+Node name: r219n07, rank: 6, local_rank: 2, device_energy_consumption [J]: 12560.6
+Node name: r249n10, rank: 15, local_rank: 3, device_energy_consumption [J]: 16875.3
+Node name: r240n14, rank: 9, local_rank: 1, device_energy_consumption [J]: 8102.32
+Node name: r219n07, rank: 7, local_rank: 3, device_energy_consumption [J]: 12922.3
+Node name: r240n14, rank: 11, local_rank: 3, device_energy_consumption [J]: 8602.56
+Node name: r219n07, rank: 4, local_rank: 0, device_energy_consumption [J]: 12919
+Node name: r240n14, rank: 10, local_rank: 2, device_energy_consumption [J]: 8103.59
+Node name: r219n07, rank: 5, local_rank: 1, device_energy_consumption [J]: 12556.5
+Node name: r240n14, rank: 8, local_rank: 0, device_energy_consumption [J]: 8595.38
+Done
+Done
+Done
+Done
+Done
+Done
+Done
+Done
+Done
+Done
+Done
+Done
+Done
+Done
+Done
+Done
