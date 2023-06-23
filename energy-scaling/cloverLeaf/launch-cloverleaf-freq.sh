@@ -1,7 +1,5 @@
 #!/bin/bash
 
-
-# configurations=("max_perf" "min_energy" "min_edp" "min_ed2p")
 configurations=("default" "min_edp" "min_ed2p" "es_50" "pl_50")
 mkdir -p logs
 for conf in ${configurations[@]}; do

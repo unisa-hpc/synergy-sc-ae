@@ -31,7 +31,7 @@ Make sure that your current working directory is the folder containing this READ
 Before running the `run_microbenchmarks_cluster.sh` script complete the following missing data in the `microbench_job.sh` script:
   - `#SBATCH --account=<cluster_account_name>`
   - `#SBATCH --partition=<cluster_partition_name>`
-  - `#SBATCH --mail-user=<set_email>`
+  - `#SBATCH --mail-user=<user_email>`
 
 2. Run `source run_microbenchmarks_cluster.sh --cxx_compiler=<DPC++ compiler path> --cuda_arch=<CUDA architecture e.g. sm_70>` to run the micro-benchmarks and save the logs for parsing.
     - Optional parameters:

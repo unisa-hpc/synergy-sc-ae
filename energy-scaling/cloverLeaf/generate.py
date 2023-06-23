@@ -7,7 +7,6 @@ import getopt
 import subprocess
 import re
 
-
 # extract default frequency on nvidia GPU
 cmd_default_freq="nvidia-smi  -q | grep 'Default Applications Clocks' -A 2 | tail -n +2"
 result = subprocess.check_output(cmd_default_freq, shell=True, stderr=subprocess.STDOUT) # Launch the command and capture the output
@@ -33,7 +32,6 @@ min_ed2p_dir = script_dir + "/cloverLeafApp/placeholder/min_ed2p/"
 default_dir = script_dir + "/cloverLeafApp/placeholder/default/"
 es_50_dir = script_dir + "/cloverLeafApp/placeholder/es_50/"
 pl_50_dir = script_dir + "/cloverLeafApp/placeholder/pl_50/"
-
 
 paths_cpp_folder = [default_dir, min_edp_dir, min_ed2p_dir, es_50_dir, pl_50_dir]
 

@@ -1,7 +1,4 @@
 #!/usr/bin/python3
-# cmd example
-# python3 change_freq.py src_cpy/ predicted_freq/ max_perf/ min_energy/ min_edp/ min_ed2p/ default/
-# aggiungere spostamento del file generato  in src, compilare e spostare l'eseguibile in executable 
 
 import os, shutil
 import sys
@@ -9,7 +6,6 @@ import pandas as pd
 import getopt
 import subprocess
 import re
-
 
 # extract default frequency on nvidia GPU
 cmd_default_freq="nvidia-smi  -q | grep 'Default Applications Clocks' -A 2 | tail -n +2"
@@ -22,21 +18,13 @@ numbers = [int(number) for number in numbers] # Convert the matched numbers to i
 default_core_freq=numbers[0]
 default_memory_freq=numbers[1]
 
-
-# per ogni file in src che termina con cpp scorrerere e ogni file in 
-# prediction-csv
-# scorrere il file .cpp fino a trovare execute($mem_freq, $core_freq
-# e sotituire con le frequenza predette 877 e core_freq
-
 # take the path to the script folder
 script_dir = os.path.dirname(os.path.realpath(sys.argv[0]))
 
 placeholder_dir = script_dir + "/miniWeatherApp/placeholder/src_cpy/"
 
-#file con le predizioni
 prediction_dir = script_dir + "/predictions/"
 
-# cartelle di output con le varie configurazioni
 min_edp_dir = script_dir + "/miniWeatherApp/placeholder/min_edp/"
 min_ed2p_dir = script_dir + "/miniWeatherApp/placeholder/min_ed2p/"
 default_dir = script_dir + "/miniWeatherApp/placeholder/default/"
@@ -46,15 +34,15 @@ pl_50_dir = script_dir + "/miniWeatherApp/placeholder/pl_50/"
 paths_cpp_folder = [default_dir, min_edp_dir, min_ed2p_dir, es_50_dir, pl_50_dir]
 
 for path in paths_cpp_folder:
-    # create dir to strore the cpp files with the selected target frequency  
+    # create dir to store the .cpp files with the selected target frequency  
     os.makedirs(path, exist_ok=True)
-    #remove all files from created dir
+    # remove all files from created dir
     os.system(f"rm -f {path}/*")
 
 
-# contains the path to cpp file with final frequencies setted according to the specified target metric (e.g es_50, pl_50)
+# contains the path to cpp file with final frequencies set according to the specified target metric (e.g es_50, pl_50)
 cpp_files = []
-# contains tthe file with frequency values for each kernel in a cpp file
+# contains the file with frequency values for each kernel in a cpp file
 prediction_files = []
 
 # for cloverleaf we have more cpp file  
@@ -72,8 +60,6 @@ prediction_files.sort()
 
 for cpp_file, prediction_file in zip(cpp_files, prediction_files):
     cpp_read_file = open(placeholder_dir+cpp_file, 'r')
-    #creare 4 file nelle cartelle diverse 
-    #sostituire le frequenze nella linea e salvare il file 
     lines_cpp_file = cpp_read_file.readlines()
     df_prediction = pd.read_csv(prediction_dir+prediction_file)
 
@@ -123,7 +109,7 @@ for cpp_file, prediction_file in zip(cpp_files, prediction_files):
             i=i+1
 
 
-# proble input size for x and z dimension
+# problem input size for x and z dimension
 nx_sizes = [3072, 4096, 5120, 6144, 7168]
 nz_size = 1536
 # parse the command line parameters for miniWeather compilation
