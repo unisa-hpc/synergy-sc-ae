@@ -4,9 +4,7 @@ CXX_COMPILER=""
 CXX_FLAGS=""
 sampling=1
 
-compute_capability=$(nvidia-smi --query-gpu=compute_cap --format=csv,noheader | tr -d .)
-cuda_arch=sm_${compute_capability}
-
+cuda_arch=""
 # Parse command-line arguments
 while [[ $# -gt 0 ]]; do
     case "$1" in
@@ -22,12 +20,29 @@ while [[ $# -gt 0 ]]; do
             sampling="${1#*=}"
             shift
             ;;
+        --cuda_arch=*)
+            cuda_arch="${1#*=}"
+            shift
+            ;;
         *)
             echo "Invalid argument: $1"
             return 1
             ;;
     esac
 done
+
+if [ -z "$CXX_COMPILER" ]
+  then
+    echo "Provide the absolute path to the DPC++ compiler as --cxx_compiler argument"
+	return
+fi
+
+if [ -z "$cuda_arch" ]
+  then
+    echo "Provide the cuda architecture as --cuda_arch argument (e.g: sm_70) "
+	return
+fi
+
 
 DPCPP_CLANG=$CXX_COMPILER
 BIN_DIR=$(dirname $DPCPP_CLANG)
