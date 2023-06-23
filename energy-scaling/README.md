@@ -15,6 +15,9 @@ The script generate an executable *parallel_for_energyMetric_numNodes* for each 
 The launch.sh script runs the generate.py script on a NVIDIA RTX Quadro 4000 (Note: we can provide this script for V100 on furore and on Marconi 100)
 
 ## CloverLeaf
-### Step to reproduce
+### Step to reproduce on single-node
+
+### Step to reproduce on multi-node
+- run the `launch-cloverleaf-freq.sh` script
 
 
