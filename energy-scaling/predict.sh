@@ -8,5 +8,8 @@ echo `nvidia-smi --query-supported-clocks=gr --format=csv,noheader,nounits` | tr
 nvsmi_out=$(nvidia-smi  -q | grep "Default Applications Clocks" -A 2 | tail -n +2)
 def_core=$(echo $nvsmi_out | awk '{print $3}')
 
+echo "Predicting frequencies for Cloverleaf..."
 python3 $SCRIPT_DIR/cloverLeaf/predict.py $def_core
+
+echo "Predicting frequencies for MiniWeather..."
 python3 $SCRIPT_DIR/miniWeather/predict.py $def_core
