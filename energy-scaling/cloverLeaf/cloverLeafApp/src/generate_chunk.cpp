@@ -90,7 +90,7 @@ void generate_chunk(const int tile, global_variables &globals) {
 	field_type &field = globals.chunk.tiles[tile].field;
 
 
-	clover::execute(globals.queue, "generate_chunk_1" ,[&](handler &h) {
+	clover::execute(1107, 1155,globals.queue, "generate_chunk_1" ,[&](handler &h) {
 		auto density0 = field.density0.access<RW>(h);
 		auto xvel0 = field.xvel0.access<RW>(h);
 		auto yvel0 = field.yvel0.access<RW>(h);
@@ -110,7 +110,7 @@ void generate_chunk(const int tile, global_variables &globals) {
 	});
 	
 	for (int state = 1; state < globals.config.number_of_states; ++state) {
-		clover::execute(globals.queue,"generate_chunk_2", [&](handler &h) {
+		clover::execute(1107, 1162,globals.queue,"generate_chunk_2", [&](handler &h) {
 
 			auto density0 = field.density0.access<RW>(h);
 			auto xvel0 = field.xvel0.access<RW>(h);

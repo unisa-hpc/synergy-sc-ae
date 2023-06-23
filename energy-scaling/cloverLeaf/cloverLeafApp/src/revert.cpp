@@ -54,7 +54,7 @@ void revert(global_variables &globals) {
 
 	for (int tile = 0; tile < globals.config.tiles_per_chunk; ++tile) {
 
-		clover::execute(globals.queue,"revert_1", [&](handler &h) {
+		clover::execute(1107, 1155,globals.queue,"revert_1", [&](handler &h) {
 			tile_type &t = globals.chunk.tiles[tile];
 			revert_kernel(
 					h,

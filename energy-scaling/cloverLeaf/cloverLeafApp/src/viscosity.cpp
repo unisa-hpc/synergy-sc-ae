@@ -97,7 +97,7 @@ void viscosity(global_variables &globals) {
 
 	for (int tile = 0; tile < globals.config.tiles_per_chunk; ++tile) {
 		tile_type &t = globals.chunk.tiles[tile];
-		clover::execute(globals.queue,"viscosity_1", [&](handler &h) {
+		clover::execute(1107, 1155,globals.queue,"viscosity_1", [&](handler &h) {
 			viscosity_kernel(h,
 			                 t.info.t_xmin,
 			                 t.info.t_xmax,

@@ -32,20 +32,17 @@ while [[ $# -gt 0 ]]; do
     esac
 done
 
-
 if [ -z "$CXX_COMPILER" ]
   then
     echo "Provide the absolute path to the DPC++ compiler as --cxx_compiler argument"
 	return
 fi
 
-
 if [ -z "$cuda_arch" ]
   then
     echo "Provide the cuda architecture as --cuda_arch argument (e.g: sm_70) "
 	return
 fi
-
 
 DPCPP_CLANG=$CXX_COMPILER
 BIN_DIR=$(dirname $DPCPP_CLANG)

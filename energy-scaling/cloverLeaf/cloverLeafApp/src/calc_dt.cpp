@@ -78,7 +78,7 @@ void calc_dt_kernel(
 
 	clover::Buffer<double, 1> result(range<1>(policy.sizeX * policy.sizeY));
 
-	clover::execute(q, "calc_dt_1", [&](handler &h) {
+	clover::execute(1107, 1155,q, "calc_dt_1", [&](handler &h) {
 		auto out = result.access<W>(h);
 		auto xarea_ = xarea.access<R>(h);
 		auto yarea_ = yarea.access<R>(h);

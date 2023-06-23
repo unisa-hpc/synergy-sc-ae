@@ -67,7 +67,7 @@ void ideal_gas(global_variables &globals, const int tile, bool predict) {
 
 	tile_type &t = globals.chunk.tiles[tile];
 
-	clover::execute(globals.queue, "ideal_gas_1", [&](handler &h) {
+	clover::execute(1107, 1155,globals.queue, "ideal_gas_1", [&](handler &h) {
 
 		if (!predict) {
 			ideal_gas_kernel(

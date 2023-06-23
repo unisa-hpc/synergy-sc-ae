@@ -14,16 +14,10 @@ import re
 # extract default frequency on nvidia GPU
 cmd_default_freq="nvidia-smi  -q | grep 'Default Applications Clocks' -A 2 | tail -n +2"
 
-# Launch the command and capture the output
-result = subprocess.check_output(cmd_default_freq, shell=True, stderr=subprocess.STDOUT)
-
-# Convert the byte output to a string
-output = result.decode("utf-8").strip()
-
-# Find all numbers in the text using regular expressions
-numbers = re.findall(r'\d+', output)
-# Convert the matched numbers to integers
-numbers = [int(number) for number in numbers]
+result = subprocess.check_output(cmd_default_freq, shell=True, stderr=subprocess.STDOUT) # Launch the command and capture the output
+output = result.decode("utf-8").strip() # Convert the byte output to a string
+numbers = re.findall(r'\d+', output) # Find all numbers in the text using regular expressions
+numbers = [int(number) for number in numbers] # Convert the matched numbers to integers
 
 default_core_freq=numbers[0]
 default_memory_freq=numbers[1]
@@ -40,7 +34,8 @@ script_dir = os.path.dirname(os.path.realpath(sys.argv[0]))
 placeholder_dir = script_dir + "/miniWeatherApp/placeholder/src_cpy/"
 
 #file con le predizioni
-prediction_dir = script_dir + "/miniWeatherApp/placeholder/predicted_freq/"
+prediction_dir = script_dir + "/predictions/"
+
 # cartelle di output con le varie configurazioni
 min_edp_dir = script_dir + "/miniWeatherApp/placeholder/min_edp/"
 min_ed2p_dir = script_dir + "/miniWeatherApp/placeholder/min_ed2p/"
@@ -93,34 +88,34 @@ for cpp_file, prediction_file in zip(cpp_files, prediction_files):
     i = 0
     for line in lines_cpp_file:
         new_line = line
-        with open(default_dir+"/"+cpp_file, 'a') as default_file:
+        with open(f"{default_dir}/{cpp_file}", 'a') as default_file:
             
             if("parallel_for($mem_freq, $core_freq, " in line):
-                new_line = line.replace("parallel_for($mem_freq, $core_freq, ", "parallel_for("+str(default_memory_freq) + ", " + str(default_core_freq) + ", ")
+                new_line = line.replace("parallel_for($mem_freq, $core_freq, ", f"parallel_for({default_memory_freq}, {default_core_freq},")
         
             default_file.write(new_line)
     
         with open(min_edp_dir+"/"+cpp_file, 'a') as min_edp_file:
             if("parallel_for($mem_freq, $core_freq, " in line):
-               new_line = line.replace("parallel_for($mem_freq, $core_freq, ", "parallel_for(877,  " + str(min_edp_freqs[i])+",")
+               new_line = line.replace("parallel_for($mem_freq, $core_freq, ", f"parallel_for({default_memory_freq}, {min_edp_freqs[i]},")
             
             min_edp_file.write(new_line)  
 
         with open(min_ed2p_dir+"/"+cpp_file, 'a') as min_ed2p_file:
             if("parallel_for($mem_freq, $core_freq, " in line):
-                new_line = line.replace("parallel_for($mem_freq, $core_freq, ", "parallel_for(877,  " + str(min_ed2p_freqs[i])+",")
+                new_line = line.replace("parallel_for($mem_freq, $core_freq, ", f"parallel_for({default_memory_freq}, {min_ed2p_freqs[i]},")
              
             min_ed2p_file.write(new_line)
 
         with open(es_50_dir+"/"+cpp_file, 'a') as es_50_file:
             if("parallel_for($mem_freq, $core_freq, " in line):
-                new_line = line.replace("parallel_for($mem_freq, $core_freq, ", "parallel_for(877,  " + str(es_50_freqs[i])+",")
+                new_line = line.replace("parallel_for($mem_freq, $core_freq, ", f"parallel_for({default_memory_freq}, {es_50_freqs[i]},")
         
             es_50_file.write(new_line)
 
         with open(pl_50_dir+"/"+cpp_file, 'a') as pl_50_file:
             if("parallel_for($mem_freq, $core_freq, " in line):
-                new_line = line.replace("parallel_for($mem_freq, $core_freq, ", "parallel_for(877,  " + str(pl_50_freqs[i])+",")
+                new_line = line.replace("parallel_for($mem_freq, $core_freq, ", f"parallel_for({default_memory_freq}, {pl_50_freqs[i]},")
         
             pl_50_file.write(new_line)
         
@@ -134,20 +129,16 @@ nz_size = 1536
 # parse the command line parameters for miniWeather compilation
 argv = sys.argv[1:]
 try:
-    opts, argv = getopt.getopt(argv, "", ["cxx_compiler=","cxx_flags=", "sycl_flags=", "ldflags=", "cuda_support=","cuda_arch=", "rocm_support=", "rocm_arch="])
+    opts, argv = getopt.getopt(argv, "", ["cxx_compiler=","cxx_flags=", "sycl_flags=", "ldflags=", "cuda_arch="])
     #lets's check out how getopt parse the arguments
 except:
     print('pass the arguments like --cxx_compiler= <path to cxx_compiler>')
 
 cxx_compiler = ""
 cxx_flags = ""
-yakl_arch = "SYCL"
-yakl_sycl_flags= "-fsycl"
 ldflags="-lpnetcdf" 
-synergy_cuda_support="OFF"
 synergy_cuda_arch=""
-synergy_rocm_support="OFF"
-synergy_rocm_arch=""
+yakl_sycl_flags=""
 
 synergy_enable_profiling="ON"
 synergy_sycl_backend="dpcpp"
@@ -159,17 +150,16 @@ for o,v in opts:
         cxx_flags = v
     elif o in ['--sycl_flags']:
         yakl_sycl_flags = v    
-    elif o in ['--cuda_support']:
-        synergy_cuda_support = v   
-
     elif o in ['--cuda_arch']:
-        synergy_cuda_arch = v   
-    elif o in ['--rocm_support']:
-        synergy_rocm_support = v   
-    elif o in ['--rocm_arch']:
-        synergy_rocm_arch = v   
-         
+        synergy_cuda_arch = v
 
+if cxx_compiler == "":
+    print("Provide the absolute path to the DPC++ compiler as --cxx_compiler argument")          
+    exit()
+
+if synergy_cuda_arch == "":
+    print("Provide the cuda architecture as --cuda_arch argument (e.g: sm_70)")          
+    exit()
 
 # create the executables dir
 os.makedirs(f"{script_dir}/executables", exist_ok=True)
@@ -186,14 +176,12 @@ for folder in paths_cpp_folder:
     i=1
     for nx_val in nx_sizes:
         os.system(f"cmake -DCMAKE_CXX_COMPILER={cxx_compiler} \
-                    -DCMAKE_CXX_FLAGS={cxx_flags} \
-                    -DYAKL_ARCH={yakl_arch} \
-                    -DYAKL_SYCL_FLAGS=\"{yakl_sycl_flags}\" \
+                    -DCMAKE_CXX_FLAGS=\"-fsycl -fsycl-targets=nvptx64-nvidia-cuda -O3 {cxx_flags}\" \
+                    -DYAKL_ARCH=SYCL \
+                    -DYAKL_SYCL_FLAGS=\"-fsycl -fsycl-targets=nvptx64-nvidia-cuda -O3 {yakl_sycl_flags}\" \
                     -DLDFLAGS={ldflags} \
-                    -DSYNERGY_CUDA_SUPPORT={synergy_cuda_support} \
+                    -DSYNERGY_CUDA_SUPPORT=ON \
                     -DSYNERGY_CUDA_ARCH={synergy_cuda_arch} \
-                    -DSYNERGY_ROCM_SUPPORT={synergy_rocm_support} \
-                    -DSYNERGY_ROCM_ARCH={synergy_rocm_arch} \
                     -DSYNERGY_SYCL_BACKEND={synergy_sycl_backend} \
                     -DNX={nx_val} \
                     -DNZ={nz_size} \

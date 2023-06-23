@@ -10,28 +10,23 @@ import re
 
 # extract default frequency on nvidia GPU
 cmd_default_freq="nvidia-smi  -q | grep 'Default Applications Clocks' -A 2 | tail -n +2"
+result = subprocess.check_output(cmd_default_freq, shell=True, stderr=subprocess.STDOUT) # Launch the command and capture the output
+output = result.decode("utf-8").strip() # Convert the byte output to a string
+numbers = re.findall(r'\d+', output) # Find all numbers in the text using regular expressions
+numbers = [int(number) for number in numbers] # Convert the matched numbers to integers
 
-# Launch the command and capture the output
-result = subprocess.check_output(cmd_default_freq, shell=True, stderr=subprocess.STDOUT)
-
-# Convert the byte output to a string
-output = result.decode("utf-8").strip()
-
-# Find all numbers in the text using regular expressions
-numbers = re.findall(r'\d+', output)
-# Convert the matched numbers to integers
-numbers = [int(number) for number in numbers]
-
-defautl_core_freq=numbers[0]
+default_core_freq=numbers[0]
 default_memory_freq=numbers[1]
 
 # take the path to the script folder
 script_dir = os.path.dirname(os.path.realpath(sys.argv[0]))
+
 # path to source code with placeholder  
 placeholder_dir = script_dir + "/cloverLeafApp/placeholder/src_cpy/"
 
 # path to prediction folder
-prediction_dir = script_dir + "/cloverLeafApp/placeholder/predicted_freq/"
+prediction_dir = script_dir + "/predictions/"
+
 # path to the source code for a specific target energy metric
 min_edp_dir = script_dir + "/cloverLeafApp/placeholder/min_edp/"
 min_ed2p_dir = script_dir + "/cloverLeafApp/placeholder/min_ed2p/"
@@ -43,32 +38,16 @@ pl_50_dir = script_dir + "/cloverLeafApp/placeholder/pl_50/"
 paths_cpp_folder = [default_dir, min_edp_dir, min_ed2p_dir, es_50_dir, pl_50_dir]
 
 for path in paths_cpp_folder:
-    # create dir to strore the cpp files with the selected target frequency  
+    # create dir to store the cpp files with the selected target frequency  
     os.makedirs(path, exist_ok=True)
     #remove all files from created dir
     os.system(f"rm -f {path}/*")
 
-
-# contains the path to cpp file with final frequencies setted according to the specified target metric (e.g es_50, pl_50)
-cpp_files = []
-# contains the file with frequency values for each kernel in a cpp file
-prediction_files = []
-
-# for cloverleaf we have more cpp file  
-for file in os.listdir(placeholder_dir):
-    if(file.split(".")[1]=="cpp"):
-        cpp_files.append(file)
-cpp_files.sort()
-
-# for each cpp file we have a prediction frequency file
-for file in os.listdir(prediction_dir):
-    prediction_files.append(file)
-
-prediction_files.sort()
-
 # for each cpp file we have to change the placeholder with the target energy metric
-for cpp_file, prediction_file in zip(cpp_files, prediction_files):
+for prediction_file in os.listdir(prediction_dir):
+    cpp_file = prediction_file.replace(".csv", ".cpp")
     cpp_read_file = open(placeholder_dir+cpp_file, 'r')
+
     lines_cpp_file = cpp_read_file.readlines()
     df_prediction = pd.read_csv(prediction_dir+prediction_file)
 
@@ -77,38 +56,35 @@ for cpp_file, prediction_file in zip(cpp_files, prediction_files):
     es_50_freqs = df_prediction["clk_es_50"].values
     pl_50_freqs = df_prediction["clk_pl_50"].values
     
-    if len(min_edp_freqs) == 0:
-        continue
-    
     i = 0
     for line in lines_cpp_file:
         new_line = line
-        with open(min_edp_dir+"/"+cpp_file, 'a') as min_edp_file:
+        with open(f"{min_edp_dir}/{cpp_file}", 'a') as min_edp_file:
             if("clover::execute($mem_freq, $core_freq, " in line):
-                new_line = line.replace("clover::execute($mem_freq, $core_freq, ", "clover::execute(877, " + str(min_edp_freqs[i])+",")
+                new_line = line.replace("clover::execute($mem_freq, $core_freq, ", f"clover::execute({default_memory_freq}, {min_edp_freqs[i]},")
            
             min_edp_file.write(new_line)  
 
-        with open(min_ed2p_dir+"/"+cpp_file, 'a') as min_ed2p_file:
+        with open(f"{min_ed2p_dir}/{cpp_file}", 'a') as min_ed2p_file:
             if("clover::execute($mem_freq, $core_freq, " in line):
-                new_line = line.replace("clover::execute($mem_freq, $core_freq, ", "clover::execute(877, " + str(min_ed2p_freqs[i])+",")
+                new_line = line.replace("clover::execute($mem_freq, $core_freq, ", f"clover::execute({default_memory_freq}, {min_ed2p_freqs[i]},")
             min_ed2p_file.write(new_line)
         
-        with open(es_50_dir+"/"+cpp_file, 'a') as es_50_file:
+        with open(f"{es_50_dir}/{cpp_file}", 'a') as es_50_file:
             if("clover::execute($mem_freq, $core_freq, " in line):
-                new_line = line.replace("clover::execute($mem_freq, $core_freq, ", "clover::execute(877, " + str(es_50_freqs[i])+",")
+                new_line = line.replace("clover::execute($mem_freq, $core_freq, ", f"clover::execute({default_memory_freq}, {es_50_freqs[i]},")
 
             es_50_file.write(new_line)
         
-        with open(pl_50_dir+"/"+cpp_file, 'a') as pl_50_file:
+        with open(f"{pl_50_dir}/{cpp_file}", 'a') as pl_50_file:
             if("clover::execute($mem_freq, $core_freq, " in line):
-                new_line = line.replace("clover::execute($mem_freq, $core_freq, ", "clover::execute(877, " + str(pl_50_freqs[i])+",")
+                new_line = line.replace("clover::execute($mem_freq, $core_freq, ", f"clover::execute({default_memory_freq}, {pl_50_freqs[i]},")
 
             pl_50_file.write(new_line)
 
-        with open(default_dir+"/"+cpp_file, 'a') as default_file:
+        with open(f"{default_dir}/{cpp_file}", 'a') as default_file:
             if("clover::execute($mem_freq, $core_freq, " in line):
-                new_line = line.replace("clover::execute($mem_freq, $core_freq, ", "clover::execute(" + str(default_memory_freq) +", " + str(defautl_core_freq) + ",")
+                new_line = line.replace("clover::execute($mem_freq, $core_freq, ", f"clover::execute({default_memory_freq}, {default_core_freq},")
 
             default_file.write(new_line)
 
@@ -132,10 +108,7 @@ cxx_flags = ""
 #in our experiment we use only the sycl version
 sycl_runtime = "DPCPP"
 # miniWeather requires pnetcdf
-synergy_cuda_support="OFF"
 synergy_cuda_arch=""
-synergy_rocm_support="OFF"
-synergy_rocm_arch=""
 
 synergy_enable_profiling="ON"
 synergy_sycl_backend="dpcpp"
@@ -145,16 +118,16 @@ for o,v in opts:
         cxx_compiler = v
     elif o in ['--cxx_flags']:
         cxx_flags = v
-    elif o in ['--cuda_support']:
-        synergy_cuda_support = v   
     elif o in ['--cuda_arch']:
-        synergy_cuda_arch = v   
-    elif o in ['--rocm_support']:
-        synergy_rocm_support = v   
-    elif o in ['--rocm_arch']:
-        synergy_rocm_arch = v   
-         
+        synergy_cuda_arch = v
 
+if cxx_compiler == "":
+    print("Provide the absolute path to the DPC++ compiler as --cxx_compiler argument")          
+    exit()
+
+if synergy_cuda_arch == "":
+    print("Provide the cuda architecture as --cuda_arch argument (e.g: sm_70)")          
+    exit()
 
 # create the executables dir
 os.makedirs(f"{script_dir}/executables", exist_ok=True)
@@ -168,15 +141,12 @@ for folder in paths_cpp_folder:
         
     # compile and build cloverleaf    
     os.system(f"cmake -DCMAKE_CXX_COMPILER={cxx_compiler} \
-                -DCMAKE_CXX_FLAGS=\"{cxx_flags}\" \
+                -DCMAKE_CXX_FLAGS=\"-fsycl -fsycl-targets=nvptx64-nvidia-cuda -O3 {cxx_flags}\" \
                 -DSYCL_RUNTIME={sycl_runtime} \
-                -DSYNERGY_CUDA_SUPPORT={synergy_cuda_support} \
-                -DSYNERGY_CUDA_ARCH={synergy_cuda_arch} \
-                -DSYNERGY_ROCM_SUPPORT={synergy_rocm_support} \
-                -DSYNERGY_ROCM_ARCH={synergy_rocm_arch} \
-                -DSYNERGY_SYCL_BACKEND={synergy_sycl_backend} \
+                -DSYNERGY_CUDA_SUPPORT=ON \
                 -S {script_dir}/cloverLeafApp/ -B {script_dir}/cloverLeafApp/build/")
     os.system(f"cmake --build {script_dir}/cloverLeafApp/build -j")
+
     # move executable in executables folder
     os.system(f"mv {script_dir}/cloverLeafApp/build/clover_leaf {script_dir}/executables/clover_leaf_{folder_name}")
     

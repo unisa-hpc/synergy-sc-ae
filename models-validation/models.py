@@ -26,8 +26,6 @@ script_dir = os.path.dirname(os.path.realpath(sys.argv[0]))
 data_dir = sys.argv[1]
 default_clk = int(sys.argv[2])
 
-if "provided-data" in data_dir:
-    default_clk = 1312
 
 Nconfig_per_case = 187
 Energy_saving_value = [0.25, 0.50, 0.75]

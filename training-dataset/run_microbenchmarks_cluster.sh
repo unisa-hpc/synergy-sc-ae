@@ -43,8 +43,6 @@ if [ -z "$cuda_arch" ]
 	return
 fi
 
-
-
 DPCPP_CLANG=$CXX_COMPILER
 BIN_DIR=$(dirname $DPCPP_CLANG)
 DPCPP_LIB=$BIN_DIR/../lib/
@@ -58,7 +56,6 @@ cmake -DCMAKE_CXX_COMPILER=$DPCPP_CLANG \
   -DENABLED_SYNERGY=ON -DSYNERGY_CUDA_SUPPORT=ON -DSYNERGY_KERNEL_PROFILING=ON -DSYNERGY_SYCL_IMPL=DPC++ \
   -S $SCRIPT_DIR/sycl-bench -B $SCRIPT_DIR/sycl-bench/build
 cmake --build $SCRIPT_DIR/sycl-bench/build -j
-
 
 echo "Running microbenchmarks..."
 mkdir -p $SCRIPT_DIR/logs

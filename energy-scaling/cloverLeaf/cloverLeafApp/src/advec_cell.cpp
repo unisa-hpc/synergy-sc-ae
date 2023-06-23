@@ -62,7 +62,7 @@ void advec_cell_kernel(
 		                             x_max + 2 + 2, y_max + 2 + 2);
 
 		if (sweep_number == 1) {
-			clover::execute(queue, "advec_cell_1", [&](handler &h) {
+			clover::execute(1107, 1155,queue, "advec_cell_1", [&](handler &h) {
 				auto volume = volume_buffer.access<R>(h);
 				auto vol_flux_x = vol_flux_x_buffer.access<R>(h);
 				auto vol_flux_y = vol_flux_y_buffer.access<R>(h);
@@ -78,7 +78,7 @@ void advec_cell_kernel(
 			});
 
 		} else {
-			clover::execute(queue, "advec_cell_1", [&](handler &h) {
+			clover::execute(1107, 1162,queue, "advec_cell_1", [&](handler &h) {
 				auto volume = volume_buffer.access<R>(h);
 				auto vol_flux_x = vol_flux_x_buffer.access<R>(h);
 				auto pre_vol = pre_vol_buffer.access<RW>(h);
@@ -89,7 +89,7 @@ void advec_cell_kernel(
 				});
 			});
 		}
-		clover::execute(queue, "advec_cell_2", [&](handler &h) {
+		clover::execute(1107, 1162,queue, "advec_cell_2", [&](handler &h) {
 			auto vertexdx = vertexdx_buffer.access<R>(h);
 			auto density1 = density1_buffer.access<R>(h);
 			auto energy1 = energy1_buffer.access<R>(h);
@@ -164,7 +164,7 @@ void advec_cell_kernel(
 
 
 		});
-		clover::execute(queue, "advec_cell_3", [&](handler &h) {
+		clover::execute(1107, 1162,queue, "advec_cell_3", [&](handler &h) {
 			auto density1 = density1_buffer.access<RW>(h);
 			auto energy1 = energy1_buffer.access<RW>(h);
 			auto mass_flux_x = mass_flux_x_buffer.access<R>(h);
@@ -194,7 +194,7 @@ void advec_cell_kernel(
 		clover::Range2d policy(x_min - 2 + 1, y_min - 2 + 1, x_max + 2 + 2, y_max + 2 + 2);
 
 		if (sweep_number == 1) {
-			clover::execute(queue, "advec_cell_1",[&](handler &h) {
+			clover::execute(1107, 1117,queue, "advec_cell_1",[&](handler &h) {
 				auto volume = volume_buffer.access<R>(h);
 				auto vol_flux_x = vol_flux_x_buffer.access<R>(h);
 				auto vol_flux_y = vol_flux_y_buffer.access<R>(h);
@@ -208,7 +208,7 @@ void advec_cell_kernel(
 				});
 			});
 		} else {
-			clover::execute(queue,"advec_cell_1", [&](handler &h) {
+			clover::execute(1107, 1162,queue,"advec_cell_1", [&](handler &h) {
 				auto volume = volume_buffer.access<R>(h);
 				auto vol_flux_y = vol_flux_y_buffer.access<R>(h);
 				auto pre_vol = pre_vol_buffer.access<RW>(h);
@@ -221,7 +221,7 @@ void advec_cell_kernel(
 		}
 
 
-		clover::execute(queue, "advec_cell_2" ,[&](handler &h) {
+		clover::execute(1107, 1162,queue, "advec_cell_2" ,[&](handler &h) {
 			auto vertexdy = vertexdy_buffer.access<R>(h);
 			auto density1 = density1_buffer.access<R>(h);
 			auto energy1 = energy1_buffer.access<R>(h);
@@ -290,7 +290,7 @@ void advec_cell_kernel(
 
 		});
 
-		clover::execute(queue, "advec_cell_3" , [&](handler &h) {
+		clover::execute(1107, 1162,queue, "advec_cell_3" , [&](handler &h) {
 			auto density1 = density1_buffer.access<RW>(h);
 			auto energy1 = energy1_buffer.access<RW>(h);
 			auto mass_flux_y = mass_flux_y_buffer.access<R>(h);

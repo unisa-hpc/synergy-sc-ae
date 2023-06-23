@@ -38,7 +38,7 @@ void reset_field_kernel(
 		clover::Buffer<double, 2> &yvel0_buffer,
 		clover::Buffer<double, 2> &yvel1_buffer) {
 
-	clover::execute(q,"reset_field_1", [&](handler &h) {
+	clover::execute(1107, 1155,q,"reset_field_1", [&](handler &h) {
 		auto density0 = density0_buffer.access<W>(h);
 		auto density1 = density1_buffer.access<R>(h);
 		auto energy0 = energy0_buffer.access<W>(h);
@@ -53,7 +53,7 @@ void reset_field_kernel(
 		});
 	});
 
-	clover::execute(q,"reset_field_2", [&](handler &h) {
+	clover::execute(1107, 1162,q,"reset_field_2", [&](handler &h) {
 		auto xvel1 = xvel1_buffer.access<R>(h);
 		auto yvel0 = yvel0_buffer.access<W>(h);
 		auto yvel1 = yvel1_buffer.access<R>(h);

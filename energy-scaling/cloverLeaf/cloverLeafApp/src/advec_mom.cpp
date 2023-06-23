@@ -58,7 +58,7 @@ void advec_mom_kernel(
 	clover::Range2d policy(x_min - 2 + 1, y_min - 2 + 1, x_max + 2 + 2, y_max + 2 + 2);
 
 	if (mom_sweep == 1) { // x 1
-		clover::execute(q,"advec_mom_1",[&](handler &h) {
+		clover::execute(1107, 1155,q,"advec_mom_1",[&](handler &h) {
 			auto vol_flux_y = vol_flux_y_buffer.access<R>(h);
 			auto vol_flux_x = vol_flux_x_buffer.access<R>(h);
 			auto volume = volume_buffer.access<R>(h);
@@ -70,7 +70,7 @@ void advec_mom_kernel(
 			});
 		});
 	} else if (mom_sweep == 2) { // y 1
-		clover::execute(q, "advec_mom_1", [&](handler &h) {
+		clover::execute(1107, 1162,q, "advec_mom_1", [&](handler &h) {
 			auto vol_flux_y = vol_flux_y_buffer.access<R>(h);
 			auto vol_flux_x = vol_flux_x_buffer.access<R>(h);
 			auto volume = volume_buffer.access<R>(h);
@@ -82,7 +82,7 @@ void advec_mom_kernel(
 			});
 		});
 	} else if (mom_sweep == 3) { // x 2
-		clover::execute(q, "advec_mom_1",[&](handler &h) {
+		clover::execute(1107, 1162,q, "advec_mom_1",[&](handler &h) {
 			auto vol_flux_y = vol_flux_y_buffer.access<R>(h);
 			auto volume = volume_buffer.access<R>(h);
 			auto pre_vol = pre_vol_buffer.access<W>(h);
@@ -93,7 +93,7 @@ void advec_mom_kernel(
 			});
 		});
 	} else if (mom_sweep == 4) { // y 2
-		clover::execute(q, "advec_mom_1",[&](handler &h) {
+		clover::execute(1107, 1162,q, "advec_mom_1",[&](handler &h) {
 			auto vol_flux_x = vol_flux_x_buffer.access<R>(h);
 			auto volume = volume_buffer.access<R>(h);
 			auto pre_vol = pre_vol_buffer.access<W>(h);
@@ -110,7 +110,7 @@ void advec_mom_kernel(
 			// DO k=y_min,y_max+1
 			//   DO j=x_min-2,x_max+2
 
-			clover::execute(q, "advec_mom_2", [&](handler &h) {
+			clover::execute(1107, 1117,q, "advec_mom_2", [&](handler &h) {
 				auto mass_flux_x = mass_flux_x_buffer.access<R>(h);
 				auto node_flux = node_flux_buffer.access<RW>(h);
 				clover::par_ranged<class advec_mom_dir1_vel1_node_flux>(
@@ -125,7 +125,7 @@ void advec_mom_kernel(
 			// DO k=y_min,y_max+1
 			//   DO j=x_min-1,x_max+2
 
-			clover::execute(q, "advec_mom_3",[&](handler &h) {
+			clover::execute(1107, 1162,q, "advec_mom_3",[&](handler &h) {
 				auto density1 = density1_buffer.access<R>(h);
 				auto node_flux = node_flux_buffer.access<R>(h);
 				auto node_mass_post = node_mass_post_buffer.access<RW>(h);
@@ -149,7 +149,7 @@ void advec_mom_kernel(
 		// DO k=y_min,y_max+1
 		//  DO j=x_min-1,x_max+1
 
-		clover::execute(q, "advec_mom_4", [&](handler &h) {
+		clover::execute(1107, 1162,q, "advec_mom_4", [&](handler &h) {
 			auto vel1 = vel1_buffer.access<R>(h);
 			auto node_flux = node_flux_buffer.access<R>(h);
 			auto node_mass_pre = node_mass_pre_buffer.access<R>(h);
@@ -198,7 +198,7 @@ void advec_mom_kernel(
 		// DO k=y_min,y_max+1
 		//   DO j=x_min,x_max+1
 
-		clover::execute(q, "advec_mom_5",[&](handler &h) {
+		clover::execute(1107, 1162,q, "advec_mom_5",[&](handler &h) {
 			auto vel1 = vel1_buffer.access<RW>(h);
 			auto node_mass_post = node_mass_post_buffer.access<R>(h);
 			auto node_mass_pre = node_mass_pre_buffer.access<R>(h);
@@ -215,7 +215,7 @@ void advec_mom_kernel(
 			// DO k=y_min-2,y_max+2
 			//   DO j=x_min,x_max+1
 
-			clover::execute(q, "advec_mom_2",[&](handler &h) {
+			clover::execute(1107, 1117,q, "advec_mom_2",[&](handler &h) {
 				auto node_flux = node_flux_buffer.access<RW>(h);
 				auto mass_flux_y = mass_flux_y_buffer.access<R>(h);
 				clover::par_ranged<class advec_mom_dir2_vel1_node_flux>(
@@ -231,7 +231,7 @@ void advec_mom_kernel(
 			// DO k=y_min-1,y_max+2
 			//   DO j=x_min,x_max+1
 
-			clover::execute(q, "advec_mom_3", [&](handler &h) {
+			clover::execute(1107, 1162,q, "advec_mom_3", [&](handler &h) {
 
 				auto density1 = density1_buffer.access<R>(h);
 				auto node_flux = node_flux_buffer.access<R>(h);
@@ -255,7 +255,7 @@ void advec_mom_kernel(
 		// DO k=y_min-1,y_max+1
 		//   DO j=x_min,x_max+1
 
-		clover::execute(q, "advec_mom_4",[&](handler &h) {
+		clover::execute(1107, 1162,q, "advec_mom_4",[&](handler &h) {
 			auto vel1 = vel1_buffer.access<R>(h);
 			auto node_flux = node_flux_buffer.access<R>(h);
 			auto node_mass_pre = node_mass_pre_buffer.access<R>(h);
@@ -306,7 +306,7 @@ void advec_mom_kernel(
 		// DO k=y_min,y_max+1
 		//   DO j=x_min,x_max+1
 
-		clover::execute(q, "advec_mom_5", [&](handler &h) {
+		clover::execute(1107, 1162,q, "advec_mom_5", [&](handler &h) {
 			auto vel1 = vel1_buffer.access<RW>(h);
 			auto node_mass_post = node_mass_post_buffer.access<R>(h);
 			auto node_mass_pre = node_mass_pre_buffer.access<R>(h);

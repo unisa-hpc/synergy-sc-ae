@@ -81,8 +81,14 @@ for app in "${applications[@]}"; do
       normalized=$(sed "${normalized_line_num}q;d" $tempfile)
       line_norm+=$(echo $normalized | sed 's/ /,/g')
 
-      echo $line_counters >> $features_count
-      echo $line_norm >> $features_norm
+      if [[ ! "$line_counters" == *"reduction_impl_algoId"* && \
+            ! "$line_counters" == *"reduCGFuncForRangeFastReduce"* && \
+            ! "$line_counters" == *"reduSaveFinalResultToUserMem"* && \
+            ! "$line_counters" == *"initRNS_5ArrayIdLi3ELi1ELi1EEERdR10Fixed_dataEUliE0"* ]]
+      then 
+        echo $line_counters >> $features_count
+        echo $line_norm >> $features_norm
+      fi
     done
   done
 

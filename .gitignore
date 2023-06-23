@@ -19,3 +19,5 @@ executables/
 **/placeholder/min*/
 **/placeholder/es*/
 **/placeholder/pl*/
+energy-scaling/**/predictions/
+gpu-freq.csv

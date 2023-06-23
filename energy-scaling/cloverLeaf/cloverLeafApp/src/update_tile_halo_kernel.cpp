@@ -70,7 +70,7 @@ void update_tile_halo_l_kernel(
 	// Density 0
 	if (fields[field_density0] == 1) {
 		// DO k=y_min-depth,y_max+depth
-		clover::execute(q, "update_tile_halo", [&](handler &h) {
+		clover::execute(1107, 1155,q, "update_tile_halo", [&](handler &h) {
 			auto left_density0 = left_density0_buffer.access<R>(h);
 			auto density0 = density0_buffer.access<W>(h);
 			clover::par_ranged<class upd_halo_l_density0>(h, {y_min - depth + 1, y_max + depth + 2}, [=](
@@ -85,7 +85,7 @@ void update_tile_halo_l_kernel(
 	// Density 1
 	if (fields[field_density1] == 1) {
 		// DO k=y_min-depth,y_max+depth
-		clover::execute(q, "update_tile_halo", [&](handler &h) {
+		clover::execute(1107, 1162,q, "update_tile_halo", [&](handler &h) {
 			auto left_density1 = left_density1_buffer.access<R>(h);
 			auto density1 = density1_buffer.access<W>(h);
 			clover::par_ranged<class upd_halo_l_density1>(h, {y_min - depth + 1, y_max + depth + 2}, [=](
@@ -100,7 +100,7 @@ void update_tile_halo_l_kernel(
 	// Energy 0
 	if (fields[field_energy0] == 1) {
 		// DO k=y_min-depth,y_max+depth
-		clover::execute(q, "update_tile_halo", [&](handler &h) {
+		clover::execute(1107, 1162,q, "update_tile_halo", [&](handler &h) {
 			auto left_energy0 = left_energy0_buffer.access<R>(h);
 			auto energy0 = energy0_buffer.access<W>(h);
 			clover::par_ranged<class upd_halo_l_energy0>(h, {y_min - depth + 1, y_max + depth + 2}, [=](
@@ -115,7 +115,7 @@ void update_tile_halo_l_kernel(
 	// Energy 1
 	if (fields[field_energy1] == 1) {
 		// DO k=y_min-depth,y_max+depth
-		clover::execute(q, "update_tile_halo", [&](handler &h) {
+		clover::execute(1107, 1162,q, "update_tile_halo", [&](handler &h) {
 			auto left_energy1 = left_energy1_buffer.access<R>(h);
 			auto energy1 = energy1_buffer.access<W>(h);
 			clover::par_ranged<class upd_halo_l_energy1>(h, {y_min - depth + 1, y_max + depth + 2}, [=](
@@ -131,7 +131,7 @@ void update_tile_halo_l_kernel(
 	// Pressure
 	if (fields[field_pressure] == 1) {
 		// DO k=y_min-depth,y_max+depth
-		clover::execute(q, "update_tile_halo", [&](handler &h) {
+		clover::execute(1107, 1117,q, "update_tile_halo", [&](handler &h) {
 			auto left_pressure = left_pressure_buffer.access<R>(h);
 			auto pressure = pressure_buffer.access<W>(h);
 			clover::par_ranged<class upd_halo_l_pressure>(h, {y_min - depth + 1, y_max + depth + 2}, [=](
@@ -146,7 +146,7 @@ void update_tile_halo_l_kernel(
 	// Viscosity
 	if (fields[field_viscosity] == 1) {
 		// DO k=y_min-depth,y_max+depth
-		clover::execute(q, "update_tile_halo", [&](handler &h) {
+		clover::execute(1107, 1162,q, "update_tile_halo", [&](handler &h) {
 			auto left_viscosity = left_viscosity_buffer.access<R>(h);
 			auto viscosity = viscosity_buffer.access<W>(h);
 			clover::par_ranged<class upd_halo_l_viscosity>(h, {y_min - depth + 1, y_max + depth + 2}, [=](
@@ -161,7 +161,7 @@ void update_tile_halo_l_kernel(
 	// Soundspeed
 	if (fields[field_soundspeed] == 1) {
 		// DO k=y_min-depth,y_max+depth
-		clover::execute(q, "update_tile_halo", [&](handler &h) {
+		clover::execute(1107, 1162,q, "update_tile_halo", [&](handler &h) {
 			auto left_soundspeed = left_soundspeed_buffer.access<R>(h);
 			auto soundspeed = soundspeed_buffer.access<W>(h);
 			clover::par_ranged<class upd_halo_l_soundspeed>(h, {y_min - depth + 1, y_max + depth + 2}, [=](
@@ -177,7 +177,7 @@ void update_tile_halo_l_kernel(
 	// XVEL 0
 	if (fields[field_xvel0] == 1) {
 		// DO k=y_min-depth,y_max+1+depth
-		clover::execute(q, "update_tile_halo", [&](handler &h) {
+		clover::execute(1107, 1162,q, "update_tile_halo", [&](handler &h) {
 			auto left_xvel0 = left_xvel0_buffer.access<R>(h);
 			auto xvel0 = xvel0_buffer.access<W>(h);
 			clover::par_ranged<class upd_halo_l_xvel0>(h, {y_min - depth + 1, y_max + 1 + depth + 2}, [=](
@@ -192,7 +192,7 @@ void update_tile_halo_l_kernel(
 	// XVEL 1
 	if (fields[field_xvel1] == 1) {
 		// DO k=y_min-depth,y_max+1+depth
-		clover::execute(q, "update_tile_halo", [&](handler &h) {
+		clover::execute(1107, 1117,q, "update_tile_halo", [&](handler &h) {
 			auto left_xvel1 = left_xvel1_buffer.access<R>(h);
 			auto xvel1 = xvel1_buffer.access<W>(h);
 			clover::par_ranged<class upd_halo_l_xvel1>(h, {y_min - depth + 1, y_max + 1 + depth + 2}, [=](
@@ -207,7 +207,7 @@ void update_tile_halo_l_kernel(
 	// YVEL 0
 	if (fields[field_yvel0] == 1) {
 		// DO k=y_min-depth,y_max+1+depth
-		clover::execute(q, "update_tile_halo", [&](handler &h) {
+		clover::execute(1107, 1162,q, "update_tile_halo", [&](handler &h) {
 			auto left_yvel0 = left_yvel0_buffer.access<R>(h);
 			auto yvel0 = yvel0_buffer.access<W>(h);
 			clover::par_ranged<class upd_halo_l_yvel0>(h, {y_min - depth + 1, y_max + 1 + depth + 2}, [=](
@@ -222,7 +222,7 @@ void update_tile_halo_l_kernel(
 	// YVEL 1
 	if (fields[field_yvel1] == 1) {
 		// DO k=y_min-depth,y_max+1+depth
-		clover::execute(q, "update_tile_halo", [&](handler &h) {
+		clover::execute(1107, 1162,q, "update_tile_halo", [&](handler &h) {
 			auto left_yvel1 = left_yvel1_buffer.access<R>(h);
 			auto yvel1 = yvel1_buffer.access<W>(h);
 			clover::par_ranged<class upd_halo_l_yvel1>(h, {y_min - depth + 1, y_max + 1 + depth + 2}, [=](
@@ -238,7 +238,7 @@ void update_tile_halo_l_kernel(
 	// VOL_FLUX_X
 	if (fields[field_vol_flux_x] == 1) {
 		// DO k=y_min-depth,y_max+depth
-		clover::execute(q, "update_tile_halo", [&](handler &h) {
+		clover::execute(1107, 1162,q, "update_tile_halo", [&](handler &h) {
 			auto left_vol_flux_x = left_vol_flux_x_buffer.access<R>(h);
 			auto vol_flux_x = vol_flux_x_buffer.access<W>(h);
 			clover::par_ranged<class upd_halo_l_vol_flux_x>(h, {y_min - depth + 1, y_max + depth + 2}, [=](
@@ -253,7 +253,7 @@ void update_tile_halo_l_kernel(
 	// MASS_FLUX_X
 	if (fields[field_mass_flux_x] == 1) {
 		// DO k=y_min-depth,y_max+depth
-		clover::execute(q, "update_tile_halo", [&](handler &h) {
+		clover::execute(1107, 1162,q, "update_tile_halo", [&](handler &h) {
 			auto left_mass_flux_x = left_mass_flux_x_buffer.access<R>(h);
 			auto mass_flux_x = mass_flux_x_buffer.access<W>(h);
 			clover::par_ranged<class upd_halo_l_mass_flux_x>(h, {y_min - depth + 1, y_max + depth + 2}, [=](
@@ -268,7 +268,7 @@ void update_tile_halo_l_kernel(
 	// VOL_FLUX_Y
 	if (fields[field_vol_flux_y] == 1) {
 		// DO k=y_min-depth,y_max+1+depth
-		clover::execute(q, "update_tile_halo", [&](handler &h) {
+		clover::execute(1107, 1162,q, "update_tile_halo", [&](handler &h) {
 			auto left_vol_flux_y = left_vol_flux_y_buffer.access<R>(h);
 			auto vol_flux_y = vol_flux_y_buffer.access<W>(h);
 			clover::par_ranged<class upd_halo_l_vol_flux_y>(h, {y_min - depth + 1, y_max + 1 + depth + 2}, [=](
@@ -283,7 +283,7 @@ void update_tile_halo_l_kernel(
 	// MASS_FLUX_Y
 	if (fields[field_mass_flux_y] == 1) {
 		// DO k=y_min-depth,y_max+1+depth
-		clover::execute(q, "update_tile_halo", [&](handler &h) {
+		clover::execute(1107, 1162,q, "update_tile_halo", [&](handler &h) {
 			auto left_mass_flux_y = left_mass_flux_y_buffer.access<R>(h);
 			auto mass_flux_y = mass_flux_y_buffer.access<W>(h);
 			clover::par_ranged<class upd_halo_l_mass_flux_y>(h, {y_min - depth + 1, y_max + 1 + depth + 2}, [=](
@@ -337,7 +337,7 @@ void update_tile_halo_r_kernel(
 	// Density 0
 	if (fields[field_density0] == 1) {
 		// DO k=y_min-depth,y_max+depth
-		clover::execute(q, "update_tile_halo", [&](handler &h) {
+		clover::execute(1107, 1162,q, "update_tile_halo", [&](handler &h) {
 			auto right_density0 = right_density0_buffer.access<R>(h);
 			auto density0 = density0_buffer.access<W>(h);
 			clover::par_ranged<class upd_halo_r_density0>(h, {y_min - depth + 1, y_max + depth + 2}, [=](
@@ -353,7 +353,7 @@ void update_tile_halo_r_kernel(
 	// Density 1
 	if (fields[field_density1] == 1) {
 		// DO k=y_min-depth,y_max+depth
-		clover::execute(q, "update_tile_halo", [&](handler &h) {
+		clover::execute(1107, 1162,q, "update_tile_halo", [&](handler &h) {
 			auto right_density1 = right_density1_buffer.access<R>(h);
 			auto density1 = density1_buffer.access<W>(h);
 			clover::par_ranged<class upd_halo_r_density1>(h, {y_min - depth + 1, y_max + depth + 2}, [=](
@@ -368,7 +368,7 @@ void update_tile_halo_r_kernel(
 	// Energy 0
 	if (fields[field_energy0] == 1) {
 		// DO k=y_min-depth,y_max+depth
-		clover::execute(q, "update_tile_halo", [&](handler &h) {
+		clover::execute(1107, 1162,q, "update_tile_halo", [&](handler &h) {
 			auto right_energy0 = right_energy0_buffer.access<R>(h);
 			auto energy0 = energy0_buffer.access<W>(h);
 			clover::par_ranged<class upd_halo_r_energy0>(h, {y_min - depth + 1, y_max + depth + 2}, [=](
@@ -383,7 +383,7 @@ void update_tile_halo_r_kernel(
 	// Energy 1
 	if (fields[field_energy1] == 1) {
 		// DO k=y_min-depth,y_max+depth
-		clover::execute(q, "update_tile_halo", [&](handler &h) {
+		clover::execute(1107, 1162,q, "update_tile_halo", [&](handler &h) {
 			auto right_energy1 = right_energy1_buffer.access<R>(h);
 			auto energy1 = energy1_buffer.access<W>(h);
 			clover::par_ranged<class upd_halo_r_energy1>(h, {y_min - depth + 1, y_max + depth + 2}, [=](
@@ -399,7 +399,7 @@ void update_tile_halo_r_kernel(
 	// Pressure
 	if (fields[field_pressure] == 1) {
 		// DO k=y_min-depth,y_max+depth
-		clover::execute(q, "update_tile_halo", [&](handler &h) {
+		clover::execute(1107, 1162,q, "update_tile_halo", [&](handler &h) {
 			auto pressure = pressure_buffer.access<W>(h);
 			auto right_pressure = right_pressure_buffer.access<R>(h);
 			clover::par_ranged<class upd_halo_r_pressure>(h, {y_min - depth + 1, y_max + depth + 2}, [=](
@@ -414,7 +414,7 @@ void update_tile_halo_r_kernel(
 	// Viscosity
 	if (fields[field_viscosity] == 1) {
 		// DO k=y_min-depth,y_max+depth
-		clover::execute(q, "update_tile_halo", [&](handler &h) {
+		clover::execute(1107, 1162,q, "update_tile_halo", [&](handler &h) {
 			auto right_viscosity = right_viscosity_buffer.access<R>(h);
 			auto viscosity = viscosity_buffer.access<W>(h);
 			clover::par_ranged<class upd_halo_r_viscosity>(h, {y_min - depth + 1, y_max + depth + 2}, [=](
@@ -429,7 +429,7 @@ void update_tile_halo_r_kernel(
 	// Soundspeed
 	if (fields[field_soundspeed] == 1) {
 		// DO k=y_min-depth,y_max+depth
-		clover::execute(q, "update_tile_halo", [&](handler &h) {
+		clover::execute(1107, 1162,q, "update_tile_halo", [&](handler &h) {
 			auto right_soundspeed = right_soundspeed_buffer.access<R>(h);
 			auto soundspeed = soundspeed_buffer.access<W>(h);
 			clover::par_ranged<class upd_halo_r_soundspeed>(h, {y_min - depth + 1, y_max + depth + 2}, [=](
@@ -445,7 +445,7 @@ void update_tile_halo_r_kernel(
 	// XVEL 0
 	if (fields[field_xvel0] == 1) {
 		// DO k=y_min-depth,y_max+1+depth
-		clover::execute(q, "update_tile_halo", [&](handler &h) {
+		clover::execute(1107, 1162,q, "update_tile_halo", [&](handler &h) {
 			auto right_xvel0 = right_xvel0_buffer.access<R>(h);
 			auto xvel0 = xvel0_buffer.access<W>(h);
 			clover::par_ranged<class upd_halo_r_xvel0>(h, {y_min - depth + 1, y_max + 1 + depth + 2}, [=](
@@ -460,7 +460,7 @@ void update_tile_halo_r_kernel(
 	// XVEL 1
 	if (fields[field_xvel1] == 1) {
 		// DO k=y_min-depth,y_max+1+depth
-		clover::execute(q, "update_tile_halo", [&](handler &h) {
+		clover::execute(1107, 1162,q, "update_tile_halo", [&](handler &h) {
 			auto right_xvel1 = right_xvel1_buffer.access<R>(h);
 			auto xvel1 = xvel1_buffer.access<W>(h);
 			clover::par_ranged<class upd_halo_r_xvel1>(h, {y_min - depth + 1, y_max + 1 + depth + 2}, [=](
@@ -475,7 +475,7 @@ void update_tile_halo_r_kernel(
 	// YVEL 0
 	if (fields[field_yvel0] == 1) {
 		// DO k=y_min-depth,y_max+1+depth
-		clover::execute(q, "update_tile_halo", [&](handler &h) {
+		clover::execute(1107, 1162,q, "update_tile_halo", [&](handler &h) {
 			auto right_yvel0 = right_yvel0_buffer.access<R>(h);
 			auto yvel0 = yvel0_buffer.access<W>(h);
 			clover::par_ranged<class upd_halo_r_yvel0>(h, {y_min - depth + 1, y_max + 1 + depth + 2}, [=](
@@ -490,7 +490,7 @@ void update_tile_halo_r_kernel(
 	// YVEL 1
 	if (fields[field_yvel1] == 1) {
 		// DO k=y_min-depth,y_max+1+depth
-		clover::execute(q, "update_tile_halo", [&](handler &h) {
+		clover::execute(1107, 1162,q, "update_tile_halo", [&](handler &h) {
 			auto right_yvel1 = right_yvel1_buffer.access<R>(h);
 			auto yvel1 = yvel1_buffer.access<W>(h);
 			clover::par_ranged<class upd_halo_r_yvel1>(h, {y_min - depth + 1, y_max + 1 + depth + 2}, [=](
@@ -506,7 +506,7 @@ void update_tile_halo_r_kernel(
 	// VOL_FLUX_X
 	if (fields[field_vol_flux_x] == 1) {
 		// DO k=y_min-depth,y_max+depth
-		clover::execute(q, "update_tile_halo", [&](handler &h) {
+		clover::execute(1107, 1162,q, "update_tile_halo", [&](handler &h) {
 			auto right_vol_flux_x = right_vol_flux_x_buffer.access<R>(h);
 			auto vol_flux_x = vol_flux_x_buffer.access<W>(h);
 			clover::par_ranged<class upd_halo_r_vol_flux_x>(h, {y_min - depth + 1, y_max + depth + 2}, [=](
@@ -521,7 +521,7 @@ void update_tile_halo_r_kernel(
 	// MASS_FLUX_X
 	if (fields[field_mass_flux_x] == 1) {
 		// DO k=y_min-depth,y_max+depth
-		clover::execute(q, "update_tile_halo", [&](handler &h) {
+		clover::execute(1107, 1162,q, "update_tile_halo", [&](handler &h) {
 			auto right_mass_flux_x = right_mass_flux_x_buffer.access<R>(h);
 			auto mass_flux_x = mass_flux_x_buffer.access<W>(h);
 			clover::par_ranged<class upd_halo_r_mass_flux_x>(h, {y_min - depth + 1, y_max + depth + 2}, [=](
@@ -536,7 +536,7 @@ void update_tile_halo_r_kernel(
 	// VOL_FLUX_Y
 	if (fields[field_vol_flux_y] == 1) {
 		// DO k=y_min-depth,y_max+1+depth
-		clover::execute(q, "update_tile_halo", [&](handler &h) {
+		clover::execute(1107, 1162,q, "update_tile_halo", [&](handler &h) {
 			auto right_vol_flux_y = right_vol_flux_y_buffer.access<R>(h);
 			auto vol_flux_y = vol_flux_y_buffer.access<W>(h);
 			clover::par_ranged<class upd_halo_r_vol_flux_y>(h, {y_min - depth + 1, y_max + 1 + depth + 2}, [=](
@@ -551,7 +551,7 @@ void update_tile_halo_r_kernel(
 	// MASS_FLUX_Y
 	if (fields[field_mass_flux_y] == 1) {
 		// DO k=y_min-depth,y_max+1+depth
-		clover::execute(q, "update_tile_halo", [&](handler &h) {
+		clover::execute(1107, 1162,q, "update_tile_halo", [&](handler &h) {
 			auto right_mass_flux_y = right_mass_flux_y_buffer.access<R>(h);
 			auto mass_flux_y = mass_flux_y_buffer.access<W>(h);
 			clover::par_ranged<class upd_halo_r_mass_flux_y>(h, {y_min - depth + 1, y_max + 1 + depth + 2}, [=](
@@ -609,7 +609,7 @@ void update_tile_halo_t_kernel(
 	if (fields[field_density0] == 1) {
 		for (int k = 0; k < depth; ++k) {
 			// DO j=x_min-depth, x_max+depth
-			clover::execute(q, "update_tile_halo", [&](handler &h) {
+			clover::execute(1107, 1162,q, "update_tile_halo", [&](handler &h) {
 				auto top_density0 = top_density0_buffer.access<R>(h);
 				auto density0 = density0_buffer.access<W>(h);
 				clover::par_ranged<class upd_halo_t_density0>(h, {x_min - depth + 1, x_max + depth + 2}, [=](
@@ -624,7 +624,7 @@ void update_tile_halo_t_kernel(
 	if (fields[field_density1] == 1) {
 		for (int k = 0; k < depth; ++k) {
 			// DO j=x_min-depth, x_max+depth
-			clover::execute(q, "update_tile_halo", [&](handler &h) {
+			clover::execute(1107, 1162,q, "update_tile_halo", [&](handler &h) {
 				auto top_density1 = top_density1_buffer.access<R>(h);
 				auto density1 = density1_buffer.access<W>(h);
 				clover::par_ranged<class upd_halo_t_density1>(h, {x_min - depth + 1, x_max + depth + 2}, [=](
@@ -639,7 +639,7 @@ void update_tile_halo_t_kernel(
 	if (fields[field_energy0] == 1) {
 		for (int k = 0; k < depth; ++k) {
 			// DO j=x_min-depth, x_max+depth
-			clover::execute(q, "update_tile_halo", [&](handler &h) {
+			clover::execute(1107, 1162,q, "update_tile_halo", [&](handler &h) {
 				auto top_energy0 = top_energy0_buffer.access<R>(h);
 				auto energy0 = energy0_buffer.access<W>(h);
 				clover::par_ranged<class upd_halo_t_energy0>(h, {x_min - depth + 1, x_max + depth + 2}, [=](
@@ -654,7 +654,7 @@ void update_tile_halo_t_kernel(
 	if (fields[field_energy1] == 1) {
 		for (int k = 0; k < depth; ++k) {
 			// DO j=x_min-depth, x_max+depth
-			clover::execute(q, "update_tile_halo", [&](handler &h) {
+			clover::execute(1107, 1162,q, "update_tile_halo", [&](handler &h) {
 				auto top_energy1 = top_energy1_buffer.access<R>(h);
 				auto energy1 = energy1_buffer.access<W>(h);
 				clover::par_ranged<class upd_halo_t_energy1>(h, {x_min - depth + 1, x_max + depth + 2}, [=](
@@ -670,7 +670,7 @@ void update_tile_halo_t_kernel(
 	if (fields[field_pressure] == 1) {
 		for (int k = 0; k < depth; ++k) {
 			// DO j=x_min-depth, x_max+depth
-			clover::execute(q, "update_tile_halo", [&](handler &h) {
+			clover::execute(1107, 1162,q, "update_tile_halo", [&](handler &h) {
 				auto top_pressure = top_pressure_buffer.access<R>(h);
 				auto pressure = pressure_buffer.access<W>(h);
 				clover::par_ranged<class upd_halo_t_pressure>(h, {x_min - depth + 1, x_max + depth + 2}, [=](
@@ -685,7 +685,7 @@ void update_tile_halo_t_kernel(
 	if (fields[field_viscosity] == 1) {
 		for (int k = 0; k < depth; ++k) {
 			// DO j=x_min-depth, x_max+depth
-			clover::execute(q, "update_tile_halo", [&](handler &h) {
+			clover::execute(1107, 1162,q, "update_tile_halo", [&](handler &h) {
 				auto top_viscosity = top_viscosity_buffer.access<R>(h);
 				auto viscosity = viscosity_buffer.access<W>(h);
 				clover::par_ranged<class upd_halo_t_viscosity>(h, {x_min - depth + 1, x_max + depth + 2}, [=](
@@ -700,7 +700,7 @@ void update_tile_halo_t_kernel(
 	if (fields[field_soundspeed] == 1) {
 		for (int k = 0; k < depth; ++k) {
 			// DO j=x_min-depth, x_max+depth
-			clover::execute(q, "update_tile_halo", [&](handler &h) {
+			clover::execute(1107, 1162,q, "update_tile_halo", [&](handler &h) {
 				auto top_soundspeed = top_soundspeed_buffer.access<R>(h);
 				auto soundspeed = soundspeed_buffer.access<W>(h);
 				clover::par_ranged<class upd_halo_t_soundspeed>(h, {x_min - depth + 1, x_max + depth + 2}, [=](
@@ -716,7 +716,7 @@ void update_tile_halo_t_kernel(
 	if (fields[field_xvel0] == 1) {
 		for (int k = 0; k < depth; ++k) {
 			// DO j=x_min-depth, x_max+1+depth
-			clover::execute(q, "update_tile_halo", [&](handler &h) {
+			clover::execute(1107, 1162,q, "update_tile_halo", [&](handler &h) {
 				auto top_xvel0 = top_xvel0_buffer.access<R>(h);
 				auto xvel0 = xvel0_buffer.access<W>(h);
 				clover::par_ranged<class upd_halo_t_xvel0>(h, {x_min - depth + 1, x_max + 1 + depth + 2}, [=](
@@ -731,7 +731,7 @@ void update_tile_halo_t_kernel(
 	if (fields[field_xvel1] == 1) {
 		for (int k = 0; k < depth; ++k) {
 			// DO j=x_min-depth, x_max+1+depth
-			clover::execute(q, "update_tile_halo", [&](handler &h) {
+			clover::execute(1107, 1140,q, "update_tile_halo", [&](handler &h) {
 				auto top_xvel1 = top_xvel1_buffer.access<R>(h);
 				auto xvel1 = xvel1_buffer.access<W>(h);
 				clover::par_ranged<class upd_halo_t_xvel1>(h, {x_min - depth + 1, x_max + 1 + depth + 2}, [=](
@@ -746,7 +746,7 @@ void update_tile_halo_t_kernel(
 	if (fields[field_yvel0] == 1) {
 		for (int k = 0; k < depth; ++k) {
 			// DO j=x_min-depth, x_max+1+depth
-			clover::execute(q, "update_tile_halo", [&](handler &h) {
+			clover::execute(1107, 1140,q, "update_tile_halo", [&](handler &h) {
 				auto top_yvel0 = top_yvel0_buffer.access<R>(h);
 				auto yvel0 = yvel0_buffer.access<W>(h);
 				clover::par_ranged<class upd_halo_t_yvel0>(h, {x_min - depth + 1, x_max + 1 + depth + 2}, [=](
@@ -761,7 +761,7 @@ void update_tile_halo_t_kernel(
 	if (fields[field_yvel1] == 1) {
 		for (int k = 0; k < depth; ++k) {
 			// DO j=x_min-depth, x_max+1+depth
-			clover::execute(q, "update_tile_halo", [&](handler &h) {
+			clover::execute(1107, 1147,q, "update_tile_halo", [&](handler &h) {
 				auto top_yvel1 = top_yvel1_buffer.access<R>(h);
 				auto yvel1 = yvel1_buffer.access<W>(h);
 				clover::par_ranged<class upd_halo_t_yvel1>(h, {x_min - depth + 1, x_max + 1 + depth + 2}, [=](
@@ -776,7 +776,7 @@ void update_tile_halo_t_kernel(
 	if (fields[field_vol_flux_x] == 1) {
 		for (int k = 0; k < depth; ++k) {
 			// DO j=x_min-depth, x_max+1+depth
-			clover::execute(q, "update_tile_halo", [&](handler &h) {
+			clover::execute(1107, 1147,q, "update_tile_halo", [&](handler &h) {
 				auto top_vol_flux_x = top_vol_flux_x_buffer.access<R>(h);
 				auto vol_flux_x = vol_flux_x_buffer.access<W>(h);
 				clover::par_ranged<class upd_halo_t_vol_flux_x>(h, {x_min - depth + 1, x_max + 1 + depth + 2}, [=](
@@ -791,7 +791,7 @@ void update_tile_halo_t_kernel(
 	if (fields[field_mass_flux_x] == 1) {
 		for (int k = 0; k < depth; ++k) {
 			// DO j=x_min-depth, x_max+1+depth
-			clover::execute(q, "update_tile_halo", [&](handler &h) {
+			clover::execute(1107, 1162,q, "update_tile_halo", [&](handler &h) {
 				auto top_mass_flux_x = top_mass_flux_x_buffer.access<R>(h);
 				auto mass_flux_x = mass_flux_x_buffer.access<W>(h);
 				clover::par_ranged<class upd_halo_t_mass_flux_x>(h, {x_min - depth + 1, x_max + 1 + depth + 2}, [=](
@@ -806,7 +806,7 @@ void update_tile_halo_t_kernel(
 	if (fields[field_vol_flux_y] == 1) {
 		for (int k = 0; k < depth; ++k) {
 			// DO j=x_min-depth, x_max+depth
-			clover::execute(q, "update_tile_halo", [&](handler &h) {
+			clover::execute(1107, 1162,q, "update_tile_halo", [&](handler &h) {
 				auto top_vol_flux_y = top_vol_flux_y_buffer.access<R>(h);
 				auto vol_flux_y = vol_flux_y_buffer.access<W>(h);
 				clover::par_ranged<class upd_halo_t_vol_flux_y>(h, {x_min - depth + 1, x_max + depth + 2}, [=](
@@ -821,7 +821,7 @@ void update_tile_halo_t_kernel(
 	if (fields[field_mass_flux_y] == 1) {
 		for (int k = 0; k < depth; ++k) {
 			// DO j=x_min-depth, x_max+depth
-			clover::execute(q, "update_tile_halo", [&](handler &h) {
+			clover::execute(1107, 1162,q, "update_tile_halo", [&](handler &h) {
 				auto top_mass_flux_y = top_mass_flux_y_buffer.access<R>(h);
 				auto mass_flux_y = mass_flux_y_buffer.access<W>(h);
 				clover::par_ranged<class upd_halo_t_mass_flux_y>(h, {x_min - depth + 1, x_max + depth + 2}, [=](
@@ -875,7 +875,7 @@ void update_tile_halo_b_kernel(
 	if (fields[field_density0] == 1) {
 		for (int k = 0; k < depth; ++k) {
 			//  DO j=x_min-depth, x_max+depth
-			clover::execute(q, "update_tile_halo", [&](handler &h) {
+			clover::execute(1107, 1162,q, "update_tile_halo", [&](handler &h) {
 				auto bottom_density0 = bottom_density0_buffer.access<R>(h);
 				auto density0 = density0_buffer.access<W>(h);
 				clover::par_ranged<class upd_halo_b_density0>(h, {x_min - depth + 1, x_max + depth + 2}, [=](
@@ -890,7 +890,7 @@ void update_tile_halo_b_kernel(
 	if (fields[field_density1] == 1) {
 		for (int k = 0; k < depth; ++k) {
 			//  DO j=x_min-depth, x_max+depth
-			clover::execute(q, "update_tile_halo", [&](handler &h) {
+			clover::execute(1107, 1162,q, "update_tile_halo", [&](handler &h) {
 				auto bottom_density1 = bottom_density1_buffer.access<R>(h);
 				auto density1 = density1_buffer.access<W>(h);
 				clover::par_ranged<class upd_halo_b_density1>(h, {x_min - depth + 1, x_max + depth + 2}, [=](
@@ -905,7 +905,7 @@ void update_tile_halo_b_kernel(
 	if (fields[field_energy0] == 1) {
 		for (int k = 0; k < depth; ++k) {
 			//  DO j=x_min-depth, x_max+depth
-			clover::execute(q, "update_tile_halo", [&](handler &h) {
+			clover::execute(1107, 825,q, "update_tile_halo", [&](handler &h) {
 				auto bottom_energy0 = bottom_energy0_buffer.access<R>(h);
 				auto energy0 = energy0_buffer.access<W>(h);
 				clover::par_ranged<class upd_halo_b_energy0>(h, {x_min - depth + 1, x_max + depth + 2}, [=](
@@ -920,7 +920,7 @@ void update_tile_halo_b_kernel(
 	if (fields[field_energy1] == 1) {
 		for (int k = 0; k < depth; ++k) {
 			//  DO j=x_min-depth, x_max+depth
-			clover::execute(q, "update_tile_halo", [&](handler &h) {
+			clover::execute(1107, 825,q, "update_tile_halo", [&](handler &h) {
 				auto bottom_energy1 = bottom_energy1_buffer.access<R>(h);
 				auto energy1 = energy1_buffer.access<W>(h);
 				clover::par_ranged<class upd_halo_b_energy1>(h, {x_min - depth + 1, x_max + depth + 2}, [=](
@@ -936,7 +936,7 @@ void update_tile_halo_b_kernel(
 	if (fields[field_pressure] == 1) {
 		for (int k = 0; k < depth; ++k) {
 			//  DO j=x_min-depth, x_max+depth
-			clover::execute(q, "update_tile_halo", [&](handler &h) {
+			clover::execute(1107, 1222,q, "update_tile_halo", [&](handler &h) {
 				auto bottom_pressure = bottom_pressure_buffer.access<R>(h);
 				auto pressure = pressure_buffer.access<W>(h);
 				clover::par_ranged<class upd_halo_b_pressure>(h, {x_min - depth + 1, x_max + depth + 2}, [=](
@@ -951,7 +951,7 @@ void update_tile_halo_b_kernel(
 	if (fields[field_viscosity] == 1) {
 		for (int k = 0; k < depth; ++k) {
 			//  DO j=x_min-depth, x_max+depth
-			clover::execute(q, "update_tile_halo", [&](handler &h) {
+			clover::execute(1107, 825,q, "update_tile_halo", [&](handler &h) {
 				auto bottom_viscosity = bottom_viscosity_buffer.access<R>(h);
 				auto viscosity = viscosity_buffer.access<W>(h);
 				clover::par_ranged<class upd_halo_b_viscosity>(h, {x_min - depth + 1, x_max + depth + 2}, [=](
@@ -966,7 +966,7 @@ void update_tile_halo_b_kernel(
 	if (fields[field_soundspeed] == 1) {
 		for (int k = 0; k < depth; ++k) {
 			//  DO j=x_min-depth, x_max+depth
-			clover::execute(q, "update_tile_halo", [&](handler &h) {
+			clover::execute(1107, 1162,q, "update_tile_halo", [&](handler &h) {
 				auto bottom_soundspeed = bottom_soundspeed_buffer.access<R>(h);
 				auto soundspeed = soundspeed_buffer.access<W>(h);
 				clover::par_ranged<class upd_halo_b_soundspeed>(h, {x_min - depth + 1, x_max + depth + 2}, [=](
@@ -982,7 +982,7 @@ void update_tile_halo_b_kernel(
 	if (fields[field_xvel0] == 1) {
 		for (int k = 0; k < depth; ++k) {
 			// DO j=x_min-depth, x_max+1+depth
-			clover::execute(q, "update_tile_halo", [&](handler &h) {
+			clover::execute(1107, 1162,q, "update_tile_halo", [&](handler &h) {
 				auto bottom_xvel0 = bottom_xvel0_buffer.access<R>(h);
 				auto xvel0 = xvel0_buffer.access<W>(h);
 				clover::par_ranged<class upd_halo_b_xvel0>(h, {x_min - depth + 1, x_max + 1 + depth + 2}, [=](
@@ -997,7 +997,7 @@ void update_tile_halo_b_kernel(
 	if (fields[field_xvel1] == 1) {
 		for (int k = 0; k < depth; ++k) {
 			// DO j=x_min-depth, x_max+1+depth
-			clover::execute(q, "update_tile_halo", [&](handler &h) {
+			clover::execute(1107, 1162,q, "update_tile_halo", [&](handler &h) {
 				auto bottom_xvel1 = bottom_xvel1_buffer.access<R>(h);
 				auto xvel1 = xvel1_buffer.access<W>(h);
 				clover::par_ranged<class upd_halo_b_xvel1>(h, {x_min - depth + 1, x_max + 1 + depth + 2}, [=](
@@ -1012,7 +1012,7 @@ void update_tile_halo_b_kernel(
 	if (fields[field_yvel0] == 1) {
 		for (int k = 0; k < depth; ++k) {
 			// DO j=x_min-depth, x_max+1+depth
-			clover::execute(q, "update_tile_halo", [&](handler &h) {
+			clover::execute(1107, 1162,q, "update_tile_halo", [&](handler &h) {
 				auto bottom_yvel0 = bottom_yvel0_buffer.access<R>(h);
 				auto yvel0 = yvel0_buffer.access<W>(h);
 				clover::par_ranged<class upd_halo_b_yvel0>(h, {x_min - depth + 1, x_max + 1 + depth + 2}, [=](
@@ -1027,7 +1027,7 @@ void update_tile_halo_b_kernel(
 	if (fields[field_yvel1] == 1) {
 		for (int k = 0; k < depth; ++k) {
 			// DO j=x_min-depth, x_max+1+depth
-			clover::execute(q, "update_tile_halo", [&](handler &h) {
+			clover::execute(1107, 1162,q, "update_tile_halo", [&](handler &h) {
 				auto bottom_yvel1 = bottom_yvel1_buffer.access<R>(h);
 				auto yvel1 = yvel1_buffer.access<W>(h);
 				clover::par_ranged<class upd_halo_b_yvel1>(h, {x_min - depth + 1, x_max + 1 + depth + 2}, [=](
@@ -1042,7 +1042,7 @@ void update_tile_halo_b_kernel(
 	if (fields[field_vol_flux_x] == 1) {
 		for (int k = 0; k < depth; ++k) {
 			// DO j=x_min-depth, x_max+1+depth
-			clover::execute(q, "update_tile_halo", [&](handler &h) {
+			clover::execute(1107, 1162,q, "update_tile_halo", [&](handler &h) {
 				auto bottom_vol_flux_x = bottom_vol_flux_x_buffer.access<R>(h);
 				auto vol_flux_x = vol_flux_x_buffer.access<W>(h);
 				clover::par_ranged<class upd_halo_b_vol_flux_x>(h, {x_min - depth + 1, x_max + 1 + depth + 2}, [=](
@@ -1057,7 +1057,7 @@ void update_tile_halo_b_kernel(
 	if (fields[field_mass_flux_x] == 1) {
 		for (int k = 0; k < depth; ++k) {
 			// DO j=x_min-depth, x_max+1+depth
-			clover::execute(q, "update_tile_halo", [&](handler &h) {
+			clover::execute(1107, 1162,q, "update_tile_halo", [&](handler &h) {
 				auto bottom_mass_flux_x = bottom_mass_flux_x_buffer.access<R>(h);
 				auto mass_flux_x = mass_flux_x_buffer.access<W>(h);
 				clover::par_ranged<class upd_halo_b_mass_flux_x>(h, {x_min - depth + 1, x_max + 1 + depth + 2}, [=](
@@ -1072,7 +1072,7 @@ void update_tile_halo_b_kernel(
 	if (fields[field_vol_flux_y] == 1) {
 		for (int k = 0; k < depth; ++k) {
 			// DO j=x_min-depth, x_max+depth
-			clover::execute(q, "update_tile_halo", [&](handler &h) {
+			clover::execute(1107, 1117,q, "update_tile_halo", [&](handler &h) {
 				auto bottom_vol_flux_y = bottom_vol_flux_y_buffer.access<R>(h);
 				auto vol_flux_y = vol_flux_y_buffer.access<W>(h);
 				clover::par_ranged<class upd_halo_b_vol_flux_y>(h, {x_min - depth + 1, x_max + depth + 2}, [=](
@@ -1087,7 +1087,7 @@ void update_tile_halo_b_kernel(
 	if (fields[field_mass_flux_y] == 1) {
 		for (int k = 0; k < depth; ++k) {
 			// DO j=x_min-depth, x_max+depth
-			clover::execute(q, "update_tile_halo", [&](handler &h) {
+			clover::execute(1107, 1162,q, "update_tile_halo", [&](handler &h) {
 				auto bottom_mass_flux_y = bottom_mass_flux_y_buffer.access<R>(h);
 				auto mass_flux_y = mass_flux_y_buffer.access<W>(h);
 				clover::par_ranged<class upd_halo_b_mass_flux_y>(h, {x_min - depth + 1, x_max + depth + 2}, [=](

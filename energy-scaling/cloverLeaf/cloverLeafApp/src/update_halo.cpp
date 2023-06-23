@@ -49,7 +49,7 @@ void update_halo_kernel(
 		if ((chunk_neighbours[chunk_bottom] == external_face) &&
 		    (tile_neighbours[tile_bottom] == external_tile)) {
 			// DO j=x_min-depth,x_max+depth
-			clover::execute(queue, "update_halo", [&](handler &h) {
+			clover::execute(1107, 1155,queue, "update_halo", [&](handler &h) {
 				auto density0 = field.density0.access<RW>(h);
 				clover::par_ranged<class APPEND_LN(update_halo)>(h, {x_min - depth + 1, x_max + depth + 2}, [=](
 						id<1> j) {
@@ -62,7 +62,7 @@ void update_halo_kernel(
 		if ((chunk_neighbours[chunk_top] == external_face) &&
 		    (tile_neighbours[tile_top] == external_tile)) {
 			// DO j=x_min-depth,x_max+depth
-			clover::execute(queue, "update_halo", [&](handler &h) {
+			clover::execute(1107, 1162,queue, "update_halo", [&](handler &h) {
 				auto density0 = field.density0.access<RW>(h);
 				clover::par_ranged<class APPEND_LN(update_halo)>(h, {x_min - depth + 1, x_max + depth + 2}, [=](
 						id<1> j) {
@@ -75,7 +75,7 @@ void update_halo_kernel(
 		if ((chunk_neighbours[chunk_left] == external_face) &&
 		    (tile_neighbours[tile_left] == external_tile)) {
 			// DO k=y_min-depth,y_max+depth
-			clover::execute(queue, "update_halo", [&](handler &h) {
+			clover::execute(1107, 1162,queue, "update_halo", [&](handler &h) {
 				auto density0 = field.density0.access<RW>(h);
 				clover::par_ranged<class APPEND_LN(update_halo)>(h, {y_min - depth + 1, y_max + depth + 2}, [=](
 						id<1> k) {
@@ -88,7 +88,7 @@ void update_halo_kernel(
 		if ((chunk_neighbours[chunk_right] == external_face) &&
 		    (tile_neighbours[tile_right] == external_tile)) {
 			// DO k=y_min-depth,y_max+depth
-			clover::execute(queue, "update_halo", [&](handler &h) {
+			clover::execute(1107, 1162,queue, "update_halo", [&](handler &h) {
 				auto density0 = field.density0.access<RW>(h);
 				clover::par_ranged<class APPEND_LN(update_halo)>(h, {y_min - depth + 1, y_max + depth + 2}, [=](
 						id<1> k) {
@@ -105,7 +105,7 @@ void update_halo_kernel(
 		if ((chunk_neighbours[chunk_bottom] == external_face) &&
 		    (tile_neighbours[tile_bottom] == external_tile)) {
 			// DO k=y_min-depth,y_max+depth
-			clover::execute(queue, "update_halo", [&](handler &h) {
+			clover::execute(1107, 1117,queue, "update_halo", [&](handler &h) {
 				auto density1 = field.density1.access<RW>(h);
 				clover::par_ranged<class APPEND_LN(update_halo)>(h, {x_min - depth + 1, x_max + depth + 2}, [=](
 						id<1> j) {
@@ -118,7 +118,7 @@ void update_halo_kernel(
 		if ((chunk_neighbours[chunk_top] == external_face) &&
 		    (tile_neighbours[tile_top] == external_tile)) {
 			// DO j=x_min-depth,x_max+depth
-			clover::execute(queue, "update_halo", [&](handler &h) {
+			clover::execute(1107, 1162,queue, "update_halo", [&](handler &h) {
 				auto density1 = field.density1.access<RW>(h);
 				clover::par_ranged<class APPEND_LN(update_halo)>(h, {x_min - depth + 1, x_max + depth + 2}, [=](
 						id<1> j) {
@@ -131,7 +131,7 @@ void update_halo_kernel(
 		if ((chunk_neighbours[chunk_left] == external_face) &&
 		    (tile_neighbours[tile_left] == external_tile)) {
 			// DO k=y_min-depth,y_max+depth
-			clover::execute(queue, "update_halo", [&](handler &h) {
+			clover::execute(1107, 1162,queue, "update_halo", [&](handler &h) {
 				auto density1 = field.density1.access<RW>(h);
 				clover::par_ranged<class APPEND_LN(update_halo)>(h, {y_min - depth + 1, y_max + depth + 2}, [=](
 						id<1> k) {
@@ -144,7 +144,7 @@ void update_halo_kernel(
 		if ((chunk_neighbours[chunk_right] == external_face) &&
 		    (tile_neighbours[tile_right] == external_tile)) {
 			// DO k=y_min-depth,y_max+depth
-			clover::execute(queue, "update_halo", [&](handler &h) {
+			clover::execute(1107, 1162,queue, "update_halo", [&](handler &h) {
 				auto density1 = field.density1.access<RW>(h);
 				clover::par_ranged<class APPEND_LN(update_halo)>(h, {y_min - depth + 1, y_max + depth + 2}, [=](
 						id<1> k) {
@@ -160,7 +160,7 @@ void update_halo_kernel(
 		if ((chunk_neighbours[chunk_bottom] == external_face) &&
 		    (tile_neighbours[tile_bottom] == external_tile)) {
 			//  DO j=x_min-depth,x_max+depth
-			clover::execute(queue, "update_halo",  [&](handler &h) {
+			clover::execute(1107, 1117,queue, "update_halo",  [&](handler &h) {
 				auto energy0 = field.energy0.access<RW>(h);
 				clover::par_ranged<class APPEND_LN(update_halo)>(h, {x_min - depth + 1, x_max + depth + 2}, [=](
 						id<1> j) {
@@ -173,7 +173,7 @@ void update_halo_kernel(
 		if ((chunk_neighbours[chunk_top] == external_face) &&
 		    (tile_neighbours[tile_top] == external_tile)) {
 			// DO j=x_min-depth,x_max+depth
-			clover::execute(queue, "update_halo",  [&](handler &h) {
+			clover::execute(1107, 1162,queue, "update_halo",  [&](handler &h) {
 				auto energy0 = field.energy0.access<RW>(h);
 				clover::par_ranged<class APPEND_LN(update_halo)>(h, {x_min - depth + 1, x_max + depth + 2}, [=](
 						id<1> j) {
@@ -186,7 +186,7 @@ void update_halo_kernel(
 		if ((chunk_neighbours[chunk_left] == external_face) &&
 		    (tile_neighbours[tile_left] == external_tile)) {
 			// DO k=y_min-depth,y_max+depth
-			clover::execute(queue, "update_halo",  [&](handler &h) {
+			clover::execute(1107, 1162,queue, "update_halo",  [&](handler &h) {
 				auto energy0 = field.energy0.access<RW>(h);
 				clover::par_ranged<class APPEND_LN(update_halo)>(h, {y_min - depth + 1, y_max + depth + 2}, [=](
 						id<1> k) {
@@ -199,7 +199,7 @@ void update_halo_kernel(
 		if ((chunk_neighbours[chunk_right] == external_face) &&
 		    (tile_neighbours[tile_right] == external_tile)) {
 			// DO k=y_min-depth,y_max+depth
-			clover::execute(queue, "update_halo",  [&](handler &h) {
+			clover::execute(1107, 1162,queue, "update_halo",  [&](handler &h) {
 				auto energy0 = field.energy0.access<RW>(h);
 				clover::par_ranged<class APPEND_LN(update_halo)>(h, {y_min - depth + 1, y_max + depth + 2}, [=](
 						id<1> k) {
@@ -216,7 +216,7 @@ void update_halo_kernel(
 		if ((chunk_neighbours[chunk_bottom] == external_face) &&
 		    (tile_neighbours[tile_bottom] == external_tile)) {
 			// DO j=x_min-depth,x_max+depth
-			clover::execute(queue, "update_halo",  [&](handler &h) {
+			clover::execute(1107, 1162,queue, "update_halo",  [&](handler &h) {
 				auto energy1 = field.energy1.access<RW>(h);
 				clover::par_ranged<class APPEND_LN(update_halo)>(h, {x_min - depth + 1, x_max + depth + 2}, [=](
 						id<1> j) {
@@ -229,7 +229,7 @@ void update_halo_kernel(
 		if ((chunk_neighbours[chunk_top] == external_face) &&
 		    (tile_neighbours[tile_top] == external_tile)) {
 			// DO j=x_min-depth,x_max+depth
-			clover::execute(queue, "update_halo",  [&](handler &h) {
+			clover::execute(1107, 1162,queue, "update_halo",  [&](handler &h) {
 				auto energy1 = field.energy1.access<RW>(h);
 				clover::par_ranged<class APPEND_LN(update_halo)>(h, {x_min - depth + 1, x_max + depth + 2}, [=](
 						id<1> j) {
@@ -242,7 +242,7 @@ void update_halo_kernel(
 		if ((chunk_neighbours[chunk_left] == external_face) &&
 		    (tile_neighbours[tile_left] == external_tile)) {
 			// DO k=y_min-depth,y_max+depth
-			clover::execute(queue, "update_halo",  [&](handler &h) {
+			clover::execute(1107, 1162,queue, "update_halo",  [&](handler &h) {
 				auto energy1 = field.energy1.access<RW>(h);
 				clover::par_ranged<class APPEND_LN(update_halo)>(h, {y_min - depth + 1, y_max + depth + 2}, [=](
 						id<1> k) {
@@ -255,7 +255,7 @@ void update_halo_kernel(
 		if ((chunk_neighbours[chunk_right] == external_face) &&
 		    (tile_neighbours[tile_right] == external_tile)) {
 			// DO k=y_min-depth,y_max+depth
-			clover::execute(queue, "update_halo",  [&](handler &h) {
+			clover::execute(1107, 1162,queue, "update_halo",  [&](handler &h) {
 				auto energy1 = field.energy1.access<RW>(h);
 				clover::par_ranged<class APPEND_LN(update_halo)>(h, {y_min - depth + 1, y_max + depth + 2}, [=](
 						id<1> k) {
@@ -271,7 +271,7 @@ void update_halo_kernel(
 		if ((chunk_neighbours[chunk_bottom] == external_face) &&
 		    (tile_neighbours[tile_bottom] == external_tile)) {
 			// DO j=x_min-depth,x_max+depth
-			clover::execute(queue, "update_halo",  [&](handler &h) {
+			clover::execute(1107, 1162,queue, "update_halo",  [&](handler &h) {
 				auto pressure = field.pressure.access<RW>(h);
 				clover::par_ranged<class APPEND_LN(update_halo)>(h, {x_min - depth + 1, x_max + depth + 2}, [=](
 						id<1> j) {
@@ -284,7 +284,7 @@ void update_halo_kernel(
 		if ((chunk_neighbours[chunk_top] == external_face) &&
 		    (tile_neighbours[tile_top] == external_tile)) {
 			// DO j=x_min-depth,x_max+depth
-			clover::execute(queue, "update_halo",  [&](handler &h) {
+			clover::execute(1107, 1162,queue, "update_halo",  [&](handler &h) {
 				auto pressure = field.pressure.access<RW>(h);
 				clover::par_ranged<class APPEND_LN(update_halo)>(h, {x_min - depth + 1, x_max + depth + 2}, [=](
 						id<1> j) {
@@ -297,7 +297,7 @@ void update_halo_kernel(
 		if ((chunk_neighbours[chunk_left] == external_face) &&
 		    (tile_neighbours[tile_left] == external_tile)) {
 			// DO k=y_min-depth,y_max+depth
-			clover::execute(queue, "update_halo",  [&](handler &h) {
+			clover::execute(1107, 1162,queue, "update_halo",  [&](handler &h) {
 				auto pressure = field.pressure.access<RW>(h);
 				clover::par_ranged<class APPEND_LN(update_halo)>(h, {y_min - depth + 1, y_max + depth + 2}, [=](
 						id<1> k) {
@@ -310,7 +310,7 @@ void update_halo_kernel(
 		if ((chunk_neighbours[chunk_right] == external_face) &&
 		    (tile_neighbours[tile_right] == external_tile)) {
 			// DO k=y_min-depth,y_max+depth
-			clover::execute(queue, "update_halo",  [&](handler &h) {
+			clover::execute(1107, 1162,queue, "update_halo",  [&](handler &h) {
 				auto pressure = field.pressure.access<RW>(h);
 				clover::par_ranged<class APPEND_LN(update_halo)>(h, {y_min - depth + 1, y_max + depth + 2}, [=](
 						id<1> k) {
@@ -326,7 +326,7 @@ void update_halo_kernel(
 		if ((chunk_neighbours[chunk_bottom] == external_face) &&
 		    (tile_neighbours[tile_bottom] == external_tile)) {
 			// DO j=x_min-depth,x_max+depth
-			clover::execute(queue, "update_halo",  [&](handler &h) {
+			clover::execute(1107, 1162,queue, "update_halo",  [&](handler &h) {
 				auto viscosity = field.viscosity.access<RW>(h);
 				clover::par_ranged<class APPEND_LN(update_halo)>(h, {x_min - depth + 1, x_max + depth + 2}, [=](
 						id<1> j) {
@@ -339,7 +339,7 @@ void update_halo_kernel(
 		if ((chunk_neighbours[chunk_top] == external_face) &&
 		    (tile_neighbours[tile_top] == external_tile)) {
 			// DO j=x_min-depth,x_max+depth
-			clover::execute(queue, "update_halo",  [&](handler &h) {
+			clover::execute(1107, 1162,queue, "update_halo",  [&](handler &h) {
 				auto viscosity = field.viscosity.access<RW>(h);
 				clover::par_ranged<class APPEND_LN(update_halo)>(h, {x_min - depth + 1, x_max + depth + 2}, [=](
 						id<1> j) {
@@ -352,7 +352,7 @@ void update_halo_kernel(
 		if ((chunk_neighbours[chunk_left] == external_face) &&
 		    (tile_neighbours[tile_left] == external_tile)) {
 			// DO k=y_min-depth,y_max+depth
-			clover::execute(queue, "update_halo",  [&](handler &h) {
+			clover::execute(1107, 1162,queue, "update_halo",  [&](handler &h) {
 				auto viscosity = field.viscosity.access<RW>(h);
 				clover::par_ranged<class APPEND_LN(update_halo)>(h, {y_min - depth + 1, y_max + depth + 2}, [=](
 						id<1> k) {
@@ -365,7 +365,7 @@ void update_halo_kernel(
 		if ((chunk_neighbours[chunk_right] == external_face) &&
 		    (tile_neighbours[tile_right] == external_tile)) {
 			// DO k=y_min-depth,y_max+depth
-			clover::execute(queue, "update_halo",  [&](handler &h) {
+			clover::execute(1107, 1162,queue, "update_halo",  [&](handler &h) {
 				auto viscosity = field.viscosity.access<RW>(h);
 				clover::par_ranged<class APPEND_LN(update_halo)>(h, {y_min - depth + 1, y_max + depth + 2}, [=](
 						id<1> k) {
@@ -381,7 +381,7 @@ void update_halo_kernel(
 		if ((chunk_neighbours[chunk_bottom] == external_face) &&
 		    (tile_neighbours[tile_bottom] == external_tile)) {
 			// DO j=x_min-depth,x_max+depth
-			clover::execute(queue, "update_halo",  [&](handler &h) {
+			clover::execute(1107, 1162,queue, "update_halo",  [&](handler &h) {
 				auto soundspeed = field.soundspeed.access<RW>(h);
 				clover::par_ranged<class APPEND_LN(update_halo)>(h, {x_min - depth + 1, x_max + depth + 2}, [=](
 						id<1> j) {
@@ -394,7 +394,7 @@ void update_halo_kernel(
 		if ((chunk_neighbours[chunk_top] == external_face) &&
 		    (tile_neighbours[tile_top] == external_tile)) {
 			// DO j=x_min-depth,x_max+depth
-			clover::execute(queue, "update_halo",  [&](handler &h) {
+			clover::execute(1107, 1162,queue, "update_halo",  [&](handler &h) {
 				auto soundspeed = field.soundspeed.access<RW>(h);
 				clover::par_ranged<class APPEND_LN(update_halo)>(h, {x_min - depth + 1, x_max + depth + 2}, [=](
 						id<1> j) {
@@ -407,7 +407,7 @@ void update_halo_kernel(
 		if ((chunk_neighbours[chunk_left] == external_face) &&
 		    (tile_neighbours[tile_left] == external_tile)) {
 			//  DO k=y_min-depth,y_max+depth
-			clover::execute(queue, "update_halo",  [&](handler &h) {
+			clover::execute(1107, 1162,queue, "update_halo",  [&](handler &h) {
 				auto soundspeed = field.soundspeed.access<RW>(h);
 				clover::par_ranged<class APPEND_LN(update_halo)>(h, {y_min - depth + 1, y_max + depth + 2}, [=](
 						id<1> k) {
@@ -420,7 +420,7 @@ void update_halo_kernel(
 		if ((chunk_neighbours[chunk_right] == external_face) &&
 		    (tile_neighbours[tile_right] == external_tile)) {
 			//  DO k=y_min-depth,y_max+depth
-			clover::execute(queue, "update_halo",  [&](handler &h) {
+			clover::execute(1107, 1162,queue, "update_halo",  [&](handler &h) {
 				auto soundspeed = field.soundspeed.access<RW>(h);
 				clover::par_ranged<class APPEND_LN(update_halo)>(h, {y_min - depth + 1, y_max + depth + 2}, [=](
 						id<1> k) {
@@ -437,7 +437,7 @@ void update_halo_kernel(
 		if ((chunk_neighbours[chunk_bottom] == external_face) &&
 		    (tile_neighbours[tile_bottom] == external_tile)) {
 			// DO j=x_min-depth,x_max+1+depth
-			clover::execute(queue, "update_halo",  [&](handler &h) {
+			clover::execute(1107, 1162,queue, "update_halo",  [&](handler &h) {
 				auto xvel0 = field.xvel0.access<RW>(h);
 				clover::par_ranged<class APPEND_LN(update_halo)>(h, {x_min - depth + 1, x_max + 1 + depth + 2}, [=](
 						id<1> j) {
@@ -450,7 +450,7 @@ void update_halo_kernel(
 		if ((chunk_neighbours[chunk_top] == external_face) &&
 		    (tile_neighbours[tile_top] == external_tile)) {
 			// DO j=x_min-depth,x_max+1+depth
-			clover::execute(queue, "update_halo",  [&](handler &h) {
+			clover::execute(1107, 1162,queue, "update_halo",  [&](handler &h) {
 				auto xvel0 = field.xvel0.access<RW>(h);
 				clover::par_ranged<class APPEND_LN(update_halo)>(h, {x_min - depth + 1, x_max + 1 + depth + 2}, [=](
 						id<1> j) {
@@ -463,7 +463,7 @@ void update_halo_kernel(
 		if ((chunk_neighbours[chunk_left] == external_face) &&
 		    (tile_neighbours[tile_left] == external_tile)) {
 			// DO k=y_min-depth,y_max+1+depth
-			clover::execute(queue, "update_halo",  [&](handler &h) {
+			clover::execute(1107, 1162,queue, "update_halo",  [&](handler &h) {
 				auto xvel0 = field.xvel0.access<RW>(h);
 				clover::par_ranged<class APPEND_LN(update_halo)>(h, {y_min - depth + 1, y_max + 1 + depth + 2}, [=](
 						id<1> k) {
@@ -476,7 +476,7 @@ void update_halo_kernel(
 		if ((chunk_neighbours[chunk_right] == external_face) &&
 		    (tile_neighbours[tile_right] == external_tile)) {
 			// DO k=y_min-depth,y_max+1+depth
-			clover::execute(queue, "update_halo",  [&](handler &h) {
+			clover::execute(1107, 1162,queue, "update_halo",  [&](handler &h) {
 				auto xvel0 = field.xvel0.access<RW>(h);
 				clover::par_ranged<class APPEND_LN(update_halo)>(h, {y_min - depth + 1, y_max + 1 + depth + 2}, [=](
 						id<1> k) {
@@ -492,7 +492,7 @@ void update_halo_kernel(
 		if ((chunk_neighbours[chunk_bottom] == external_face) &&
 		    (tile_neighbours[tile_bottom] == external_tile)) {
 			// DO j=x_min-depth,x_max+1+depth
-			clover::execute(queue, "update_halo",  [&](handler &h) {
+			clover::execute(1107, 1162,queue, "update_halo",  [&](handler &h) {
 				auto xvel1 = field.xvel1.access<RW>(h);
 				clover::par_ranged<class APPEND_LN(update_halo)>(h, {x_min - depth + 1, x_max + 1 + depth + 2}, [=](
 						id<1> j) {
@@ -505,7 +505,7 @@ void update_halo_kernel(
 		if ((chunk_neighbours[chunk_top] == external_face) &&
 		    (tile_neighbours[tile_top] == external_tile)) {
 			// DO j=x_min-depth,x_max+1+depth
-			clover::execute(queue, "update_halo",  [&](handler &h) {
+			clover::execute(1107, 1162,queue, "update_halo",  [&](handler &h) {
 				auto xvel1 = field.xvel1.access<RW>(h);
 				clover::par_ranged<class APPEND_LN(update_halo)>(h, {x_min - depth + 1, x_max + 1 + depth + 2}, [=](
 						id<1> j) {
@@ -518,7 +518,7 @@ void update_halo_kernel(
 		if ((chunk_neighbours[chunk_left] == external_face) &&
 		    (tile_neighbours[tile_left] == external_tile)) {
 			// DO k=y_min-depth,y_max+1+depth
-			clover::execute(queue, "update_halo",  [&](handler &h) {
+			clover::execute(1107, 1162,queue, "update_halo",  [&](handler &h) {
 				auto xvel1 = field.xvel1.access<RW>(h);
 				clover::par_ranged<class APPEND_LN(update_halo)>(h, {y_min - depth + 1, y_max + 1 + depth + 2}, [=](
 						id<1> k) {
@@ -531,7 +531,7 @@ void update_halo_kernel(
 		if ((chunk_neighbours[chunk_right] == external_face) &&
 		    (tile_neighbours[tile_right] == external_tile)) {
 			// DO k=y_min-depth,y_max+1+depth
-			clover::execute(queue, "update_halo",  [&](handler &h) {
+			clover::execute(1107, 1162,queue, "update_halo",  [&](handler &h) {
 				auto xvel1 = field.xvel1.access<RW>(h);
 				clover::par_ranged<class APPEND_LN(update_halo)>(h, {y_min - depth + 1, y_max + 1 + depth + 2}, [=](
 						id<1> k) {
@@ -547,7 +547,7 @@ void update_halo_kernel(
 		if ((chunk_neighbours[chunk_bottom] == external_face) &&
 		    (tile_neighbours[tile_bottom] == external_tile)) {
 			// DO j=x_min-depth,x_max+1+depth
-			clover::execute(queue, "update_halo",  [&](handler &h) {
+			clover::execute(1107, 1162,queue, "update_halo",  [&](handler &h) {
 				auto yvel0 = field.yvel0.access<RW>(h);
 				clover::par_ranged<class APPEND_LN(update_halo)>(h, {x_min - depth + 1, x_max + 1 + depth + 2}, [=](
 						id<1> j) {
@@ -560,7 +560,7 @@ void update_halo_kernel(
 		if ((chunk_neighbours[chunk_top] == external_face) &&
 		    (tile_neighbours[tile_top] == external_tile)) {
 			// DO j=x_min-depth,x_max+1+depth
-			clover::execute(queue, "update_halo",  [&](handler &h) {
+			clover::execute(1107, 1162,queue, "update_halo",  [&](handler &h) {
 				auto yvel0 = field.yvel0.access<RW>(h);
 				clover::par_ranged<class APPEND_LN(update_halo)>(h, {x_min - depth + 1, x_max + 1 + depth + 2}, [=](
 						id<1> j) {
@@ -573,7 +573,7 @@ void update_halo_kernel(
 		if ((chunk_neighbours[chunk_left] == external_face) &&
 		    (tile_neighbours[tile_left] == external_tile)) {
 			// DO k=y_min-depth,y_max+1+depth
-			clover::execute(queue, "update_halo",  [&](handler &h) {
+			clover::execute(1107, 1140,queue, "update_halo",  [&](handler &h) {
 				auto yvel0 = field.yvel0.access<RW>(h);
 				clover::par_ranged<class APPEND_LN(update_halo)>(h, {y_min - depth + 1, y_max + 1 + depth + 2}, [=](
 						id<1> k) {
@@ -586,7 +586,7 @@ void update_halo_kernel(
 		if ((chunk_neighbours[chunk_right] == external_face) &&
 		    (tile_neighbours[tile_right] == external_tile)) {
 			// DO k=y_min-depth,y_max+1+depth
-			clover::execute(queue, "update_halo",  [&](handler &h) {
+			clover::execute(1107, 1140,queue, "update_halo",  [&](handler &h) {
 				auto yvel0 = field.yvel0.access<RW>(h);
 				clover::par_ranged<class APPEND_LN(update_halo)>(h, {y_min - depth + 1, y_max + 1 + depth + 2}, [=](
 						id<1> k) {
@@ -602,7 +602,7 @@ void update_halo_kernel(
 		if ((chunk_neighbours[chunk_bottom] == external_face) &&
 		    (tile_neighbours[tile_bottom] == external_tile)) {
 			// DO j=x_min-depth,x_max+1+depth
-			clover::execute(queue, "update_halo",  [&](handler &h) {
+			clover::execute(1107, 1147,queue, "update_halo",  [&](handler &h) {
 				auto yvel1 = field.yvel1.access<RW>(h);
 				clover::par_ranged<class APPEND_LN(update_halo)>(h, {x_min - depth + 1, x_max + 1 + depth + 2}, [=](
 						id<1> j) {
@@ -615,7 +615,7 @@ void update_halo_kernel(
 		if ((chunk_neighbours[chunk_top] == external_face) &&
 		    (tile_neighbours[tile_top] == external_tile)) {
 			// DO j=x_min-depth,x_max+1+depth
-			clover::execute(queue, "update_halo",  [&](handler &h) {
+			clover::execute(1107, 1147,queue, "update_halo",  [&](handler &h) {
 				auto yvel1 = field.yvel1.access<RW>(h);
 				clover::par_ranged<class APPEND_LN(update_halo)>(h, {x_min - depth + 1, x_max + 1 + depth + 2}, [=](
 						id<1> j) {
@@ -628,7 +628,7 @@ void update_halo_kernel(
 		if ((chunk_neighbours[chunk_left] == external_face) &&
 		    (tile_neighbours[tile_left] == external_tile)) {
 			// DO k=y_min-depth,y_max+1+depth
-			clover::execute(queue, "update_halo",  [&](handler &h) {
+			clover::execute(1107, 1162,queue, "update_halo",  [&](handler &h) {
 				auto yvel1 = field.yvel1.access<RW>(h);
 				clover::par_ranged<class APPEND_LN(update_halo)>(h, {y_min - depth + 1, y_max + 1 + depth + 2}, [=](
 						id<1> k) {
@@ -641,7 +641,7 @@ void update_halo_kernel(
 		if ((chunk_neighbours[chunk_right] == external_face) &&
 		    (tile_neighbours[tile_right] == external_tile)) {
 			// DO k=y_min-depth,y_max+1+depth
-			clover::execute(queue, "update_halo",  [&](handler &h) {
+			clover::execute(1107, 1162,queue, "update_halo",  [&](handler &h) {
 				auto yvel1 = field.yvel1.access<RW>(h);
 				clover::par_ranged<class APPEND_LN(update_halo)>(h, {y_min - depth + 1, y_max + 1 + depth + 2}, [=](
 						id<1> k) {
@@ -658,7 +658,7 @@ void update_halo_kernel(
 		if ((chunk_neighbours[chunk_bottom] == external_face) &&
 		    (tile_neighbours[tile_bottom] == external_tile)) {
 			// DO j=x_min-depth,x_max+1+depth
-			clover::execute(queue, "update_halo",  [&](handler &h) {
+			clover::execute(1107, 1162,queue, "update_halo",  [&](handler &h) {
 				auto vol_flux_x = field.vol_flux_x.access<RW>(h);
 				clover::par_ranged<class APPEND_LN(update_halo)>(h, {x_min - depth + 1, x_max + 1 + depth + 2}, [=](
 						id<1> j) {
@@ -671,7 +671,7 @@ void update_halo_kernel(
 		if ((chunk_neighbours[chunk_top] == external_face) &&
 		    (tile_neighbours[tile_top] == external_tile)) {
 			// DO j=x_min-depth,x_max+1+depth
-			clover::execute(queue, "update_halo",  [&](handler &h) {
+			clover::execute(1107, 1162,queue, "update_halo",  [&](handler &h) {
 				auto vol_flux_x = field.vol_flux_x.access<RW>(h);
 				clover::par_ranged<class APPEND_LN(update_halo)>(h, {x_min - depth + 1, x_max + 1 + depth + 2}, [=](
 						id<1> j) {
@@ -684,7 +684,7 @@ void update_halo_kernel(
 		if ((chunk_neighbours[chunk_left] == external_face) &&
 		    (tile_neighbours[tile_left] == external_tile)) {
 			// DO k=y_min-depth,y_max+depth
-			clover::execute(queue, "update_halo",  [&](handler &h) {
+			clover::execute(1107, 1162,queue, "update_halo",  [&](handler &h) {
 				auto vol_flux_x = field.vol_flux_x.access<RW>(h);
 				clover::par_ranged<class APPEND_LN(update_halo)>(h, {y_min - depth + 1, y_max + depth + 2}, [=](
 						id<1> k) {
@@ -697,7 +697,7 @@ void update_halo_kernel(
 		if ((chunk_neighbours[chunk_right] == external_face) &&
 		    (tile_neighbours[tile_right] == external_tile)) {
 			// DO k=y_min-depth,y_max+depth
-			clover::execute(queue, "update_halo",  [&](handler &h) {
+			clover::execute(1107, 825,queue, "update_halo",  [&](handler &h) {
 				auto vol_flux_x = field.vol_flux_x.access<RW>(h);
 				clover::par_ranged<class APPEND_LN(update_halo)>(h, {y_min - depth + 1, y_max + depth + 2}, [=](
 						id<1> k) {
@@ -714,7 +714,7 @@ void update_halo_kernel(
 		if ((chunk_neighbours[chunk_bottom] == external_face) &&
 		    (tile_neighbours[tile_bottom] == external_tile)) {
 			// DO j=x_min-depth,x_max+1+depth
-			clover::execute(queue, "update_halo",  [&](handler &h) {
+			clover::execute(1107, 825,queue, "update_halo",  [&](handler &h) {
 				auto mass_flux_x = field.mass_flux_x.access<RW>(h);
 				clover::par_ranged<class APPEND_LN(update_halo)>(h, {x_min - depth + 1, x_max + 1 + depth + 2}, [=](
 						id<1> j) {
@@ -727,7 +727,7 @@ void update_halo_kernel(
 		if ((chunk_neighbours[chunk_top] == external_face) &&
 		    (tile_neighbours[tile_top] == external_tile)) {
 			// DO j=x_min-depth,x_max+1+depth
-			clover::execute(queue, "update_halo",  [&](handler &h) {
+			clover::execute(1107, 1222,queue, "update_halo",  [&](handler &h) {
 				auto mass_flux_x = field.mass_flux_x.access<RW>(h);
 				clover::par_ranged<class APPEND_LN(update_halo)>(h, {x_min - depth + 1, x_max + 1 + depth + 2}, [=](
 						id<1> j) {
@@ -740,7 +740,7 @@ void update_halo_kernel(
 		if ((chunk_neighbours[chunk_left] == external_face) &&
 		    (tile_neighbours[tile_left] == external_tile)) {
 			// DO k=y_min-depth,y_max+depth
-			clover::execute(queue, "update_halo",  [&](handler &h) {
+			clover::execute(1107, 825,queue, "update_halo",  [&](handler &h) {
 				auto mass_flux_x = field.mass_flux_x.access<RW>(h);
 				clover::par_ranged<class APPEND_LN(update_halo)>(h, {y_min - depth + 1, y_max + depth + 2}, [=](
 						id<1> k) {
@@ -753,7 +753,7 @@ void update_halo_kernel(
 		if ((chunk_neighbours[chunk_right] == external_face) &&
 		    (tile_neighbours[tile_right] == external_tile)) {
 			// DO k=y_min-depth,y_max+depth
-			clover::execute(queue, "update_halo",  [&](handler &h) {
+			clover::execute(1107, 1162,queue, "update_halo",  [&](handler &h) {
 				auto mass_flux_x = field.mass_flux_x.access<RW>(h);
 				clover::par_ranged<class APPEND_LN(update_halo)>(h, {y_min - depth + 1, y_max + depth + 2}, [=](
 						id<1> k) {
@@ -770,7 +770,7 @@ void update_halo_kernel(
 		if ((chunk_neighbours[chunk_bottom] == external_face) &&
 		    (tile_neighbours[tile_bottom] == external_tile)) {
 			// DO j=x_min-depth,x_max+depth
-			clover::execute(queue, "update_halo",  [&](handler &h) {
+			clover::execute(1107, 1162,queue, "update_halo",  [&](handler &h) {
 				auto vol_flux_y = field.vol_flux_y.access<RW>(h);
 				clover::par_ranged<class APPEND_LN(update_halo)>(h, {x_min - depth + 1, x_max + depth + 2}, [=](
 						id<1> j) {
@@ -783,7 +783,7 @@ void update_halo_kernel(
 		if ((chunk_neighbours[chunk_top] == external_face) &&
 		    (tile_neighbours[tile_top] == external_tile)) {
 			// DO j=x_min-depth,x_max+depth
-			clover::execute(queue, "update_halo",  [&](handler &h) {
+			clover::execute(1107, 1162,queue, "update_halo",  [&](handler &h) {
 				auto vol_flux_y = field.vol_flux_y.access<RW>(h);
 				clover::par_ranged<class APPEND_LN(update_halo)>(h, {x_min - depth + 1, x_max + depth + 2}, [=](
 						id<1> j) {
@@ -796,7 +796,7 @@ void update_halo_kernel(
 		if ((chunk_neighbours[chunk_left] == external_face) &&
 		    (tile_neighbours[tile_left] == external_tile)) {
 			// DO k=y_min-depth,y_max+1+depth
-			clover::execute(queue, "update_halo",  [&](handler &h) {
+			clover::execute(1107, 1162,queue, "update_halo",  [&](handler &h) {
 				auto vol_flux_y = field.vol_flux_y.access<RW>(h);
 				clover::par_ranged<class APPEND_LN(update_halo)>(h, {y_min - depth + 1, y_max + 1 + depth + 2}, [=](
 						id<1> k) {
@@ -809,7 +809,7 @@ void update_halo_kernel(
 		if ((chunk_neighbours[chunk_right] == external_face) &&
 		    (tile_neighbours[tile_right] == external_tile)) {
 			// DO k=y_min-depth,y_max+1+depth
-			clover::execute(queue, "update_halo",  [&](handler &h) {
+			clover::execute(1107, 1162,queue, "update_halo",  [&](handler &h) {
 				auto vol_flux_y = field.vol_flux_y.access<RW>(h);
 				clover::par_ranged<class APPEND_LN(update_halo)>(h, {y_min - depth + 1, y_max + 1 + depth + 2}, [=](
 						id<1> k) {
@@ -825,7 +825,7 @@ void update_halo_kernel(
 		if ((chunk_neighbours[chunk_bottom] == external_face) &&
 		    (tile_neighbours[tile_bottom] == external_tile)) {
 			// DO j=x_min-depth,x_max+depth
-			clover::execute(queue, "update_halo",  [&](handler &h) {
+			clover::execute(1107, 1162,queue, "update_halo",  [&](handler &h) {
 				auto mass_flux_y = field.mass_flux_y.access<RW>(h);
 				clover::par_ranged<class APPEND_LN(update_halo)>(h, {x_min - depth + 1, x_max + depth + 2}, [=](
 						id<1> j) {
@@ -838,7 +838,7 @@ void update_halo_kernel(
 		if ((chunk_neighbours[chunk_top] == external_face) &&
 		    (tile_neighbours[tile_top] == external_tile)) {
 			// DO j=x_min-depth,x_max+depth
-			clover::execute(queue, "update_halo",  [&](handler &h) {
+			clover::execute(1107, 1162,queue, "update_halo",  [&](handler &h) {
 				auto mass_flux_y = field.mass_flux_y.access<RW>(h);
 				clover::par_ranged<class APPEND_LN(update_halo)>(h, {x_min - depth + 1, x_max + depth + 2}, [=](
 						id<1> j) {
@@ -851,7 +851,7 @@ void update_halo_kernel(
 		if ((chunk_neighbours[chunk_left] == external_face) &&
 		    (tile_neighbours[tile_left] == external_tile)) {
 			// DO k=y_min-depth,y_max+1+depth
-			clover::execute(queue, "update_halo",  [&](handler &h) {
+			clover::execute(1107, 1117,queue, "update_halo",  [&](handler &h) {
 				auto mass_flux_y = field.mass_flux_y.access<RW>(h);
 				clover::par_ranged<class APPEND_LN(update_halo)>(h, {y_min - depth + 1, y_max + 1 + depth + 2}, [=](
 						id<1> k) {
@@ -864,7 +864,7 @@ void update_halo_kernel(
 		if ((chunk_neighbours[chunk_right] == external_face) &&
 		    (tile_neighbours[tile_right] == external_tile)) {
 			// DO k=y_min-depth,y_max+1+depth
-			clover::execute(queue, "update_halo",  [&](handler &h) {
+			clover::execute(1107, 1162,queue, "update_halo",  [&](handler &h) {
 				auto mass_flux_y = field.mass_flux_y.access<RW>(h);
 				clover::par_ranged<class APPEND_LN(update_halo)>(h, {y_min - depth + 1, y_max + 1 + depth + 2}, [=](
 						id<1> k) {

@@ -152,7 +152,7 @@ void PdV(global_variables &globals, bool predict) {
 
 	globals.error_condition = 0;
 
-	clover::execute(globals.queue,"PdV_1", [&](handler &h) {
+	clover::execute(1107, 1155,globals.queue,"PdV_1", [&](handler &h) {
 		for (int tile = 0; tile < globals.config.tiles_per_chunk; ++tile) {
 			tile_type &t = globals.chunk.tiles[tile];
 			PdV_kernel(

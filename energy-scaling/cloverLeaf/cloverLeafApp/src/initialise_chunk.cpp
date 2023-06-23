@@ -66,7 +66,7 @@ void initialise_chunk(const int tile, global_variables &globals) {
 	// Take a reference to the lowest structure, as Kokkos device cannot necessarily chase through the structure.
 	field_type &field = globals.chunk.tiles[tile].field;
 
-	clover::execute(globals.queue,"initialise_chunk_1", [&](handler &h) {
+	clover::execute(1107, 1155,globals.queue,"initialise_chunk_1", [&](handler &h) {
 		auto vertexx = field.vertexx.access<W>(h);
 		auto vertexdx = field.vertexdx.access<W>(h);
 		clover::par_ranged<class APPEND_LN(initialise)>(h, {0u, xrange}, [=](id<1> j) {
@@ -75,7 +75,7 @@ void initialise_chunk(const int tile, global_variables &globals) {
 		});
 	});
 
-	clover::execute(globals.queue,"initialise_chunk_2", [&](handler &h) {
+	clover::execute(1107, 1162,globals.queue,"initialise_chunk_2", [&](handler &h) {
 		auto vertexy = field.vertexy.access<W>(h);
 		auto vertexdy = field.vertexdy.access<W>(h);
 		clover::par_ranged<class APPEND_LN(initialise)>(h, {0u, yrange}, [=](id<1> k) {
@@ -87,7 +87,7 @@ void initialise_chunk(const int tile, global_variables &globals) {
 	const size_t xrange1 = (x_max + 2) - (x_min - 2) + 1;
 	const size_t yrange1 = (y_max + 2) - (y_min - 2) + 1;
 
-	clover::execute(globals.queue,"initialise_chunk_3", [&](handler &h) {
+	clover::execute(1107, 1162,globals.queue,"initialise_chunk_3", [&](handler &h) {
 		auto cellx = field.cellx.access<W>(h);
 		auto celldx = field.celldx.access<W>(h);
 		auto vertexx = field.vertexx.access<W>(h);
@@ -97,7 +97,7 @@ void initialise_chunk(const int tile, global_variables &globals) {
 		});
 	});
 
-	clover::execute(globals.queue,"initialise_chunk_4", [&](handler &h) {
+	clover::execute(1107, 1162,globals.queue,"initialise_chunk_4", [&](handler &h) {
 		auto celly = field.celly.access<W>(h);
 		auto celldy = field.celldy.access<W>(h);
 		auto vertexy = field.vertexy.access<W>(h);
@@ -108,7 +108,7 @@ void initialise_chunk(const int tile, global_variables &globals) {
 		});
 	});
 
-	clover::execute(globals.queue,"initialise_chunk_5", [&](handler &h) {
+	clover::execute(1107, 1117,globals.queue,"initialise_chunk_5", [&](handler &h) {
 		auto volume = field.volume.access<W>(h);
 		auto xarea = field.xarea.access<W>(h);
 		auto yarea = field.yarea.access<W>(h);
