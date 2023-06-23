@@ -1,12 +1,32 @@
 #!/bin/bash
 
-if [ -z "$1" ]
+CXX_COMPILER=""
+
+# Parse command-line arguments
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        --cxx_compiler=*)
+            CXX_COMPILER="${1#*=}"
+            shift
+            ;;
+        *)
+            echo "Invalid argument: $1"
+            return 1
+            ;;
+    esac
+done
+
+if [ -z "$CXX_COMPILER" ]
   then
-    echo "Provide the absolute path to the DPC++ compiler folder as first argument"
+    echo "Provide the absolute path to the DPC++ compiler as --cxx_compiler argument"
 	return
 fi
 
-DPCPP_CLANG=$1/clang++
+
+DPCPP_CLANG=$CXX_COMPILER
+BIN_DIR=$(dirname $DPCPP_CLANG)
+DPCPP_LIB=$BIN_DIR/../lib/
+
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
 cmake -S $SCRIPT_DIR/passes -B $SCRIPT_DIR/passes/build
