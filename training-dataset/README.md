@@ -2,13 +2,14 @@
 This folder contains all the source code and scripts needed to generate the models' training dataset.
 
 ## Folder structure
-- xxx
-- xxx
-
+- `micro` contains the source code of the micro-benchmarks and the generated bitcode and output features
+- `passes` contains the source code of the compiler passes used to extract the code features
+- `sycl-bench` contains the source code of the micro-benchmarks embedded into the SYCL-Bench infrastructure used for energy and runtime profiling
+- `postprocess` contains the scripts to parse and generate the dataset for training
 
 > ### Reproduce on a single node (with **root access**)
 1. Run `source extract_features.sh --cxx_compiler=<DPC++ compiler path>` to extract static code features from the micro-benchmarks.
-    - the `<DPC++ compiler path>` must be the absolute path to the DPC++ compiler
+    - the DPC++ compiler path must be the absolute path to the DPC++ compiler
     - the output features will be in the `micro/features-*` subfolders
 
 2. Run `sudo ./run_microbenchmarks.sh --cxx_compiler=<DPC++ compiler path> --cuda_arch=<CUDA architecture e.g. sm_70>` to run the micro-benchmarks and save the logs for parsing.
@@ -17,8 +18,8 @@ This folder contains all the source code and scripts needed to generate the mode
       - `--freq_sampling` to reduce the number of tested core frequencies, the script will test one frequency every `freq_sampling`, e.g. passing 2 will halve the number of tested frequencies
     - The logs will be in the `logs/` subfolder
 
-3. Run `source process_microbenchmarks.sh` to parse the logs and create the data for the training of the model
-    - the dataset will be in the `/validation/data/training-data` folder
+3. Run `source process_microbenchmarks.sh` to parse the logs and create the data for the training of the model.
+    - the dataset will be in the `/models-validation/data/training-data` folder
 
 > ### Reproduce on a cluster (with NVGPUFREQ SLURM plugin)
 Make sure that your current working directory is the folder containing this README.md file: `training-dataset`.
@@ -27,7 +28,7 @@ Make sure that your current working directory is the folder containing this READ
     - the `<DPC++ compiler path>` must be the absolute path to the DPC++ compiler
     - the output features will be in the `micro/features-*` subfolders
 
-Before running the `run_microbenchmarks_cluster.sh` script complete the following missing data in the `micro_bench_job.sh` script:
+Before running the `run_microbenchmarks_cluster.sh` script complete the following missing data in the `microbench_job.sh` script:
   - `#SBATCH --account=<cluster_account_name>`
   - `#SBATCH --partition=<cluster_partition_name>`
   - `#SBATCH --mail-user=<set_email>`
@@ -38,5 +39,5 @@ Before running the `run_microbenchmarks_cluster.sh` script complete the followin
       - `--freq_sampling` to reduce the number of tested core frequencies, the script will test one frequency every `freq_sampling`, e.g. passing 2 will halve the number of tested frequencies
     - the logs will be in the `logs/` subfolder
 
-3. Run `source process_microbenchmarks.sh` to parse the logs and create the data for the training of the model
-    - the dataset will be in the `/validation/data/training-data` folder
+3. Run `source process_microbenchmarks.sh` to parse the logs and create the data for the training of the model.
+    - the dataset will be in the `/models-validation/data/training-data` folder

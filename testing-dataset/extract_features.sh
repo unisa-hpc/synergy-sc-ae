@@ -22,11 +22,7 @@ if [ -z "$CXX_COMPILER" ]
 	return
 fi
 
-
 DPCPP_CLANG=$CXX_COMPILER
-BIN_DIR=$(dirname $DPCPP_CLANG)
-DPCPP_LIB=$BIN_DIR/../lib/
-
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
 cmake -S $SCRIPT_DIR/passes -B $SCRIPT_DIR/passes/build

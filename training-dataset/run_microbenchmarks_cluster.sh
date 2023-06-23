@@ -39,7 +39,7 @@ fi
 
 if [ -z "$cuda_arch" ]
   then
-    echo "Provide the cuda architecture as --cuda_arch argument (e.g: sm_70) "
+    echo "Provide the cuda architecture as --cuda_arch argument (e.g: sm_70)"
 	return
 fi
 

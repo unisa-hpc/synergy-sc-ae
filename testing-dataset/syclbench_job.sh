@@ -1,14 +1,14 @@
 #!/bin/bash
 
-#SBATCH --account=lig8_dev
+#SBATCH --account=
+#SBATCH --partition=
+#SBATCH --mail-user=
 #SBATCH --job-name=sycl-bench
-#SBATCH --partition=m100_usr_prod
 #SBATCH --time 01:00:00
 #SBATCH --nodes=1             
 #SBATCH --ntasks=1
 #SBATCH --gres=gpu:1,nvgpufreq
 #SBATCH --mail-type=ALL
-#SBATCH --mail-user=mdantonio@unisa.it
 #SBATCH --exclusive
 
 runs=$1
