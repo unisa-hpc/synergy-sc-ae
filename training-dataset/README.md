@@ -23,6 +23,7 @@ The models training can also be performed on the data provided by the authors, s
   - run the script with `source extract_features.sh <DPC++ compiler path>`, providing the absolute path to the DPC++ compiler folder as first argument
   - the output features will be in the `micro/features-*/` subfolders
 2. `run_microbenchmarks_cluster.sh` script will run the microbenchmarks and save the logs for parsing
+  - move in the training-dataset folder
   - before running the `run_microbenchmarks_cluster.sh` complete the following missing data in the `micro_bench_job.sh`
     - `#SBATCH --account`=<cluster_account_name>
     - `#SBATCH --partition`=<cluster_partition_name>

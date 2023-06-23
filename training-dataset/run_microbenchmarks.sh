@@ -24,6 +24,8 @@ while [[ $# -gt 0 ]]; do
     esac
 done
 
+compute_capability=$(nvidia-smi --query-gpu=compute_cap --format=csv,noheader | tr -d .)
+cuda_arch=sm_${compute_capability}
 
 if [ -z "$CXX_COMPILER" ]
   then
@@ -39,7 +41,7 @@ SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 export LD_LIBRARY_PATH=$DPCPP_LIB:$LD_LIBRARY_PATH
 cmake -DCMAKE_CXX_COMPILER=$DPCPP_CLANG \
   -DCMAKE_CXX_FLAGS=$CXX_FLAGS \
-  -DSYCL_IMPL=LLVM-CUDA -DSYCL_BENCH_CUDA_ARCH=sm_70 -DENABLED_TIME_EVENT_PROFILING=ON \
+  -DSYCL_IMPL=LLVM-CUDA -DSYCL_BENCH_CUDA_ARCH=$cuda_arch -DENABLED_TIME_EVENT_PROFILING=ON \
   -DENABLED_SYNERGY=ON -DSYNERGY_CUDA_SUPPORT=ON -DSYNERGY_KERNEL_PROFILING=ON -DSYNERGY_SYCL_IMPL=DPC++ \
   -S $SCRIPT_DIR/sycl-bench -B $SCRIPT_DIR/sycl-bench/build
 cmake --build $SCRIPT_DIR/sycl-bench/build -j

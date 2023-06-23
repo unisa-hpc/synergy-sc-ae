@@ -1,25 +1,44 @@
 #!/bin/bash
 
-if [ -z "$1" ]
-  then
-    echo "Provide the absolute path to the DPC++ compiler folder as first argument"
-	return
-fi
+CXX_COMPILER=""
+CXX_FLAGS=""
+sampling=1
 
-sampling=$2
-if [ -z "$2" ]
-then
-  sampling=1
-fi
+compute_capability=$(nvidia-smi --query-gpu=compute_cap --format=csv,noheader | tr -d .)
+cuda_arch=sm_${compute_capability}
 
-DPCPP_CLANG=$1/clang++
-DPCPP_LIB=$1/../lib/
+# Parse command-line arguments
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        --cxx_compiler=*)
+            CXX_COMPILER="${1#*=}"
+            shift
+            ;;
+        --cxx_flags=*)
+            CXX_FLAGS="${1#*=}"
+            shift
+            ;;
+        --freq_sampling=*)
+            sampling="${1#*=}"
+            shift
+            ;;
+        *)
+            echo "Invalid argument: $1"
+            return 1
+            ;;
+    esac
+done
+
+DPCPP_CLANG=$CXX_COMPILER
+BIN_DIR=$(dirname $DPCPP_CLANG)
+DPCPP_LIB=$BIN_DIR/../lib/
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
 export LD_LIBRARY_PATH=$DPCPP_LIB:$LD_LIBRARY_PATH
 
 cmake -DCMAKE_CXX_COMPILER=$DPCPP_CLANG \
-  -DSYCL_IMPL=LLVM-CUDA -DSYCL_BENCH_CUDA_ARCH=sm_70 -DENABLED_TIME_EVENT_PROFILING=ON\
+  -DCMAKE_CXX_FLAGS=$CXX_FLAGS \
+  -DSYCL_IMPL=LLVM-CUDA -DSYCL_BENCH_CUDA_ARCH=$cuda_arch -DENABLED_TIME_EVENT_PROFILING=ON\
   -DENABLED_SYNERGY=ON -DSYNERGY_CUDA_SUPPORT=ON -DSYNERGY_KERNEL_PROFILING=ON -DSYNERGY_SYCL_IMPL=DPC++ \
   -S $SCRIPT_DIR/sycl-bench -B $SCRIPT_DIR/sycl-bench/build
 cmake --build $SCRIPT_DIR/sycl-bench/build -j

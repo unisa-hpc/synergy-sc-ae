@@ -1,5 +1,5 @@
 #!/bin/bash
-# Default values
+
 CXX_COMPILER=""
 CXX_FLAGS=""
 sampling=1
@@ -7,7 +7,7 @@ sampling=1
 compute_capability=$(nvidia-smi --query-gpu=compute_cap --format=csv,noheader | tr -d .)
 cuda_arch=sm_${compute_capability}
 
-
+# Parse command-line arguments
 while [[ $# -gt 0 ]]; do
     case "$1" in
         --cxx_compiler=*)
@@ -29,13 +29,6 @@ while [[ $# -gt 0 ]]; do
     esac
 done
 
-if [ -z "$CXX_COMPILER" ]
-  then
-    echo "Provide the absolute path to the DPC++ compiler as --cxx_compiler argument"
-	return
-fi
-
-
 DPCPP_CLANG=$CXX_COMPILER
 BIN_DIR=$(dirname $DPCPP_CLANG)
 DPCPP_LIB=$BIN_DIR/../lib/
@@ -44,14 +37,12 @@ SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 export LD_LIBRARY_PATH=$DPCPP_LIB:$LD_LIBRARY_PATH
 
 cmake -DCMAKE_CXX_COMPILER=$DPCPP_CLANG \
-  -DCMAKE_CXX_FLAGS=$CXX_FLAGS\
+  -DCMAKE_CXX_FLAGS=$CXX_FLAGS \
   -DSYCL_IMPL=LLVM-CUDA -DSYCL_BENCH_CUDA_ARCH=$cuda_arch -DENABLED_TIME_EVENT_PROFILING=ON\
   -DENABLED_SYNERGY=ON -DSYNERGY_CUDA_SUPPORT=ON -DSYNERGY_KERNEL_PROFILING=ON -DSYNERGY_SYCL_IMPL=DPC++ \
   -S $SCRIPT_DIR/sycl-bench -B $SCRIPT_DIR/sycl-bench/build
 cmake --build $SCRIPT_DIR/sycl-bench/build -j
 
-
-echo "Running microbenchmarks..."
 mkdir -p $SCRIPT_DIR/logs
 
 mem_frequencies=$(nvidia-smi -i 0 --query-supported-clocks=mem --format=csv,noheader,nounits)
@@ -73,7 +64,8 @@ for core_freq in $core_frequencies; do
 done
 sampled_freq+=($def_core)
 
+echo "Running SYCL-Bench..."
 
 for core in "${sampled_freq[@]}"; do
-    sbatch ${SCRIPT_DIR}/microbench_job.sh 5 $def_mem $core
+    sbatch ${SCRIPT_DIR}/syclbench_job.sh 5 $def_mem $core
 done
