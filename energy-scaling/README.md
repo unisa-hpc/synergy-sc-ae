@@ -6,17 +6,17 @@ This folder contains all the source code and scripts needed to generate the data
 - `cloverLeaf` contains the CloverLeaf application source code and application-specific scripts for data parsing processing
 - `miniWeather `contains the MiniWeather application source code and application-specific scripts for data parsing processing
 
-## MiniWeather 
-Note: if you extracted the features and predicted the frequencies for CloverLeaf, then you can skip steps 1 and 2.
-
-> ### Reproduce on a multi-GPU cluster (with NVGPUFREQ SLURM plugin)
-Note: if you want to obtain the results using the pre-built data, just run step 3 and 7.
-
-1. Run `source extract_features.sh --cxx_compiler=<DPC++ compiler path>` to extract static code features for each kernel in MiniWeather.
+## Applications features extraction and prediction
+1. Run `source extract_features.sh --cxx_compiler=<DPC++ compiler path>` to extract static code features for each kernel in both applications.
     - the DPC++ compiler path must be the absolute path to the DPC++ compiler
-    - the output features will be in the `miniWeather/features-*` subfolders
+    - the output features will be in the `miniWeather/features-*` and `cloverLeaf/features-*` subfolders
 2. Run `source predict.sh` to generate the predicted frequencies for each kernel and energy metric (`es_50`, `pl_50`, `min_edp`, `min_ed2p`, `default`).
-    - the output predictions will be in the `miniWeather/prediction` subfolder.
+    - the output predictions will be in the `miniWeather/prediction` and`cloverLeaf/predictions` subfolders
+
+## MiniWeather 
+> ### Reproduce on a multi-GPU cluster (with NVGPUFREQ SLURM plugin)
+**Note: if you want to obtain the results using the pre-built data, just run step 3 and 7.**
+
 3. Run `cd miniWeather`.
 4. Run `python3 generate.py --cxx_compiler=<DPC++ compiler path> --cuda_arch=<CUDA architecture e.g. sm_70>` to compile the MiniWeather application for different energy metrics.
     - Optional parameters:
@@ -36,15 +36,9 @@ Note: if you want to obtain the results using the pre-built data, just run step 
     - the plots will be in the `/energy-scaling/plots` folder
 
 ## CloverLeaf
-Note: if you extracted the features and predicted the frequencies for MiniWeather, then you can skip steps 1 and 2.
 > ### Reproduce on a multi-GPU cluster (with NVGPUFREQ SLURM plugin)
-Note: if you want to obtain the results using the pre-built data, just run step 3 and 7.
+**Note: if you want to obtain the results using the pre-built data, just run step 3 and 7.**
 
-1. Run `source extract_features.sh --cxx_compiler=<DPC++ compiler path>` to extract static code features for each kernel in CloverLeaf.
-    - the DPC++ compiler path must be the absolute path to the DPC++ compiler
-    - the output features will be in the `cloverLeaf/features-*` subfolders
-2. Run `source predict.sh` to generate the predicted frequencies for each kernel and energy metric (`es_50`, `pl_50`, `min_edp`, `min_ed2p`, `default`).
-    - the output predictions will be in the `cloverLeaf/prediction` subfolder.
 3. Run `cd cloverLeaf`.
 4. Run `python3 generate.py --cxx_compiler=<DPC++ compiler path> --cuda_arch=<CUDA architecture e.g. sm_70>` to compile the CloverLeaf application for different energy metrics.
     - Optional parameters:

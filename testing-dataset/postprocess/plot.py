@@ -90,7 +90,7 @@ for file in os.listdir(kernels_dir):
         pset_size = len(pset["speedup"])
 
         plt.ylim(0.6, 2)
-        plt.xlim(0.15, 1.2)
+        plt.xlim(left=0.15)
         
         cur_xlim_left, cur_xlim_right = plt.xlim()
         cur_xlim_bottom, cur_ylim_top = plt.ylim()

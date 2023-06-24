@@ -12,3 +12,6 @@ The models training and validation can be performed either on the pre-built data
       - `--provided_data` must be passed as an argument if you want to use the pre-built dataset
     - the output plots for the prediction error will be placed in the `predictions/benchmarks-errors/` folder
     - the output data used for the error analysis will be in the `predictions/algorithms.txt` file
+
+### Next step
+Go to the `/energy-scaling` folder.
