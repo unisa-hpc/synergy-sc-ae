@@ -15,7 +15,7 @@ This folder contains all the source code and scripts needed to generate the mode
 2. Run `sudo ./run_microbenchmarks.sh --cxx_compiler=<DPC++ compiler path> --cuda_arch=<CUDA architecture e.g. sm_70>` to run the micro-benchmarks and save the logs for parsing.
     - Optional parameters:
       - `--cxx_flags` to pass other options to the DPC++ compiler
-      - `--freq_sampling` to reduce the number of tested core frequencies, the script will test one frequency every `freq_sampling`, e.g. passing 2 will halve the number of tested frequencies
+      - `--freq_sampling` to reduce the number of tested core frequencies, the script will test one frequency every `freq_sampling`, e.g. passing 2 will halve the number of tested frequencies. **Important: if you use the `--freq_sampling` command-line argument, the same sampling value must be used for generating both the training and testing datasets**
     - The logs will be in the `logs/` subfolder
 
 3. Run `source process_microbenchmarks.sh` to parse the logs and create the data for the training of the model.
@@ -36,8 +36,11 @@ Before running the `run_microbenchmarks_cluster.sh` script complete the followin
 2. Run `source run_microbenchmarks_cluster.sh --cxx_compiler=<DPC++ compiler path> --cuda_arch=<CUDA architecture e.g. sm_70>` to run the micro-benchmarks and save the logs for parsing.
     - Optional parameters:
       - `--cxx_flags` to pass other options to the DPC++ compiler
-      - `--freq_sampling` to reduce the number of tested core frequencies, the script will test one frequency every `freq_sampling`, e.g. passing 2 will halve the number of tested frequencies
+      - `--freq_sampling` to reduce the number of tested core frequencies, the script will test one frequency every `freq_sampling`, e.g. passing 2 will halve the number of tested frequencies. **Important: if you use the `--freq_sampling` command-line argument, the same sampling value must be used for generating both the training and testing datasets**
     - the logs will be in the `logs/` subfolder
 
 3. Run `source process_microbenchmarks.sh` to parse the logs and create the data for the training of the model.
     - the dataset will be in the `/models-validation/data/training-data` folder
+
+### Next step
+Go to the `/testing-dataset` folder.
