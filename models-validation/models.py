@@ -101,8 +101,8 @@ def func_PL_clk_prediction(x_feature, df_x_obj,  # training data
                     predict_df.columns[0])[:1].index
                 clk_prediction = y_model_test_feature['core-freq'].loc[idx_clk_prediction]
 
-                print(
-                    f'{test_case[case_i]:10} ==> PL_{value_i} ==> {name:15} ==> frequency prediction is {int(clk_prediction)}')
+                # print(
+                #     f'{test_case[case_i]:10} ==> PL_{value_i} ==> {name:15} ==> frequency prediction is {int(clk_prediction)}')
                 clk_prediction_list.append(int(clk_prediction))
 
     return clk_prediction_list
@@ -152,8 +152,8 @@ def func_ES_clk_prediction(x_feature, df_x_obj,  # training data
                     predict_df.columns[0])[:1].index
                 clk_prediction = y_model_test_feature['core-freq'].loc[idx_clk_prediction]
 
-                print(
-                    f'{test_case[case_i]:10} ==> ES_{value_i} ==> {name:15} ==> frequency prediction is {int(clk_prediction)}')
+                # print(
+                #     f'{test_case[case_i]:10} ==> ES_{value_i} ==> {name:15} ==> frequency prediction is {int(clk_prediction)}')
                 clk_prediction_list.append(int(clk_prediction))
 
     return clk_prediction_list
@@ -247,7 +247,7 @@ if __name__ == '__main__':
 
     # ===========================================================================================================
     # training input data: features, frequency, objectives
-
+    print("Reading datasets...")
     # df = pd.concat([pd.read_csv(file_name.format(i)) for i in range(1, 11)])
     df_list_feature = []
     df_list_core_clk = []
@@ -327,6 +327,8 @@ if __name__ == '__main__':
     # ===========================================================================================================
     # Time
     # ================= time - ML prediction and plot result for each test benchmarks
+    print("Generating time predictions...")
+
     predictors = [
         ("Linear", LinearRegression()),
         ("Lasso", Lasso(alpha=1.0)),  # alpha=0.005, max_iter=5000
@@ -371,6 +373,8 @@ if __name__ == '__main__':
     # Energy
 
     # ================= Energy - ML prediction and plot result for each test benchmarks
+    print("Generating energy predictions...")
+
     predictors = [
         ("RandomForest", RandomForestRegressor()),
         ("SVR_RBF", SVR(kernel="rbf", C=100, gamma=0.1, epsilon=0.1)),
@@ -412,7 +416,7 @@ if __name__ == '__main__':
     # # EDP
 
     # ================= EDP - ML prediction and plot result for each test benchmarks
-    print("Generating edp prediction...")
+    print("Generating EDP predictions...")
 
     predictors = [
         ("RandomForest", RandomForestRegressor()),
@@ -454,7 +458,7 @@ if __name__ == '__main__':
     # ===========================================================================================================
     # # ED2P
     # ================= ED2P - ML prediction and plot result for each test benchmarks
-    print("Generating ed2p prediction...")
+    print("Generating ED2P predictions...")
 
     predictors = [
         ("Linear", LinearRegression()),
@@ -501,7 +505,7 @@ if __name__ == '__main__':
     # ES metric
     # ================= ES metric - ML prediction and plot result for each test benchmarks
 
-    print("Generating energy saving prediction...")
+    print("Generating energy saving predictions...")
 
     predictors = [
         ("RandomForest", RandomForestRegressor()),
@@ -602,7 +606,7 @@ if __name__ == '__main__':
     # ===========================================================================================================
     # # PL metric
     # ================= PL metric - ML prediction and plot result for each test benchmarks
-    print("Generating PL metric results ...")
+    print("Generating performance loss predictions...")
 
     predictors = [
         ("Linear", LinearRegression()),

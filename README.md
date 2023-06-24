@@ -6,8 +6,8 @@ Our experimental setup was based on Ubuntu 22.04 and 20.04.
 We suggest using Ubuntu 20.04 or later.
 
 ## Hardware Requirements
-- Single-node experiments: t least one NVIDIA GPU is required.
-- Multi-node experiments: a cluster with NVIDIA GPUs is required, equipped with the provided SLURM plugin.
+- Single-node experiments: at least one NVIDIA GPU is required.
+- Multi-node experiments: a cluster with NVIDIA GPUs is required, equipped with the provided NVGPUFREQ SLURM plugin.
 
 ## Software Requirements
 - DPC++ (Intel/LLVM) [2022-09](https://github.com/intel/llvm/releases/tag/2022-09)
