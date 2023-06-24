@@ -2,7 +2,7 @@
 
 CXX_COMPILER=""
 CXX_FLAGS=""
-sampling=1
+runs=5
 
 cuda_arch=""
 
@@ -21,8 +21,8 @@ while [[ $# -gt 0 ]]; do
             cuda_arch="${1#*=}"
             shift
             ;;
-        --freq_sampling=*)
-            sampling="${1#*=}"
+        --num_runs=*)
+            runs="${1#*=}"
             shift
             ;;
         *)
@@ -70,20 +70,8 @@ nvsmi_out=$(nvidia-smi  -q | grep "Default Applications Clocks" -A 2 | tail -n +
 def_core=$(echo $nvsmi_out | awk '{print $3}')
 def_mem=$(echo $nvsmi_out | awk '{print $7}')
 
-sampled_freq=()
-i=-1
-for core_freq in $core_frequencies; do
-  i=$((i+1))
-  if [ $((i % sampling)) != 0 ]
-  then
-    continue
-  fi
-  sampled_freq+=($core_freq)
-done
-sampled_freq+=($def_core)
-
 echo "Running SYCL-Bench..."
 
-for core in "${sampled_freq[@]}"; do
-    sbatch ${SCRIPT_DIR}/syclbench_job.sh 5 $def_mem $core
+for core in $core_frequencies; do
+    sbatch ${SCRIPT_DIR}/syclbench_job.sh $runs $def_mem $core
 done

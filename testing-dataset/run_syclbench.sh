@@ -94,3 +94,5 @@ for core_freq in $core_frequencies; do
   $SCRIPT_DIR/sycl-bench/build/sobel  --device=gpu --num-iters=2000 --num-runs=$runs --memory-freq=${mem_freq} --core-freq=${core_freq} > $SCRIPT_DIR/logs/sobel_${mem_freq}_${core_freq}.log
   $SCRIPT_DIR/sycl-bench/build/vec_add  --device=gpu --size=1048576 --num-iters=100000 --num-runs=$runs --memory-freq=${mem_freq} --core-freq=${core_freq} > $SCRIPT_DIR/logs/vec_add_${mem_freq}_${core_freq}.log
 done
+
+nvidia-smi -rac

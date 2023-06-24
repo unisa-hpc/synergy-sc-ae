@@ -16,7 +16,7 @@ This folder contains all the source code and scripts needed to generate:
 2. Run `sudo ./run_syclbench.sh --cxx_compiler=<DPC++ compiler path> --cuda_arch=<CUDA architecture e.g. sm_70>` to run the SYCL-Bench benchmarks and save the logs for parsing.
     - Optional parameters:
       - `--cxx_flags` to pass other options to the DPC++ compiler
-      - `--freq_sampling` to reduce the number of tested core frequencies, the script will test one frequency every `freq_sampling`, e.g. passing 2 will halve the number of tested frequencies. **Important: if you use the `--freq_sampling` command-line argument, the same sampling value must be used for generating both the training and testing datasets.**
+      - `--num_runs` to reduce the number of times each benchmarks is repeated, reducing the overall execution time, the default value is 5 if not specified
     - The logs will be in the `logs/` subfolder
 
 3. Run `source process_syclbench.sh` to process the logs and create the data for the validation of the model and the plots of the characterization section.
@@ -38,7 +38,7 @@ Before running the `run_syclbench_cluster.sh` script complete the following miss
 2. Run `source run_syclbench_cluster.sh --cxx_compiler=<DPC++ compiler path> --cuda_arch=<CUDA architecture e.g. sm_70>` to run the SYCL-Bench benchmarks and save the logs for parsing.
     - Optional parameters:
       - `--cxx_flags` to pass other options to the DPC++ compiler
-      - `--freq_sampling` to reduce the number of tested core frequencies, the script will test one frequency every `freq_sampling`, e.g. passing 2 will halve the number of tested frequencies. **Important: if you use the `--freq_sampling` command-line argument, the same sampling value must be used for generating both the training and testing datasets**
+      - `--num_runs` to reduce the number of times each benchmarks is repeated, reducing the overall execution time, the default value is 5 if not specified
     - the logs will be in the `logs/` subfolder
 
 3. Run `source process_syclbench.sh` to process the logs and create the data for the validation of the model and the plots of the characterization section.

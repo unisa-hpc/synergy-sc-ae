@@ -14,15 +14,22 @@ We suggest using Ubuntu 20.04 or later.
   - Install using the [Getting Started Guide](https://github.com/intel/llvm/blob/sycl/sycl/doc/GetStartedGuide.md)
 - Clang and LLVM 15
   - Install using the [LLVM automatic installation script](https://apt.llvm.org/#llvmsh)
+  - The `opt-15` tool must be available in the system PATH
+- [CUDA Toolkit](https://developer.nvidia.com/cuda-toolkit-archive) (tested with CUDA 11.8)
 - Python 3
-  - Packages: `scikit-learn`, `pandas`, `numpy`, `matplotlib`, `paretoset`
-- CUDA Toolkit (tested with CUDA 11.8)
+  - Install with `sudo apt install python3`
+  - Required packages: `scikit-learn`, `pandas`, `numpy`, `matplotlib`, `paretoset`
+    - Install with `pip install scikit-learn pandas numpy matplotlib paretoset`
+- cmake 3.17 or later
+  - Install with `sudo apt install cmake`
+  - Alternatively, download the [latest stable release](https://cmake.org/download/#latest)
+  - Check that cmake version is >= 3.17 using `cmake --version`
 
 Required for multi-node experiments: 
 - [NVGPUFREQ SLURM plugin](https://github.com/LigateProject/slurm-nvgpufreq)
   - Follow the instruction in the readme file of the repository
 - Application libraries
-  - APT package `libpnetcdf-dev` (for MiniWeather)
+  - Install with `sudo apt install libpnetcdf-dev` (for MiniWeather)
 - MPI Implementation (tested with Spectrum MPI)
 
 ## How to use this repository
@@ -61,11 +68,11 @@ Some scripts will require to specify the CUDA architecture (or Compute Capabilit
 |       |  sm_35 |  sm_52  |  sm_61 | sm_72 (Xavier) |        |  sm_86 |                | sm_90a (Thor) |
 
 ### Obtain the GPU frequencies
-When running the benchmarks to generate the training and testing datasets, the scripts will test the available frequencies of the GPU.
+When running the micro-benchmarks to generate the training datasets, the scripts will test the available frequencies of the GPU.
 You can reduce the number of tested frequencies through the `--freq_sampling` command-line argument, that allows sampling the frequencies.
 
 If you do not know how many core frequencies your GPU has, you can run the following command.
-``` 
+```bash
 # All frequencies
 nvidia-smi -i 0 --query-supported-clocks=gr --format=csv
 
@@ -74,7 +81,6 @@ nvidia-smi -i 0 --query-supported-clocks=gr --format=csv,noheader | wc -l
 ```
 If your GPU has a lot of frequencies, then it may be a good idea to sample some frequencies to reduce the execution time (this may change the models' accuracy).
 
-**Note: if you use the `--freq_sampling` command-line argument, the same sampling value must be used for generating both the training and testing datasets.**
 
 ### `--gres:nvgpufreq` for SLURM batch jobs
 In order to run the SLURM jobs with the NVGPUFREQ plugin, the `--gres:nvgpufreq` and `--exclusive` options must be specified in the batch job.
