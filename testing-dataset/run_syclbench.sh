@@ -2,7 +2,7 @@
 
 CXX_COMPILER=""
 CXX_FLAGS=""
-sampling=1
+runs=5
 
 cuda_arch=""
 # Parse command-line arguments
@@ -16,8 +16,8 @@ while [[ $# -gt 0 ]]; do
             CXX_FLAGS="${1#*=}"
             shift
             ;;
-        --freq_sampling=*)
-            sampling="${1#*=}"
+        --num_runs=*)
+            runs="${1#*=}"
             shift
             ;;
         --cuda_arch=*)
@@ -70,23 +70,11 @@ nvsmi_out=$(nvidia-smi  -q | grep "Default Applications Clocks" -A 2 | tail -n +
 def_core=$(echo $nvsmi_out | awk '{print $3}')
 def_mem=$(echo $nvsmi_out | awk '{print $7}')
 
-sampled_freq=()
-i=-1
-for core_freq in $core_frequencies; do
-  i=$((i+1))
-  if [ $((i % sampling)) != 0 ]
-  then
-    continue
-  fi
-  sampled_freq+=($core_freq)
-done
-sampled_freq+=($def_core)
 
 echo "Running SYCL-Bench..."
-runs=5
 
 mem_freq=$def_mem
-for core_freq in "${sampled_freq[@]}"; do
+for core_freq in $core_frequencies; do
   $SCRIPT_DIR/sycl-bench/build/bit_compression --device=gpu --size=524288 --num-iters=100000 --num-runs=$runs --memory-freq=${mem_freq} --core-freq=${core_freq} > $SCRIPT_DIR/logs/bit_compression_${mem_freq}_${core_freq}.log
   $SCRIPT_DIR/sycl-bench/build/black_scholes --device=gpu --size=524288 --num-iters=100000 --num-runs=$runs --memory-freq=${mem_freq} --core-freq=${core_freq} > $SCRIPT_DIR/logs/black_scholes_${mem_freq}_${core_freq}.log
   $SCRIPT_DIR/sycl-bench/build/box_blur --device=gpu --num-iters=200 --num-runs=$runs --memory-freq=${mem_freq} --core-freq=${core_freq} > $SCRIPT_DIR/logs/box_blur_${mem_freq}_${core_freq}.log
