@@ -1,5 +1,7 @@
 #!/bin/bash
 
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+
 provided=false
 while [[ $# -gt 0 ]]; do
     case "$1" in
@@ -15,14 +17,11 @@ while [[ $# -gt 0 ]]; do
     esac
 done
 
-SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
-
-nvsmi_out=$(nvidia-smi  -q | grep "Default Applications Clocks" -A 2 | tail -n +2)
-def_core=$(echo $nvsmi_out | awk '{print $3}')
-
 if [ $provided = true ]
 then
-  python3 $SCRIPT_DIR/models.py provided-data 1312
+  python3 $SCRIPT_DIR/parse.py provided-logs
+  python3 $SCRIPT_DIR/plot.py
 else
-  python3 $SCRIPT_DIR/models.py data $def_core
+  python3 $SCRIPT_DIR/parse.py logs
+  python3 $SCRIPT_DIR/plot.py
 fi

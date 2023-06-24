@@ -24,7 +24,8 @@ while [[ $# -gt 0 ]]; do
             ;;
         *)
             echo "Invalid argument: $1"
-            return 1
+              return 1 2>/dev/null
+              exit 1
             ;;
     esac
 done
@@ -32,13 +33,15 @@ done
 if [ -z "$CXX_COMPILER" ]
   then
     echo "Provide the absolute path to the DPC++ compiler as --cxx_compiler argument"
-	return
+    return 1 2>/dev/null
+    exit 1
 fi
 
 if [ -z "$cuda_arch" ]
   then
     echo "Provide the cuda architecture as --cuda_arch argument (e.g: sm_70)"
-	return
+    return 1 2>/dev/null
+    exit 1
 fi
 
 
