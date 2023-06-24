@@ -10,6 +10,8 @@ This folder contains all the source code and scripts needed to generate the data
 Note: if you extracted the features and predicted the frequencies for CloverLeaf, then you can skip steps 1 and 2.
 
 > ### Reproduce on a multi-GPU cluster (with NVGPUFREQ SLURM plugin)
+Note: if you want to obtain the results using the pre-built data, just run step 3 and 7.
+
 1. Run `source extract_features.sh --cxx_compiler=<DPC++ compiler path>` to extract static code features for each kernel in MiniWeather.
     - the DPC++ compiler path must be the absolute path to the DPC++ compiler
     - the output features will be in the `miniWeather/features-*` subfolders
@@ -28,11 +30,16 @@ Note: if you extracted the features and predicted the frequencies for CloverLeaf
     - `#SBATCH --ntasks-per-node=<num_of_processes_per_node>` (it must be equal to the number of gpus per node)
     - `#SBATCH --mail-user=<user_email>`
 6. Run `source launch-miniweather-freq.sh` script to launch the MiniWeather application on 1, 2, 4, 8 and 16 nodes.
-7. Run 
+7. Run `source plot.sh` to parse the logs and generate the plots.
+    - Optional parameters:
+      - `--provided_data` must be passed as an argument if you want to use the pre-built dataset
+    - the plots will be in the `/energy-scaling/plots` folder
 
 ## CloverLeaf
 Note: if you extracted the features and predicted the frequencies for MiniWeather, then you can skip steps 1 and 2.
 > ### Reproduce on a multi-GPU cluster (with NVGPUFREQ SLURM plugin)
+Note: if you want to obtain the results using the pre-built data, just run step 3 and 7.
+
 1. Run `source extract_features.sh --cxx_compiler=<DPC++ compiler path>` to extract static code features for each kernel in CloverLeaf.
     - the DPC++ compiler path must be the absolute path to the DPC++ compiler
     - the output features will be in the `cloverLeaf/features-*` subfolders
@@ -50,4 +57,7 @@ Note: if you extracted the features and predicted the frequencies for MiniWeathe
     - `#SBATCH --ntasks-per-node=<num_of_processes_per_node>` (it must be equal to the number of gpus per node)
     - `#SBATCH --mail-user=<user_email>`
 6. Run `source launch-cloverleaf-freq.sh` script to launch the CloverLeaf application on 1, 2, 4, 8 and 16 nodes.
-7. Run 
+7. Run `source plot.sh` to parse the logs and generate the plots.
+    - Optional parameters:
+      - `--provided_data` must be passed as an argument if you want to use the pre-built dataset
+    - the plots will be in the `/energy-scaling/plots` folder
