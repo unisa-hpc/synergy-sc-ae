@@ -9,6 +9,8 @@ This folder contains all the source code and scripts needed to generate:
 - `postprocess` contains the scripts to parse and generate the dataset for validation, and the scripts to generate the multi-objective characterization plots
 
 > ### Reproduce on a single node (with **root access**)
+**Note: if you want to obtain the multi-objective characterization results using the pre-generated data, just run step 3.**
+
 1. Run `source extract_features.sh --cxx_compiler=<DPC++ compiler path>` to extract static code features from the benchmarks.
     - the DPC++ compiler path must be the absolute path to the DPC++ compiler
     - the output features will be in the `features-*` subfolders
@@ -20,10 +22,13 @@ This folder contains all the source code and scripts needed to generate:
     - The logs will be in the `logs/` subfolder
 
 3. Run `source process_syclbench.sh` to process the logs and create the data for the validation of the model and the plots of the characterization section.
+    - `--provided_data` must be passed as an argument if you want to use the pre-generated logs
     - the dataset will be in the `/models-validation/data/testing-data` folder
     - the characterization plots will be in the `/testing-dataset/plots` subfolder
 
 > ### Reproduce on a cluster (with NVGPUFREQ SLURM plugin)
+**Note: if you want to obtain the multi-objective characterization results using the pre-generated data, just run step 3.**
+
 Make sure that your current working directory is the folder containing this README.md file: `testing-dataset`.
 
 1. Run `source extract_features.sh --cxx_compiler=<DPC++ compiler path>` to extract static code features from the benchmarks.
@@ -42,6 +47,7 @@ Before running the `run_syclbench_cluster.sh` script complete the following miss
     - the logs will be in the `logs/` subfolder
 
 3. Run `source process_syclbench.sh` to process the logs and create the data for the validation of the model and the plots of the characterization section.
+    - `--provided_data` must be passed as an argument if you want to use the pre-generated logs
     - the dataset will be in the `/models-validation/data/testing-data` folder
     - the characterization plots will be in the `/testing-dataset/plots` subfolder
 

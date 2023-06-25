@@ -35,7 +35,7 @@ Required for multi-node experiments:
 ## How to use this repository
 This repository is divided in four directories:
 - `training-dataset`, it contains all the scripts required to generate the data on which the models are trained
-- `testing-dataset`, that contains the scripts to run the SYCL-Bench suite to gather validation dataset and characterization plots
+- `testing-dataset`, that contains the scripts to run the SYCL-Bench suite to gather validation dataset and multi-objective characterization plots
 - `models-validation`, provides the scripts for models training and inference based on the previous datasets and the scripts to reproduce the validation results
 - `energy-scaling`, that provides the scripts to launch the MiniWeather and CloverLeaf applications to reproduce the energy scaling results
 
@@ -45,7 +45,7 @@ Each subdirectory has its own `README.md` file that provides additional informat
 As running the tests may take some time and some specific requirements, we provide our data to obtain the exact same results of the paper.
 
 This workflow does not run any application, but uses the data obtained during our experimental analysis.
-To use this workflow visit the `models-validation` and `energy-scaling` folders and follow the readme files.
+To use this workflow visit the `testing-dataset`, `models-validation` and `energy-scaling` folders and follow the readme files.
 
 ## Reproduce the results of the paper
 In order to reproduce the results without the pre-generated data, make sure that all the requirements are fulfilled.

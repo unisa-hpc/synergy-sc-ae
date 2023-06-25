@@ -21,6 +21,8 @@ This folder contains all the source code and scripts needed to generate the mode
 3. Run `source process_microbenchmarks.sh` to parse the logs and create the data for the training of the model.
     - the dataset will be in the `/models-validation/data/training-data` folder
 
+**Note: if for any reason you stop the micro-benchmarks while running, you should also cleanup the created `logs/` folder.**
+
 > ### Reproduce on a cluster (with NVGPUFREQ SLURM plugin)
 Make sure that your current working directory is the folder containing this README.md file: `training-dataset`.
 
@@ -41,6 +43,8 @@ Before running the `run_microbenchmarks_cluster.sh` script complete the followin
 
 3. Run `source process_microbenchmarks.sh` to parse the logs and create the data for the training of the model.
     - the dataset will be in the `/models-validation/data/training-data` folder
+
+**Note: if for any reason you stop the micro-benchmarks while running, you should also cleanup the created `logs/` folder.**
 
 ### Next step
 Go to the `/testing-dataset` folder.

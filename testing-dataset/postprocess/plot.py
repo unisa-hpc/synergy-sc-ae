@@ -2,9 +2,13 @@
 
 import sys
 import os
+import matplotlib
 import matplotlib.pyplot as plt
 import pandas as pd
 from paretoset import paretoset
+
+matplotlib.rcParams['pdf.fonttype'] = 42
+matplotlib.rcParams['ps.fonttype'] = 42
 
 pd.set_option("display.max_columns", None)
 pd.set_option("display.max_rows", None)

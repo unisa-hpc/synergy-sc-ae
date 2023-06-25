@@ -1,0 +1,28 @@
+********** Results for Ftle**********
+problem-size: 1048576
+local-size: 256
+num-iters: 500000
+core-freq: 135
+memory-freq: 877
+device-name: Tesla V100-SXM2-16GB
+sycl-implementation: LLVM CUDA (Intel DPC++)
+throughput-metric: N/A
+kernel-time-mean: 6.120968 [s]
+kernel-time-stddev: 0.001788 [s]
+kernel-time-median: 6.122180 [s]
+kernel-time-min: 6.118721 [s]
+kernel-time-samples: "6.118721 6.119329 6.122180 6.122234 6.122377"
+kernel-time-throughput: N/A
+run-time-mean: 6.130268 [s]
+run-time-stddev: 0.002798 [s]
+run-time-median: 6.130705 [s]
+run-time-min: 6.126907 [s]
+run-time-samples: "6.126907 6.127893 6.130705 6.132633 6.133201"
+run-time-throughput: N/A
+kernel-energy-mean: 137.951382 [J]
+kernel-energy-stddev: 0.956436 [J]
+kernel-energy-median: 138.568580 [J]
+kernel-energy-min: 136.532725 [J]
+kernel-energy-max: 138.659520 [J]
+kernel-energy-samples: "136.532725 137.381705 138.568580 138.614380 138.659520"
+Verification: PASS

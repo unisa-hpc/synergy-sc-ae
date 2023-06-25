@@ -1,0 +1,28 @@
+********** Results for Matrix_mul**********
+problem-size: 5000
+local-size: 256
+num-iters: 1
+core-freq: 712
+memory-freq: 877
+device-name: Tesla V100-SXM2-16GB
+sycl-implementation: LLVM CUDA (Intel DPC++)
+throughput-metric: N/A
+kernel-time-mean: 1.009059 [s]
+kernel-time-stddev: 0.001666 [s]
+kernel-time-median: 1.009970 [s]
+kernel-time-min: 1.006209 [s]
+kernel-time-samples: "1.006209 1.008938 1.009970 1.010035 1.010144"
+kernel-time-throughput: N/A
+run-time-mean: 1.021273 [s]
+run-time-stddev: 0.002374 [s]
+run-time-median: 1.021041 [s]
+run-time-min: 1.018418 [s]
+run-time-samples: "1.018418 1.019940 1.021041 1.022306 1.024663"
+run-time-throughput: N/A
+kernel-energy-mean: 74.941452 [J]
+kernel-energy-stddev: 0.252877 [J]
+kernel-energy-median: 75.013070 [J]
+kernel-energy-min: 74.599210 [J]
+kernel-energy-max: 75.173460 [J]
+kernel-energy-samples: "74.599210 74.762070 75.013070 75.159450 75.173460"
+Verification: PASS

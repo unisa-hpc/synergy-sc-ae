@@ -1,0 +1,28 @@
+********** Results for Matrix_transpose**********
+problem-size: 4096
+local-size: 256
+num-iters: 20000
+core-freq: 1140
+memory-freq: 877
+device-name: Tesla V100-SXM2-16GB
+sycl-implementation: LLVM CUDA (Intel DPC++)
+throughput-metric: N/A
+kernel-time-mean: 0.989223 [s]
+kernel-time-stddev: 0.001009 [s]
+kernel-time-median: 0.989579 [s]
+kernel-time-min: 0.988034 [s]
+kernel-time-samples: "0.988034 0.988352 0.989579 0.989680 0.990472"
+kernel-time-throughput: N/A
+run-time-mean: 1.000377 [s]
+run-time-stddev: 0.001617 [s]
+run-time-median: 1.000743 [s]
+run-time-min: 0.997882 [s]
+run-time-samples: "0.997882 0.999917 1.000743 1.001154 1.002188"
+run-time-throughput: N/A
+kernel-energy-mean: 85.804757 [J]
+kernel-energy-stddev: 0.319206 [J]
+kernel-energy-median: 85.686000 [J]
+kernel-energy-min: 85.510015 [J]
+kernel-energy-max: 86.260160 [J]
+kernel-energy-samples: "85.510015 85.562080 85.686000 86.005530 86.260160"
+Verification: PASS

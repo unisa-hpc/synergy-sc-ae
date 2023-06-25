@@ -1,0 +1,28 @@
+********** Results for MolecularDynamics**********
+problem-size: 16384
+local-size: 256
+num-iters: 200000
+core-freq: 630
+memory-freq: 877
+device-name: Tesla V100-SXM2-16GB
+sycl-implementation: LLVM CUDA (Intel DPC++)
+throughput-metric: N/A
+kernel-time-mean: 1.871818 [s]
+kernel-time-stddev: 0.000261 [s]
+kernel-time-median: 1.871705 [s]
+kernel-time-min: 1.871650 [s]
+kernel-time-samples: "1.871650 1.871687 1.871705 1.871769 1.872278"
+kernel-time-throughput: N/A
+run-time-mean: 1.883639 [s]
+run-time-stddev: 0.002486 [s]
+run-time-median: 1.883624 [s]
+run-time-min: 1.881076 [s]
+run-time-samples: "1.881076 1.881427 1.883624 1.885086 1.886980"
+run-time-throughput: N/A
+kernel-energy-mean: 91.528800 [J]
+kernel-energy-stddev: 0.818588 [J]
+kernel-energy-median: 91.878800 [J]
+kernel-energy-min: 90.064930 [J]
+kernel-energy-max: 91.915480 [J]
+kernel-energy-samples: "90.064930 91.869955 91.878800 91.914835 91.915480"
+Verification: PASS
