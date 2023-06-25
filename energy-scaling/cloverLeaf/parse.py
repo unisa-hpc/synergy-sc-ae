@@ -3,7 +3,7 @@
 import os
 import sys
 
-if len(sys.argv) != 2:
+if len(sys.argv) != 3:
     print("Insert the name of the data folder")
     exit(0)
 
@@ -11,6 +11,8 @@ script_dir = os.path.dirname(os.path.realpath(sys.argv[0]))
 
 logs_dir = f"{script_dir}/{sys.argv[1]}"
 output_dir = f"{script_dir}/parsed"
+
+gpus_per_node = int(sys.argv[2])
 
 if "provided-logs" in logs_dir:
   replicate = True 
@@ -28,7 +30,7 @@ for conf in configurations:
       out_file = ws_out
 
       for nodes in [1, 2, 4, 8, 16]:
-        ngpus = nodes * 4
+        ngpus = nodes * gpus_per_node
         time_mean = 0
         energy_mean = 0
 

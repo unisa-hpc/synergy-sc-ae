@@ -33,6 +33,7 @@ This folder contains all the source code and scripts needed to generate the data
 7. Run `source plot.sh` to parse the logs and generate the plots.
     - Optional parameters:
       - `--provided_data` must be passed as an argument if you want to use the pre-built dataset
+      - `--ngpus=<gpus_per_node>` if you changed the number of GPUs per node in the batch job, then you **must** pass this argument specifying its value
     - the plots will be in the `/energy-scaling/plots` folder
 
 ## CloverLeaf
@@ -54,4 +55,5 @@ This folder contains all the source code and scripts needed to generate the data
 7. Run `source plot.sh` to parse the logs and generate the plots.
     - Optional parameters:
       - `--provided_data` must be passed as an argument if you want to use the pre-built dataset
+      - `--ngpus=<gpus_per_node>` if you changed the number of GPUs per node in the batch job, then you **must** pass this argument specifying its value
     - the plots will be in the `/energy-scaling/plots` folder

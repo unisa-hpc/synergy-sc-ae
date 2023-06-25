@@ -3,10 +3,15 @@
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
 provided=false
+gpus_per_node=4
 while [[ $# -gt 0 ]]; do
     case "$1" in
         --provided_data*)
             provided=true
+            shift
+            ;;
+        --ngpus=*)
+            gpus_per_node="${1#*=}"
             shift
             ;;
         *)
@@ -19,9 +24,9 @@ done
 
 if [ $provided = true ]
 then
-  python3 $SCRIPT_DIR/parse.py provided-logs
-  python3 $SCRIPT_DIR/plot.py
+  python3 $SCRIPT_DIR/parse.py provided-logs 4
+  python3 $SCRIPT_DIR/plot.py 4
 else
-  python3 $SCRIPT_DIR/parse.py logs
-  python3 $SCRIPT_DIR/plot.py
+  python3 $SCRIPT_DIR/parse.py logs $gpus_per_node
+  python3 $SCRIPT_DIR/plot.py $gpus_per_node
 fi

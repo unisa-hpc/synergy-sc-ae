@@ -2,13 +2,18 @@
 
 import sys
 import os
+import matplotlib
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 import matplotlib.lines as mlines
 from matplotlib.ticker import FuncFormatter
 import pandas as pd
 
+matplotlib.rcParams['pdf.fonttype'] = 42
+matplotlib.rcParams['ps.fonttype'] = 42
+
 script_dir = os.path.dirname(os.path.realpath(sys.argv[0]))
+gpus_per_node = int(sys.argv[1])
 
 parsed_dir = f"{script_dir}/parsed"
 output_dir = f"{script_dir}/../plots"
@@ -28,7 +33,7 @@ configurations = ["es_50", "pl_50", "default", "min_edp", "min_ed2p"] # 11
 markers = ["v", "d", "x", "s", "D"]
 colors = ["tab:blue", "tab:green", "tab:red", "tab:olive", "tab:purple"]
 
-gpus = [4, 8, 16, 32, 64]
+gpus = [nodes * gpus_per_node for nodes in [1, 2, 4, 8, 16]]
 
 for scaling in ["ws"]:
   plt.clf()
