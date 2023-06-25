@@ -5,12 +5,13 @@
 # Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
 
 import sys
+import matplotlib
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 import math
 import os
-
+from collections.abc import Iterable
 from matplotlib.pyplot import figure
 
 from sklearn.metrics import mean_squared_error
@@ -21,13 +22,13 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.svm import SVR
 from sklearn.pipeline import make_pipeline
 
+matplotlib.rcParams['pdf.fonttype'] = 42
+matplotlib.rcParams['ps.fonttype'] = 42
 
 script_dir = os.path.dirname(os.path.realpath(sys.argv[0]))
 data_dir = sys.argv[1]
 default_clk = int(sys.argv[2])
 
-
-Nconfig_per_case = 187
 Energy_saving_value = [0.25, 0.50, 0.75]
 
 training_file_normalized_loc = f"{script_dir}/{data_dir}/training-data/"  # frequency is not normalized
@@ -56,25 +57,32 @@ loc_freq_min_energy = [117,113,116,117,113,114,114,101,101,111,104,104,113,117,1
 loc_freq_default = [157,157,157,157,157,157,157,157,157,157,157,157,157,157,157,157,157,157,157,157,157,157,157]
 
 
+def flatten(xs):
+    for x in xs:
+        if isinstance(x, Iterable) and not isinstance(x, (str, bytes)):
+            yield from flatten(x)
+        else:
+            yield x
+
 # Defining MAPE function
 def APE(Y_actual, Y_Predicted):
     ape = np.abs((Y_actual - Y_Predicted) / Y_actual) * 100
     return ape
 
-
 def func_PL_clk_prediction(x_feature, df_x_obj,  # training data
                            df_y_core_clk, df_y_features,  # testing features
                            y_measurement, y_measurement_df,  # testing measurement
                            predictor_dict,  # ML predictors
-                           metric_values  # objective
+                           metric_values,  # objective
+                           n_config_per_case
                            ):
     clk_prediction_list = []
     metric_prediction_list = []
     metric_measurement_list = []
     for case_i in range(0, len(test_case)):  # model each test benchmarks ------- len(test_case)
 
-        case_start = Nconfig_per_case * case_i
-        case_end = Nconfig_per_case + Nconfig_per_case * case_i
+        case_start = n_config_per_case * case_i
+        case_end = n_config_per_case + n_config_per_case * case_i
         df_test_core_clk_per_case = df_y_core_clk[case_start:case_end]
         df_test_feature_per_case = df_y_features[case_start:case_end]
         y_model_test_feature = pd.concat([df_test_core_clk_per_case, df_test_feature_per_case], axis=1)
@@ -112,15 +120,16 @@ def func_ES_clk_prediction(x_feature, df_x_obj,  # training data
                            df_y_core_clk, df_y_features,  # testing features
                            y_measurement, y_measurement_df,  # testing measurement
                            predictor_dict,  # ML predictors
-                           metric_values  # objective
+                           metric_values,  # objective
+                           n_config_per_case
                            ):
     clk_prediction_list = []
     metric_prediction_list = []
     metric_measurement_list = []
     for case_i in range(0, len(test_case)):  # model each test benchmarks ------- len(test_case)
 
-        case_start = Nconfig_per_case * case_i
-        case_end = Nconfig_per_case + Nconfig_per_case * case_i
+        case_start = n_config_per_case * case_i
+        case_end = n_config_per_case + n_config_per_case * case_i
         df_test_core_clk_per_case = df_y_core_clk[case_start:case_end]
         df_test_feature_per_case = df_y_features[case_start:case_end]
         y_model_test_feature = pd.concat([df_test_core_clk_per_case, df_test_feature_per_case], axis=1)
@@ -182,7 +191,7 @@ def func_PlotErrorinBar(x_tick, mse_dict, objective, max=70):
     axs.set_ylabel('Absolute Percentage Error [%]', fontsize=12)
     # axs.set_yticklabels()
 
-    axs.set_ylim([0, max])
+    axs.set_ylim(bottom=0)
     axs.legend(loc='upper center', fontsize=12, ncol=multiplier)
 
     axs.grid(axis='y')
@@ -196,15 +205,15 @@ def func_MachineLearning_Regression(x_feature, df_x_obj,  # training data
                                     df_y_core_clk, df_y_features,  # testing features
                                     y_measurement, y_measurement_df,  # testing measurement
                                     predictor_dict,  # ML predictors
-                                    objective  # objective
+                                    objective,  # objective
+                                    n_config_per_case
                                     ):
     clk_prediction_list = []
     metric_prediction_list = []
     metric_measurement_list = []
     for case_i in range(0, len(test_case)):  # model each test benchmarks ------- len(test_case)
-
-        case_start = Nconfig_per_case * case_i
-        case_end = Nconfig_per_case + Nconfig_per_case * case_i
+        case_start = n_config_per_case * case_i
+        case_end = n_config_per_case + n_config_per_case * case_i
         df_test_core_clk_per_case = df_y_core_clk[case_start:case_end]
         df_test_feature_per_case = df_y_features[case_start:case_end]
         y_model_test_feature = pd.concat([df_test_core_clk_per_case, df_test_feature_per_case], axis=1)
@@ -212,7 +221,6 @@ def func_MachineLearning_Regression(x_feature, df_x_obj,  # training data
         # # time-model
 
         for name, predictor in predictor_dict:
-
             model = make_pipeline(predictor)
             model.fit(x_feature, df_x_obj.values.ravel())
             predict_temp = model.predict(y_model_test_feature)
@@ -279,7 +287,6 @@ if __name__ == '__main__':
 
     del df_list_feature[:], df_list_core_clk[:], df_list_time[:], df_list_energy[:], df_list_edp[:], df_list_ed2p[:]
 
-    Nconfig_per_case = len(df_train_core_clk['core-freq'].unique())
 
     # ===========================================================================================================
     # prediction input data: features, model, frequency
@@ -295,6 +302,7 @@ if __name__ == '__main__':
         df_list_edp.append(df_test_data[['mean-edp']])
         df_list_ed2p.append(df_test_data[['mean-ed2p']])
 
+
     df_test_features = pd.concat(df_list_feature)
     df_test_core_clk = pd.concat(df_list_core_clk)
     df_test_obj_time = pd.concat(df_list_time)
@@ -302,12 +310,14 @@ if __name__ == '__main__':
     df_test_obj_edp = pd.concat(df_list_edp)
     df_test_obj_ed2p = pd.concat(df_list_ed2p)
 
-    time_true_array = np.zeros(Nconfig_per_case * len(test_case))
-    energy_true_array = np.zeros(Nconfig_per_case * len(test_case))
-    edp_true_array = np.zeros(Nconfig_per_case * len(test_case))
-    ed2p_true_array = np.zeros(Nconfig_per_case * len(test_case))
+    n_config_per_case = len(df_test_core_clk['core-freq'].unique())
 
-    for array_id in range(0, Nconfig_per_case * len(test_case)):
+    time_true_array = np.zeros(n_config_per_case * len(test_case))
+    energy_true_array = np.zeros(n_config_per_case * len(test_case))
+    edp_true_array = np.zeros(n_config_per_case * len(test_case))
+    ed2p_true_array = np.zeros(n_config_per_case * len(test_case))
+
+    for array_id in range(0, n_config_per_case * len(test_case)):
         time_true_array[array_id] = df_test_obj_time.iat[array_id, 0]
         energy_true_array[array_id] = df_test_obj_energy.iat[array_id, 0]
         edp_true_array[array_id] = df_test_obj_edp.iat[array_id, 0]
@@ -327,7 +337,7 @@ if __name__ == '__main__':
     # ===========================================================================================================
     # Time
     # ================= time - ML prediction and plot result for each test benchmarks
-    print("Generating time predictions...")
+    print("Generating time models...")
 
     predictors = [
         ("Linear", LinearRegression()),
@@ -339,7 +349,8 @@ if __name__ == '__main__':
                                         df_test_core_clk, df_test_features,  # testing features
                                         time_true_array, df_test_obj_time,  # testing measurement
                                         predictors,  # ML predictors
-                                        'Time')  # objective
+                                        'Time',  # objective
+                                        n_config_per_case)
 
     # #============= ## time - prediction error analysis
 
@@ -363,6 +374,7 @@ if __name__ == '__main__':
         rmse = math.sqrt(mse)
         mape = mean_absolute_percentage_error(metric_measure_list[predictor_cnt::inter],
                                               metric_pre_list[predictor_cnt::inter])
+    
         with open(algorithms_file, "a") as f:
             print(f'{name:15} - RMSE: {rmse:.4f}, MAPE: {mape:.4f}', file=f)
         predictor_cnt = predictor_cnt + 1
@@ -373,7 +385,7 @@ if __name__ == '__main__':
     # Energy
 
     # ================= Energy - ML prediction and plot result for each test benchmarks
-    print("Generating energy predictions...")
+    print("Generating energy models...")
 
     predictors = [
         ("RandomForest", RandomForestRegressor()),
@@ -385,7 +397,8 @@ if __name__ == '__main__':
                                         df_test_core_clk, df_test_features,  # testing features
                                         energy_true_array, df_test_obj_energy,  # testing measurement
                                         predictors,  # ML predictors
-                                        'Energy')  # objective
+                                        'Energy',  # objective
+                                        n_config_per_case)
 
     # #============= ## Energy - prediction error analysis
 
@@ -416,7 +429,7 @@ if __name__ == '__main__':
     # # EDP
 
     # ================= EDP - ML prediction and plot result for each test benchmarks
-    print("Generating EDP predictions...")
+    print("Generating EDP models...")
 
     predictors = [
         ("RandomForest", RandomForestRegressor()),
@@ -428,7 +441,8 @@ if __name__ == '__main__':
                                         df_test_core_clk, df_test_features,  # testing features
                                         edp_true_array, df_test_obj_edp,  # testing measurement
                                         predictors,  # ML predictors
-                                        'EDP')  # objective
+                                        'EDP',  # objective
+                                        n_config_per_case)
 
     # #============= ## EDP - prediction error analysis
 
@@ -458,7 +472,7 @@ if __name__ == '__main__':
     # ===========================================================================================================
     # # ED2P
     # ================= ED2P - ML prediction and plot result for each test benchmarks
-    print("Generating ED2P predictions...")
+    print("Generating ED2P models...")
 
     predictors = [
         ("Linear", LinearRegression()),
@@ -472,7 +486,8 @@ if __name__ == '__main__':
                                         df_test_core_clk, df_test_features,  # testing features
                                         ed2p_true_array, df_test_obj_ed2p,  # testing measurement
                                         predictors,  # ML predictors
-                                        'ED2P')  # objective
+                                        'ED2P',  # objective
+                                        n_config_per_case)
 
     # #============= ## ED2P - prediction error analysis
 
@@ -523,7 +538,8 @@ if __name__ == '__main__':
                                                      df_test_core_clk, df_test_features,  # testing features
                                                      energy_true_array, df_test_obj_energy,  # testing measurement
                                                      predictors,  # ML predictors
-                                                     Energy_saving_value)  # objective
+                                                     Energy_saving_value,  # objective
+                                                     n_config_per_case)
         clk_prediction_sublist = [clk_prediction_list[i:i + 6] for i in range(0, len(clk_prediction_list), 6)]
         clk_prediction_df = pd.DataFrame(clk_prediction_sublist, columns=ES_column_name)
         clk_prediction_df['kernel'] = test_case
@@ -593,15 +609,15 @@ if __name__ == '__main__':
     with open(algorithms_file, "a") as f:
         print('\nES_25', file=f)
         print(f"RandomForest - RMSE: {ES_25_RandomForest_rmse:.4f}, MAPE: {ES_25_RandomForest_mape:.4f}", file=f)
-        print(f"SVR - RMSE: RMSE {ES_25_SVR_rmse:.4f}, MAPE {ES_25_SVR_mape:.4f}", file=f)
+        print(f"SVR - RMSE: {ES_25_SVR_rmse:.4f}, MAPE {ES_25_SVR_mape:.4f}", file=f)
 
         print('\nES_50', file=f)
         print(f"RandomForest - RMSE: {ES_50_RandomForest_rmse:.4f}, MAPE: {ES_50_RandomForest_mape:.4f}", file=f)
-        print(f"SVR - RMSE: RMSE {ES_50_SVR_rmse:.4f}, MAPE {ES_50_SVR_mape:.4f}", file=f)
+        print(f"SVR - RMSE: {ES_50_SVR_rmse:.4f}, MAPE {ES_50_SVR_mape:.4f}", file=f)
 
         print('\nES_75', file=f)
         print(f"RandomForest - RMSE: {ES_75_RandomForest_rmse:.4f}, MAPE: {ES_75_RandomForest_mape:.4f}", file=f)
-        print(f"SVR - RMSE: RMSE {ES_75_SVR_rmse:.4f}, MAPE {ES_75_SVR_mape:.4f}", file=f)
+        print(f"SVR - RMSE: {ES_75_SVR_rmse:.4f}, MAPE {ES_75_SVR_mape:.4f}", file=f)
 
     # ===========================================================================================================
     # # PL metric
@@ -627,7 +643,8 @@ if __name__ == '__main__':
                                                      df_test_core_clk, df_test_features,  # testing features
                                                      time_true_array, df_test_obj_time,  # testing measurement
                                                      predictors,  # ML predictors
-                                                     Energy_saving_value)  # objective
+                                                     Energy_saving_value,  # objective
+                                                     n_config_per_case)
         clk_prediction_sublist = [clk_prediction_list[i:i + 9] for i in range(0, len(clk_prediction_list), 9)]
         clk_prediction_df = pd.DataFrame(clk_prediction_sublist, columns=PL_column_name)
         clk_prediction_df['kernel'] = test_case
