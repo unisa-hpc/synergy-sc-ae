@@ -2,6 +2,8 @@
 This folder contains the scripts to build and validate the machine learning models used for frequency predictions.
 The models training and validation can be performed either on the pre-built dataset or on the dataset generated during the previous steps.
 
+The expected execution time is around 30 minutes. The process could take less time if the training dataset is smaller i.e. if you used the `--freq_sampling` argument.
+
 ## Folder structure
 - `provided-data` contains the pre-built dataset, obtained during our experimental evaluation
 - the `data` is generated during the previous steps and contains the training and testing datasets

@@ -1,7 +1,8 @@
 # Training dataset
 This folder contains all the source code and scripts needed to generate the models' training dataset.
 
-The expected execution time of all micro-benchmarks for a single frequency configuration required around 20 minutes
+The expected execution time of all micro-benchmarks for a single frequency configuration is around 20 minutes.
+The `--freq_sampling` argument can reduce the total execution time by reducing the number of tested core frequencies.
 
 ## Folder structure
 - `micro` contains the source code of the micro-benchmarks and the generated bitcode and output features

@@ -3,8 +3,8 @@ This folder contains all the source code and scripts needed to generate:
   - the dataset on which the models will be validated
   - the multi-objective characterization plots of the paper
 
-The expected execution time of all benchmarks is of around 2 minutes per frequency configuration.
-If the `--num_runs` argument is specified, the execution time can drop down to around 25 seconds per frequency configuration (with `--num_runs=1`)
+The expected execution time of all benchmarks is of around 2 minutes per frequency configuration (with `--num_runs=5`, the default value).
+If the `--num_runs` argument is specified, the execution time can drop down to around 25 seconds per frequency configuration (with `--num_runs=1`).
 
 ## Folder structure
 - `passes` contains the source code of the compiler passes used to extract the code features
