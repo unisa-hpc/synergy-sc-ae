@@ -54,13 +54,13 @@ SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 export LD_LIBRARY_PATH=$DPCPP_LIB:$LD_LIBRARY_PATH
 
 cmake -DCMAKE_CXX_COMPILER=$DPCPP_CLANG \
-  -DCMAKE_CXX_FLAGS=$CXX_FLAGS\
-  -DSYCL_IMPL=LLVM-CUDA -DSYCL_BENCH_CUDA_ARCH=$cuda_arch -DENABLED_TIME_EVENT_PROFILING=ON\
+  -DCMAKE_CXX_FLAGS="-Wno-unknown-cuda-version -Wno-linker-warnings -Wno-sycl-target $CXX_FLAGS" \
+  -DSYCL_IMPL=LLVM-CUDA -DSYCL_BENCH_CUDA_ARCH=$cuda_arch -DENABLED_TIME_EVENT_PROFILING=ON \
   -DENABLED_SYNERGY=ON -DSYNERGY_CUDA_SUPPORT=ON -DSYNERGY_KERNEL_PROFILING=ON -DSYNERGY_SYCL_IMPL=DPC++ \
   -S $SCRIPT_DIR/sycl-bench -B $SCRIPT_DIR/sycl-bench/build
 cmake --build $SCRIPT_DIR/sycl-bench/build -j
 
-echo "Running microbenchmarks..."
+echo "Running micro-benchmarks..."
 mkdir -p $SCRIPT_DIR/logs
 
 mem_frequencies=$(nvidia-smi -i 0 --query-supported-clocks=mem --format=csv,noheader,nounits)
@@ -84,5 +84,6 @@ sampled_freq+=($def_core)
 
 
 for core in "${sampled_freq[@]}"; do
+    echo "Running micro-benchmarks for frequency $core_freq"
     sbatch ${SCRIPT_DIR}/microbench_job.sh 5 $def_mem $core
 done

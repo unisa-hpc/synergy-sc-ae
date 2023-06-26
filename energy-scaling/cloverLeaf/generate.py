@@ -137,7 +137,7 @@ for folder in paths_cpp_folder:
         # copy cpp file with frequency values setted in the src folder of the original application
         os.system(f"cp {folder}/{file} {script_dir}/cloverLeafApp/src")
         
-    # compile and build cloverleaf    
+    # compile and build cloverleaf
     os.system(f"cmake -DCMAKE_CXX_COMPILER={cxx_compiler} \
                 -DCMAKE_CXX_FLAGS=\"-fsycl -fsycl-targets=nvptx64-nvidia-cuda -O3 {cxx_flags}\" \
                 -DSYCL_RUNTIME={sycl_runtime} \

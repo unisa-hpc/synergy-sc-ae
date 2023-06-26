@@ -43,14 +43,17 @@ for file in $SCRIPT_DIR/cloverLeaf/cloverLeafApp/base_src/*.cpp; do
   name=`basename ${file%.*}`
   
   if [[ ! -f "$SCRIPT_DIR/bitcode/cloverLeaf/$name.bc" ]]; then
-    sycl $file -I$SCRIPT_DIR/cloverLeaf/cloverLeafApp/SYnergy/include -o  $SCRIPT_DIR/bitcode/cloverLeaf/$name.bc
+    echo "Generating bitcode for $name"
+    sycl -Wno-unknown-cuda-version -Wno-deprecated-declarations $file -I$SCRIPT_DIR/cloverLeaf/cloverLeafApp/SYnergy/include -o  $SCRIPT_DIR/bitcode/cloverLeaf/$name.bc
   fi 
 done
 
 ####### Extract MiniWeather bitcode
 mkdir -p  $SCRIPT_DIR/bitcode/miniWeather
 if [[ ! -f "$SCRIPT_DIR/bitcode/miniWeather/$name.bc" ]]; then
-  sycl $SCRIPT_DIR/miniWeather/miniWeatherApp/cpp/miniWeather_mpi_parallelfor.cpp \
+  echo "Generating bitcode for miniWeather_mpi_parallelfor"
+
+  sycl -Wno-unknown-cuda-version -Wno-deprecated-declarations $SCRIPT_DIR/miniWeather/miniWeatherApp/cpp/miniWeather_mpi_parallelfor.cpp \
     -D YAKL_ARCH_SYCL -D _NX=4096 -D _NZ=2048 -D _SIM_TIME=5 -D _OUT_FREQ=1 -D _DATA_SPEC=DATA_SPEC_THERMAL \
     -I$SCRIPT_DIR/miniWeather/miniWeatherApp/cpp/YAKL/src -I$SCRIPT_DIR/miniWeather/miniWeatherApp/cpp/YAKL/external \
     -I$SCRIPT_DIR/miniWeather/miniWeatherApp/cpp/YAKL/SYnergy/include -o $SCRIPT_DIR/bitcode/miniWeather/miniWeather_mpi_parallelfor.bc

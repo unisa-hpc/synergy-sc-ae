@@ -40,7 +40,8 @@ for file in $SCRIPT_DIR/micro/*.cpp; do
   name=`basename ${file%.*}`
   
   if [[ ! -f "$SCRIPT_DIR/micro/bitcode/$name.bc" ]]; then
-    sycl $file -o  $SCRIPT_DIR/micro/bitcode/$name.bc
+    echo "Generating bitcode for $name"
+    sycl -Wno-unknown-cuda-version $file -o  $SCRIPT_DIR/micro/bitcode/$name.bc
   fi 
 done
 

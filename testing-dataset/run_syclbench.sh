@@ -55,7 +55,7 @@ SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 export LD_LIBRARY_PATH=$DPCPP_LIB:$LD_LIBRARY_PATH
 
 cmake -DCMAKE_CXX_COMPILER=$DPCPP_CLANG \
-  -DCMAKE_CXX_FLAGS=$CXX_FLAGS \
+  -DCMAKE_CXX_FLAGS="-Wno-unknown-cuda-version -Wno-linker-warnings -Wno-sycl-target $CXX_FLAGS" \
   -DSYCL_IMPL=LLVM-CUDA -DSYCL_BENCH_CUDA_ARCH=$cuda_arch -DENABLED_TIME_EVENT_PROFILING=ON\
   -DENABLED_SYNERGY=ON -DSYNERGY_CUDA_SUPPORT=ON -DSYNERGY_KERNEL_PROFILING=ON -DSYNERGY_SYCL_IMPL=DPC++ \
   -S $SCRIPT_DIR/sycl-bench -B $SCRIPT_DIR/sycl-bench/build
@@ -75,6 +75,8 @@ echo "Running SYCL-Bench..."
 
 mem_freq=$def_mem
 for core_freq in $core_frequencies; do
+  echo "Running benchmarks for frequency $core_freq"
+
   $SCRIPT_DIR/sycl-bench/build/bit_compression --device=gpu --size=524288 --num-iters=100000 --num-runs=$runs --memory-freq=${mem_freq} --core-freq=${core_freq} > $SCRIPT_DIR/logs/bit_compression_${mem_freq}_${core_freq}.log
   $SCRIPT_DIR/sycl-bench/build/black_scholes --device=gpu --size=524288 --num-iters=100000 --num-runs=$runs --memory-freq=${mem_freq} --core-freq=${core_freq} > $SCRIPT_DIR/logs/black_scholes_${mem_freq}_${core_freq}.log
   $SCRIPT_DIR/sycl-bench/build/box_blur --device=gpu --num-iters=200 --num-runs=$runs --memory-freq=${mem_freq} --core-freq=${core_freq} > $SCRIPT_DIR/logs/box_blur_${mem_freq}_${core_freq}.log

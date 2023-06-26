@@ -55,8 +55,8 @@ SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 export LD_LIBRARY_PATH=$DPCPP_LIB:$LD_LIBRARY_PATH
 
 cmake -DCMAKE_CXX_COMPILER=$DPCPP_CLANG \
-  -DCMAKE_CXX_FLAGS=$CXX_FLAGS \
-  -DSYCL_IMPL=LLVM-CUDA -DSYCL_BENCH_CUDA_ARCH=$cuda_arch -DENABLED_TIME_EVENT_PROFILING=ON\
+  -DCMAKE_CXX_FLAGS="-Wno-unknown-cuda-version -Wno-linker-warnings -Wno-sycl-target $CXX_FLAGS" \
+  -DSYCL_IMPL=LLVM-CUDA -DSYCL_BENCH_CUDA_ARCH=$cuda_arch -DENABLED_TIME_EVENT_PROFILING=ON \
   -DENABLED_SYNERGY=ON -DSYNERGY_CUDA_SUPPORT=ON -DSYNERGY_KERNEL_PROFILING=ON -DSYNERGY_SYCL_IMPL=DPC++ \
   -S $SCRIPT_DIR/sycl-bench -B $SCRIPT_DIR/sycl-bench/build
 cmake --build $SCRIPT_DIR/sycl-bench/build -j
@@ -73,5 +73,6 @@ def_mem=$(echo $nvsmi_out | awk '{print $7}')
 echo "Running SYCL-Bench..."
 
 for core in $core_frequencies; do
+    echo "Running benchmarks for frequency $core_freq"
     sbatch ${SCRIPT_DIR}/syclbench_job.sh $runs $def_mem $core
 done

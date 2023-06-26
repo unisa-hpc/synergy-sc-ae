@@ -1,6 +1,8 @@
 # Training dataset
 This folder contains all the source code and scripts needed to generate the models' training dataset.
 
+The expected execution time of all micro-benchmarks for a single frequency configuration required around 20 minutes
+
 ## Folder structure
 - `micro` contains the source code of the micro-benchmarks and the generated bitcode and output features
 - `passes` contains the source code of the compiler passes used to extract the code features
