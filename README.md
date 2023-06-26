@@ -18,8 +18,8 @@ We suggest using Ubuntu 20.04 or later.
 - [CUDA Toolkit](https://developer.nvidia.com/cuda-toolkit-archive) (tested with CUDA 11.8)
 - Python 3
   - Install with `sudo apt install python3`
-  - Required packages: `scikit-learn`, `pandas`, `numpy`, `matplotlib`, `paretoset`
-    - Install with `pip install scikit-learn pandas numpy matplotlib paretoset`
+  - Required packages: `scikit-learn>=0.24`, `pandas`, `numpy`, `matplotlib`, `paretoset`
+    - Install with `pip install scikit-learn>=0.24 pandas numpy matplotlib paretoset`
 - cmake 3.17 or later
   - Install with `sudo apt install cmake`
   - Alternatively, download the [latest stable release](https://cmake.org/download/#latest)
@@ -31,6 +31,7 @@ Required for multi-node experiments:
 - Application libraries
   - Install with `sudo apt install libpnetcdf-dev` (for MiniWeather)
 - MPI Implementation (tested with Spectrum MPI)
+  - Install with `sudo apt install openmpi-bin libopenmpi-dev`
 
 ## How to use this repository
 This repository is divided in four directories:

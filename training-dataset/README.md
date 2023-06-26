@@ -13,6 +13,7 @@ This folder contains all the source code and scripts needed to generate the mode
     - the output features will be in the `micro/features-*` subfolders
 
 2. Run `sudo ./run_microbenchmarks.sh --cxx_compiler=<DPC++ compiler path> --cuda_arch=<CUDA architecture e.g. sm_70>` to run the micro-benchmarks and save the logs for parsing.
+    - the DPC++ compiler path must be the absolute path to the DPC++ compiler
     - Optional parameters:
       - `--cxx_flags` to pass other options to the DPC++ compiler
       - `--freq_sampling` to reduce the number of tested core frequencies, the script will test one frequency every `freq_sampling`, e.g. passing 2 will halve the number of tested frequencies.
@@ -27,7 +28,7 @@ This folder contains all the source code and scripts needed to generate the mode
 Make sure that your current working directory is the folder containing this README.md file: `training-dataset`.
 
 1. Run `source extract_features.sh --cxx_compiler=<DPC++ compiler path>` to extract static code features from the micro-benchmarks.
-    - the `<DPC++ compiler path>` must be the absolute path to the DPC++ compiler
+    - the DPC++ compiler path must be the absolute path to the DPC++ compiler
     - the output features will be in the `micro/features-*` subfolders
 
 Before running the `run_microbenchmarks_cluster.sh` script complete the following missing data in the `microbench_job.sh` script:

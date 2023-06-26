@@ -29,7 +29,8 @@ This folder contains all the source code and scripts needed to generate the data
     - `#SBATCH --gpus-per-node=<num_of_gpus_per_node>`
     - `#SBATCH --ntasks-per-node=<num_of_processes_per_node>` (it must be equal to the number of gpus per node)
     - `#SBATCH --mail-user=<user_email>`
-6. Run `source launch-miniweather-freq.sh` script to launch the MiniWeather application on 1, 2, 4, 8 and 16 nodes.
+6. Run `source launch-miniweather-freq.sh --cxx_compiler=<DPC++ compiler path>` script to launch the MiniWeather application on 1, 2, 4, 8 and 16 nodes.
+    - the DPC++ compiler path must be the absolute path to the DPC++ compiler
 7. Run `source plot.sh` to parse the logs and generate the plots.
     - Optional parameters:
       - `--provided_data` must be passed as an argument if you want to use the pre-built dataset
@@ -51,7 +52,8 @@ This folder contains all the source code and scripts needed to generate the data
     - `#SBATCH --gpus-per-node=<num_of_gpus_per_node>`
     - `#SBATCH --ntasks-per-node=<num_of_processes_per_node>` (it must be equal to the number of gpus per node)
     - `#SBATCH --mail-user=<user_email>`
-6. Run `source launch-cloverleaf-freq.sh` script to launch the CloverLeaf application on 1, 2, 4, 8 and 16 nodes.
+6. Run `source launch-cloverleaf-freq.sh --cxx_compiler=<DPC++ compiler path>` script to launch the CloverLeaf application on 1, 2, 4, 8 and 16 nodes.
+    - the DPC++ compiler path must be the absolute path to the DPC++ compiler
 7. Run `source plot.sh` to parse the logs and generate the plots.
     - Optional parameters:
       - `--provided_data` must be passed as an argument if you want to use the pre-built dataset
