@@ -12,6 +12,8 @@
 
 nodes=$1
 executable=$2
+path=$3
+
 proc=$(( $nodes*4 ))
 size=$(( $proc*32 ))
-mpirun -n $proc -gpu ./executables/${executable} --file ./cloverleafApp/input_files/clover_bm${size}_short.in
+mpirun -n $proc -gpu ./executables/${executable} --file $path/cloverLeafApp/input_file/clover_bm${size}_short.in

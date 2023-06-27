@@ -29,10 +29,12 @@ BIN_DIR=$(dirname $DPCPP_CLANG)
 DPCPP_LIB=$BIN_DIR/../lib/
 export LD_LIBRARY_PATH=$DPCPP_LIB:$LD_LIBRARY_PATH
 
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+
 configurations=("default" "min_edp" "min_ed2p" "es_50" "pl_50")
 mkdir -p logs
 for conf in ${configurations[@]}; do
 	for nodes in 1 2 4 8 16; do 
-		sbatch --array=1-10 --nodes=$nodes --output=./logs/cloverleaf_${conf}_ws_${nodes}_%a.log ./cloverleaf-wsjob-freq.sh ${nodes} clover_leaf_${conf}
+		sbatch --array=1-10 --nodes=$nodes --output=./logs/cloverleaf_${conf}_ws_${nodes}_%a.log ./cloverleaf-wsjob-freq.sh ${nodes} clover_leaf_${conf} $SCRIPT_DIR
 	done
 done

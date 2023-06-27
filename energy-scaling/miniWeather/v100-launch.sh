@@ -1,1 +1,0 @@
-./generate.py --cxx_compiler="/software-local/dpcpp-2022-09/bin/clang++" --cuda_arch="sm_70"
