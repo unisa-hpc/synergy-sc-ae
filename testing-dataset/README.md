@@ -18,7 +18,7 @@ If the `--num_runs` argument is specified, the execution time can drop down to a
     - the DPC++ compiler path must be the absolute path to the DPC++ compiler
     - the output features will be in the `features-*` subfolders
 
-2. Run `sudo ./run_syclbench.sh --cxx_compiler=<DPC++ compiler path> --cuda_arch=<CUDA architecture e.g. sm_70>` to run the SYCL-Bench benchmarks and save the logs for parsing.
+2. Run `sudo ./run_syclbench.sh --cxx_compiler=<DPC++ compiler path> --cuda_arch=<CUDA architecture e.g. sm_70> [--num_runs=<runs>]` to run the SYCL-Bench benchmarks and save the logs for parsing.
     - Optional parameters:
       - `--cxx_flags` to pass other options to the DPC++ compiler
       - `--num_runs` to reduce the number of times each benchmarks is repeated, reducing the overall execution time, the default value is 5 if not specified
@@ -43,7 +43,7 @@ Before running the `run_syclbench_cluster.sh` script complete the following miss
   - `#SBATCH --partition=<cluster_partition_name>`
   - `#SBATCH --mail-user=<user_email>`
 
-2. Run `source run_syclbench_cluster.sh --cxx_compiler=<DPC++ compiler path> --cuda_arch=<CUDA architecture e.g. sm_70>` to run the SYCL-Bench benchmarks and save the logs for parsing.
+2. Run `source run_syclbench_cluster.sh --cxx_compiler=<DPC++ compiler path> --cuda_arch=<CUDA architecture e.g. sm_70> [--num_runs=<runs>]` to run the SYCL-Bench benchmarks and save the logs for parsing.
     - Optional parameters:
       - `--cxx_flags` to pass other options to the DPC++ compiler
       - `--num_runs` to reduce the number of times each benchmarks is repeated, reducing the overall execution time, the default value is 5 if not specified

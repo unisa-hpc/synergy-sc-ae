@@ -20,7 +20,7 @@ This folder contains all the source code and scripts needed to generate the data
 3. Run `cd miniWeather`.
 4. Run `python3 generate.py --cxx_compiler=<DPC++ compiler path> --cuda_arch=<CUDA architecture e.g. sm_70>` to compile the MiniWeather application for different energy metrics.
     - Optional parameters:
-      - `--cxx_flags` to pass other options to the DPC++ compiler
+      - `--cxx_flags` to pass other options to the DPC++ compiler. If the PnetCDF library is in a non-standard path, pass the `"-L/path/to/PnetCDF/lib -I/path/to/PnetCDF/include" flags
       - `--sycl_flags` to pass other compilation options for the YAKL library
     - the binary files for each combination of energy metric (`es_50`, `pl_50`, `min_edp`, `min_ed2p`, `default`) and number of nodes (1, 2, 4, 8, 16), will be in the `miniWeather/executables` folder.
 5. Complete the following missing data in the `miniweather-wsjob-freq.sh` script:

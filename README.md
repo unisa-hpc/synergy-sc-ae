@@ -2,8 +2,7 @@
 This repository provides the details for reproducing the results of the SC23 paper *SYnergy: Fine-grained Energy-Efficient Heterogeneous Computing for Scalable Energy Saving*.
 
 ## OS Requirements
-Our experimental setup was based on Ubuntu 22.04 and 20.04.
-We suggest using Ubuntu 20.04 or later.
+Our experiments have been tested on Ubuntu 20.04, 22.04, and RHEL 8.1.
 
 ## Hardware Requirements
 - Single-node experiments: at least one NVIDIA GPU is required.
